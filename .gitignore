@@ -1,0 +1,11 @@
+# logs & temp
+*.log
+_verify/
+images/tmp/
+
+# OS / editor
+Thumbs.db
+Desktop.ini
+.DS_Store
+.vscode/
+.idea/

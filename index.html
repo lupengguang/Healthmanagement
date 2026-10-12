@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C-ON FITNESS — Personal Trainer Gym</title>
+<meta name="description" content="C-ON Fitness — Personal trainer gym. Programs, packages and world-class coaches.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0b0e'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23e8102e'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ══════════ PRELOADER ══════════ -->
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-logo"><span>C</span><span>-</span><span>O</span><span>N</span></div>
+    <div class="preloader-bar"><i></i></div>
+    <div class="preloader-count">0%</div>
+  </div>
+</div>
+
+<!-- ══════════ CUSTOM CURSOR ══════════ -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ══════════ SCROLL PROGRESS ══════════ -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ══════════ NOISE OVERLAY ══════════ -->
+<div class="noise" aria-hidden="true"></div>
+
+<!-- ══════════ NAVBAR ══════════ -->
+<header class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="#home" class="logo" data-cursor>
+      <svg class="logo-ico" viewBox="0 0 40 24" fill="none"><rect x="1" y="8" width="4" height="8" rx="1" fill="currentColor"/><rect x="35" y="8" width="4" height="8" rx="1" fill="currentColor"/><rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="30" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="10" y="10.5" width="20" height="3" rx="1.5" fill="currentColor"/></svg>
+      <span class="logo-txt">C<b>-</b>ON<i class="logo-dot"></i></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="nav-link is-active">首页</a>
+      <a href="#about" class="nav-link">关于我们</a>
+      <a href="services.html" class="nav-link">服务</a>
+      <a href="programs.html" class="nav-link">训练项目</a>
+      <a href="#contact" class="nav-link">联系我们</a>
+    </nav>
+    <a href="#packages" class="btn btn-red nav-cta" data-cursor data-magnetic>
+      <span>加入我们</span><em>0718</em>
+    </a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- mobile menu -->
+<div class="m-menu" id="mMenu">
+  <nav class="m-menu-links">
+    <a href="#home" class="m-link"><small>01</small>首页</a>
+    <a href="#about" class="m-link"><small>02</small>关于我们</a>
+    <a href="services.html" class="m-link"><small>03</small>服务</a>
+    <a href="programs.html" class="m-link"><small>04</small>训练项目</a>
+    <a href="#contact" class="m-link"><small>05</small>联系我们</a>
+  </nav>
+  <div class="m-menu-foot">
+    <a href="#packages" class="btn btn-red">立即加入我们</a>
+    <p>0718 · hello@con-fitness.com</p>
+  </div>
+</div>
+
+<main>
+<!-- ══════════ HERO ══════════ -->
+<section class="hero" id="home">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-grid"></div>
+    <div class="orb orb-red" id="heroOrb1"></div>
+    <div class="orb orb-red-soft" id="heroOrb2"></div>
+  </div>
+  <div class="hero-media" id="heroMedia">
+    <img src="images/hero-trainer.jpg" alt="Personal trainer lifting dumbbell" id="heroImg">
+  </div>
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <p class="hero-kicker"><i></i>NO PAIN · NO GAIN · C-ON FITNESS</p>
+      <h1 class="hero-title">
+        <span class="line"><span class="word red">PERSONAL</span></span>
+        <span class="line"><span class="word">TRAINER&nbsp;GYM</span></span>
+      </h1>
+      <p class="hero-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <div class="hero-actions">
+        <a href="#packages" class="btn btn-red" data-cursor data-magnetic><span>JOIN US</span></a>
+        <a href="#programs" class="btn btn-ghost" data-cursor data-magnetic><span>OUR PROGRAMS <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      </div>
+      <div class="hero-socials">
+        <a href="#" data-cursor aria-label="Facebook">Fb</a><a href="#" data-cursor aria-label="Instagram">Ig</a><a href="#" data-cursor aria-label="Youtube">Yt</a><a href="#" data-cursor aria-label="X">X</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-badge" id="heroBadge">
+    <div class="hb-ring"><svg viewBox="0 0 100 100"><defs><path id="circ" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs><text><textPath href="#circ">SCROLL DOWN · SCROLL DOWN · SCROLL DOWN ·</textPath></text></svg></div>
+    <span class="hb-arrow">↓</span>
+  </div>
+</section>
+
+<!-- ══════════ STATS ══════════ -->
+<section class="stats-wrap">
+  <div class="container">
+    <div class="stats glass-strong" id="stats">
+      <div class="stat">
+        <h3><span class="count" data-count="13">0</span><em>+</em></h3>
+        <p>YEARS EXPERIENCE</p>
+      </div>
+      <div class="stat">
+        <h3><span class="count" data-count="11">0</span><em>+</em></h3>
+        <p>GYM STUDIOS</p>
+      </div>
+      <div class="stat">
+        <h3><span class="count" data-count="90">0</span><em>+</em></h3>
+        <p>LOYAL CLIENT</p>
+      </div>
+      <div class="stat">
+        <h3><span class="count" data-count="45">0</span><em>+</em></h3>
+        <p>TRAINER &amp; STAFF</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ABOUT ══════════ -->
+<section class="about section" id="about">
+  <div class="orb orb-dim" aria-hidden="true"></div>
+  <div class="container about-panel glass" data-reveal>
+    <div class="about-media">
+      <img src="images/about-trainer.jpg" alt="Trainer doing biceps curl" data-parallax>
+      <div class="about-frame"></div>
+      <div class="about-exp"><strong>13<i>+</i></strong><span>YEARS OF<br>EXPERIENCE</span></div>
+    </div>
+    <div class="about-content">
+      <h2 class="h2 h2-red">ABOUT <span>US</span></h2>
+      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+      <p class="muted">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+      <ul class="about-list">
+        <li>Modern equipment &amp; recovery zones</li>
+        <li>Certified personal trainers</li>
+        <li>Personalized nutrition coaching</li>
+      </ul>
+      <a href="#services" class="btn btn-red" data-cursor data-magnetic><span>READ MORE</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PROGRAMS ══════════ -->
+<section class="programs section" id="programs">
+  <div class="container">
+    <div class="sec-head" data-reveal>
+      <h2 class="h2">OUR <span class="red">PROGRAMS</span></h2>
+      <div class="sec-rule"><i></i></div>
+    </div>
+    <div class="programs-grid" data-reveal-group>
+      <article class="p-card glass" data-tilt data-cursor>
+        <figure class="p-media"><img src="images/program-female.jpg" alt="Female workout"><span class="p-tag">01</span></figure>
+        <div class="p-body">
+          <h3>FEMALE WORKOUT</h3>
+          <p>Lorem ipsum dolor sit amet, conse ctetur adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+          <a href="#packages" class="p-link">VIEW DETAILS <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="p-card glass" data-tilt data-cursor>
+        <figure class="p-media"><img src="images/program-cardio.jpg" alt="Cardio workouts"><span class="p-tag">02</span></figure>
+        <div class="p-body">
+          <h3>CARDIO WORKOUTS</h3>
+          <p>Lorem ipsum dolor sit amet, conse ctetur adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+          <a href="#packages" class="p-link">VIEW DETAILS <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="p-card glass" data-tilt data-cursor>
+        <figure class="p-media"><img src="images/program-functional.jpg" alt="Functional training"><span class="p-tag">03</span></figure>
+        <div class="p-body">
+          <h3>JOB TRAINING</h3>
+          <p>Lorem ipsum dolor sit amet, conse ctetur adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+          <a href="#packages" class="p-link">VIEW DETAILS <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+    </div>
+    <div class="sec-cta" data-reveal><a href="#packages" class="btn btn-outline-red" data-cursor data-magnetic><span>VIEW ALL</span></a></div>
+  </div>
+</section>
+
+<!-- ══════════ WHY CHOOSE US (circle) ══════════ -->
+<section class="why section" id="why">
+  <div class="container">
+    <div class="sec-head" data-reveal>
+      <h2 class="h2">WHY <span class="red">CHOOSE US</span></h2>
+      <div class="sec-rule"><i></i></div>
+    </div>
+    <div class="why-stage" id="whyStage">
+      <div class="why-lines" aria-hidden="true"><i class="wl-h"></i><i class="wl-v"></i></div>
+      <div class="why-center" id="whyCenter">
+        <div class="why-ring r1"></div>
+        <div class="why-ring r2"></div>
+        <div class="why-ring r3"></div>
+        <img src="images/why-center.jpg" alt="Woman barbell squat">
+        <span class="why-plus">+</span>
+      </div>
+      <div class="why-item wi-1" data-reveal>
+        <h4>PROFESSIONAL TRAINER</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+        <a href="#services" data-cursor>Read more →</a>
+      </div>
+      <div class="why-item wi-2" data-reveal>
+        <h4>AFFORDABLE PRICES</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+        <a href="#packages" data-cursor>Read more →</a>
+      </div>
+      <div class="why-item wi-3" data-reveal>
+        <h4>COMPLETE EQUIPMENT</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+        <a href="#services" data-cursor>Read more →</a>
+      </div>
+      <div class="why-item wi-4" data-reveal>
+        <h4>CLEANNESS GUARANTEED</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+        <a href="#services" data-cursor>Read more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PACKAGES ══════════ -->
+<section class="packages section" id="packages">
+  <div class="orb orb-red-soft orb-left" aria-hidden="true"></div>
+  <div class="container">
+    <div class="sec-head" data-reveal>
+      <h2 class="h2">OUR <span class="red">PACKAGES</span></h2>
+      <div class="sec-rule"><i></i></div>
+    </div>
+    <div class="pkg-grid" data-reveal-group>
+      <article class="pkg glass" data-tilt data-cursor>
+        <h3>SINGLE <span>SESSION</span></h3>
+        <ul>
+          <li>Full gym &amp; cardio zone access</li>
+          <li>1 personal training session</li>
+          <li>Body composition analysis</li>
+          <li>Free locker &amp; towel service</li>
+          <li>Valid for 30 days</li>
+        </ul>
+        <div class="pkg-price"><sup>$</sup>150</div>
+        <a href="#contact" class="btn btn-outline-red w100" data-cursor><span>JOIN NOW</span></a>
+      </article>
+      <article class="pkg pkg-featured" data-tilt data-cursor>
+        <span class="pkg-badge">POPULAR</span>
+        <h3>MONTHLY <span>SESSION</span></h3>
+        <ul>
+          <li>Unlimited 24/7 gym access</li>
+          <li>8 personal training sessions</li>
+          <li>Custom nutrition plan</li>
+          <li>Sauna &amp; recovery zone</li>
+          <li>Free group classes</li>
+        </ul>
+        <div class="pkg-price"><sup>$</sup>90</div>
+        <a href="#contact" class="btn btn-dark w100" data-cursor><span>JOIN NOW</span></a>
+      </article>
+      <article class="pkg glass" data-tilt data-cursor>
+        <h3>YEARLY <span>SESSION</span></h3>
+        <ul>
+          <li>Unlimited 24/7 gym access</li>
+          <li>60 personal training sessions</li>
+          <li>Quarterly body analysis</li>
+          <li>Pool, sauna &amp; spa access</li>
+          <li>Guest passes every month</li>
+        </ul>
+        <div class="pkg-price"><sup>$</sup>50</div>
+        <a href="#contact" class="btn btn-outline-red w100" data-cursor><span>JOIN NOW</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SERVICES / ACCORDION ══════════ -->
+<section class="services section" id="services">
+  <div class="orb orb-orange" aria-hidden="true"></div>
+  <div class="container services-grid">
+    <div class="services-media" data-reveal>
+      <span class="tag-orange">// Why choose us</span>
+      <div class="sm-frame">
+        <img src="images/why-accordion.jpg" alt="Athlete training with kettlebell" data-parallax>
+      </div>
+    </div>
+    <div class="services-content">
+      <h2 class="h2-poppins" data-reveal>WHY CHOOSE US FOR YOUR <span class="orange">FITNESS</span> JOURNEY?</h2>
+      <div class="accordion" id="accordion" data-reveal>
+        <div class="acc-item">
+          <button class="acc-head" data-cursor>
+            <span>State-of-the-Art Equipment</span>
+            <i class="acc-ico"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7l10 10M17 7v10H7"/></svg></i>
+          </button>
+          <div class="acc-body"><div class="acc-inner"><p>Train on premium machines, free weights and smart cardio stations. Our equipment is serviced weekly, so every rep you take is smooth, safe and effective.</p></div></div>
+        </div>
+        <div class="acc-item is-open">
+          <button class="acc-head" data-cursor>
+            <span>Expert Trainers</span>
+            <i class="acc-ico"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7l10 10M17 7v10H7"/></svg></i>
+          </button>
+          <div class="acc-body"><div class="acc-inner"><p>Our certified trainers are here to guide you every step of the way, offering personalized workout plans, expert advice, and continuous motivation. They ensure that you perform exercises safely and effectively, helping you achieve your goals faster and more efficiently.</p></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head" data-cursor>
+            <span>Wide Range of Classes</span>
+            <i class="acc-ico"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7l10 10M17 7v10H7"/></svg></i>
+          </button>
+          <div class="acc-body"><div class="acc-inner"><p>From high-energy HIIT and boxing to calming yoga and mobility — choose from 40+ weekly classes included in every membership, led by world-class coaches.</p></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-head" data-cursor>
+            <span>Welcoming Community</span>
+            <i class="acc-ico"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7l10 10M17 7v10H7"/></svg></i>
+          </button>
+          <div class="acc-body"><div class="acc-inner"><p>Join a community that celebrates every milestone with you. Challenge events, member meetups and a support crew that never lets you train alone.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PLANS ══════════ -->
+<section class="plans section" id="plans">
+  <div class="container">
+    <div class="sec-head sec-head-left" data-reveal>
+      <span class="tag-orange">// Subscription</span>
+      <h2 class="h2-poppins">FLEXIBLE <span class="orange">PLANS</span> FOR EVERY GOAL</h2>
+    </div>
+    <div class="plans-grid" data-reveal-group>
+      <article class="plan glass" data-tilt data-cursor>
+        <h3>Basic</h3>
+        <div class="plan-price"><sup>$</sup><strong class="count" data-count="25">0</strong><span>/ month</span></div>
+        <p class="plan-note">Ideal for beginners to start training.</p>
+        <em class="plan-div">WHAT YOU GET</em>
+        <ul>
+          <li>Unlimited access to the gym</li>
+          <li>1 free group class per month</li>
+          <li>Free access to relaxation zone</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost-orange w100" data-cursor><span>Get started <i>↗</i></span></a>
+      </article>
+      <article class="plan plan-featured" data-tilt data-cursor>
+        <span class="plan-badge">BEST VALUE</span>
+        <h3>Standard</h3>
+        <div class="plan-price"><sup>$</sup><strong class="count" data-count="35">0</strong><span>/ month</span></div>
+        <p class="plan-note">Ideal for beginners to intermediate training.</p>
+        <em class="plan-div">WHAT YOU GET</em>
+        <ul>
+          <li>Unlimited access to the gym</li>
+          <li>3 free group classes per month</li>
+          <li>Free access to relaxation area</li>
+        </ul>
+        <a href="#contact" class="btn btn-orange w100" data-cursor><span>Get started <i>↗</i></span></a>
+      </article>
+      <article class="plan glass" data-tilt data-cursor>
+        <h3>Premium</h3>
+        <div class="plan-price"><sup>$</sup><strong class="count" data-count="45">0</strong><span>/ month</span></div>
+        <p class="plan-note">Ideal for pros who want the best results.</p>
+        <em class="plan-div">WHAT YOU GET</em>
+        <ul>
+          <li>Unlimited access to the gym</li>
+          <li>Unlimited group classes</li>
+          <li>2 personal training sessions per month</li>
+          <li>Free access to relaxation area, sauna, and pool</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost-orange w100" data-cursor><span>Get started <i>↗</i></span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ GLOBAL MAP ══════════ -->
+<section class="global section" id="global">
+  <div class="container">
+    <div class="sec-head sec-head-left" data-reveal>
+      <span class="tag-orange">// Our countries</span>
+      <h2 class="h2-poppins">OUR GLOBAL PRESENCE: <span class="orange">FITNESS CENTERS</span> AROUND THE WORLD</h2>
+    </div>
+    <div class="global-intro" data-reveal>
+      <div class="gi-count"><strong>23<i>+</i></strong><span>Countries</span></div>
+      <p>No matter where you are, our gym is here to help you reach your fitness goals. With locations around the globe, we're making it easier than ever to stay fit and join our worldwide fitness community.</p>
+    </div>
+    <div class="map-wrap glass" data-reveal>
+      <canvas id="worldMap" aria-label="Interactive world map of gym locations"></canvas>
+      <div class="map-tip" id="mapTip"></div>
+      <div class="map-legend"><i></i> C-ON gym locations — hover to explore</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CTA ══════════ -->
+<section class="cta" id="contact">
+  <div class="orb orb-orange orb-cta" aria-hidden="true"></div>
+  <div class="container cta-inner" data-reveal>
+    <h2>READY TO GROW<span class="orange">?</span></h2>
+    <p>Take the first step toward a stronger, healthier you by claiming your free one-week membership at C-ON. Experience our state-of-the-art facilities, join our energizing classes, and see why C-ON is the perfect place to reach your fitness goals.</p>
+    <a href="#packages" class="btn btn-orange btn-lg" data-cursor data-magnetic><span>CLAIM YOUR FREE WEEK <i>↗</i></span></a>
+  </div>
+</section>
+</main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="f-brand">
+      <a href="#home" class="logo" data-cursor>
+        <svg class="logo-ico" viewBox="0 0 40 24" fill="none"><rect x="1" y="8" width="4" height="8" rx="1" fill="currentColor"/><rect x="35" y="8" width="4" height="8" rx="1" fill="currentColor"/><rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="30" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="10" y="10.5" width="20" height="3" rx="1.5" fill="currentColor"/></svg>
+        <span class="logo-txt">C<b>-</b>ON<i class="logo-dot"></i></span>
+      </a>
+      <p>Personal trainer gym. 13+ years building stronger bodies and sharper minds across 23+ countries.</p>
+      <div class="f-socials"><a href="#" data-cursor aria-label="Facebook">Fb</a><a href="#" data-cursor aria-label="Instagram">Ig</a><a href="#" data-cursor aria-label="Youtube">Yt</a><a href="#" data-cursor aria-label="X">X</a></div>
+    </div>
+    <div class="f-col">
+      <h5>Quick Links</h5>
+      <a href="#home">Home</a><a href="#about">About Us</a><a href="services.html">Services</a><a href="programs.html">Programs</a><a href="#packages">Packages</a>
+    </div>
+    <div class="f-col">
+      <h5>Programs</h5>
+      <a href="#programs">Female Workout</a><a href="#programs">Cardio Workouts</a><a href="#programs">Job Training</a><a href="#plans">Membership</a><a href="#global">Locations</a>
+    </div>
+    <div class="f-col">
+      <h5>Contact</h5>
+      <a href="tel:+86718888">📞 +86 0718-8888</a>
+      <a href="mailto:hello@con-fitness.com">✉ hello@con-fitness.com</a>
+      <p>📍 21 Fitness Street, Los Angeles, CA</p>
+      <p>Mon–Sun · 06:00 — 23:00</p>
+    </div>
+  </div>
+  <div class="footer-bar"><div class="container"><p>© 2026 C-ON FITNESS. All rights reserved.</p><a href="#home" data-cursor>BACK TO TOP ↑</a></div></div>
+</footer>
+
+<button class="backtop" id="backtop" aria-label="Back to top"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

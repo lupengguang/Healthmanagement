@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C-ON FITNESS — 训练项目</title>
+<meta name="description" content="C-ON 训练项目 — 基于AI体态评估结果匹配最适合的训练项目，科学有效改善体态。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0b0e'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23e8102e'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ══════════ PRELOADER ══════════ -->
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-logo"><span>C</span><span>-</span><span>O</span><span>N</span></div>
+    <div class="preloader-bar"><i></i></div>
+    <div class="preloader-count">0%</div>
+  </div>
+</div>
+
+<!-- ══════════ CUSTOM CURSOR ══════════ -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ══════════ SCROLL PROGRESS ══════════ -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ══════════ NOISE OVERLAY ══════════ -->
+<div class="noise" aria-hidden="true"></div>
+
+<!-- ══════════ NAVBAR ══════════ -->
+<header class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo" data-cursor>
+      <svg class="logo-ico" viewBox="0 0 40 24" fill="none"><rect x="1" y="8" width="4" height="8" rx="1" fill="currentColor"/><rect x="35" y="8" width="4" height="8" rx="1" fill="currentColor"/><rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="30" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="10" y="10.5" width="20" height="3" rx="1.5" fill="currentColor"/></svg>
+      <span class="logo-txt">C<b>-</b>ON<i class="logo-dot"></i></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html#home" class="nav-link">首页</a>
+      <a href="index.html#about" class="nav-link">关于我们</a>
+      <a href="services.html" class="nav-link">服务</a>
+      <a href="programs.html" class="nav-link is-active">训练项目</a>
+      <a href="index.html#contact" class="nav-link">联系我们</a>
+    </nav>
+    <a href="#pgCta" class="btn btn-red nav-cta" data-cursor data-magnetic>
+      <span>加入我们</span><em>0718</em>
+    </a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- mobile menu -->
+<div class="m-menu" id="mMenu">
+  <nav class="m-menu-links">
+    <a href="index.html#home" class="m-link"><small>01</small>首页</a>
+    <a href="index.html#about" class="m-link"><small>02</small>关于我们</a>
+    <a href="services.html" class="m-link"><small>03</small>服务</a>
+    <a href="programs.html" class="m-link"><small>04</small>训练项目</a>
+    <a href="index.html#contact" class="m-link"><small>05</small>联系我们</a>
+  </nav>
+  <div class="m-menu-foot">
+    <a href="#pgCta" class="btn btn-red">立即加入我们</a>
+    <p>0718 · hello@con-fitness.com</p>
+  </div>
+</div>
+
+<main>
+<!-- ══════════ PAGE TITLE ══════════ -->
+<section class="svc-hero">
+  <div class="orb orb-red-soft orb-left" aria-hidden="true"></div>
+  <div class="container svc-hero-grid">
+    <div data-reveal><span class="tag-orange">// 训练项目</span></div>
+    <div data-reveal>
+      <h1 class="svc-title">精选<span class="orange">训练项目</span>，精准改善体态</h1>
+      <p class="svc-sub">基于AI体态评估结果，为你匹配最适合的训练项目，每个项目均经专业设计，科学有效</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FILTER + CARDS ══════════ -->
+<section class="section" style="padding-top:34px">
+  <div class="orb orb-orange" style="right:-180px;top:4%" aria-hidden="true"></div>
+  <div class="container">
+
+    <!-- filter panel -->
+    <div class="pg-filter glass" data-reveal>
+      <div class="pg-search-wrap">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="text" class="pg-search" id="pgSearch" placeholder="搜索训练项目，如：圆肩驼背、骨盆前倾、居家拉伸…">
+      </div>
+      <div class="pg-groups">
+        <div class="pg-group" data-group="goal">
+          <span class="pg-gname">训练目标</span>
+          <div class="pg-opts">
+            <button class="pg-opt is-on" data-v="全部" data-cursor>全部</button>
+            <button class="pg-opt" data-v="改善圆肩驼背" data-cursor>改善圆肩驼背</button>
+            <button class="pg-opt" data-v="改善骨盆前倾" data-cursor>改善骨盆前倾</button>
+            <button class="pg-opt" data-v="改善头前伸" data-cursor>改善头前伸</button>
+            <button class="pg-opt" data-v="改善高低肩" data-cursor>改善高低肩</button>
+            <button class="pg-opt" data-v="减脂塑形" data-cursor>减脂塑形</button>
+            <button class="pg-opt" data-v="增肌力量" data-cursor>增肌力量</button>
+            <button class="pg-opt" data-v="柔韧性提升" data-cursor>柔韧性提升</button>
+          </div>
+        </div>
+        <div class="pg-group" data-group="equip">
+          <span class="pg-gname">器械要求</span>
+          <div class="pg-opts">
+            <button class="pg-opt is-on" data-v="全部" data-cursor>全部</button>
+            <button class="pg-opt" data-v="无器械" data-cursor>无器械</button>
+            <button class="pg-opt" data-v="瑜伽垫" data-cursor>瑜伽垫</button>
+            <button class="pg-opt" data-v="弹力带" data-cursor>弹力带</button>
+            <button class="pg-opt" data-v="哑铃" data-cursor>哑铃</button>
+          </div>
+        </div>
+        <div class="pg-group" data-group="level">
+          <span class="pg-gname">难度等级</span>
+          <div class="pg-opts">
+            <button class="pg-opt is-on" data-v="全部" data-cursor>全部</button>
+            <button class="pg-opt" data-v="入门" data-cursor>入门</button>
+            <button class="pg-opt" data-v="进阶" data-cursor>进阶</button>
+            <button class="pg-opt" data-v="高阶" data-cursor>高阶</button>
+          </div>
+        </div>
+        <div class="pg-group" data-group="dur">
+          <span class="pg-gname">单次时长</span>
+          <div class="pg-opts">
+            <button class="pg-opt is-on" data-v="全部" data-cursor>全部</button>
+            <button class="pg-opt" data-v="10分钟以内" data-cursor>10分钟以内</button>
+            <button class="pg-opt" data-v="10-20分钟" data-cursor>10-20分钟</button>
+            <button class="pg-opt" data-v="20-30分钟" data-cursor>20-30分钟</button>
+            <button class="pg-opt" data-v="30分钟以上" data-cursor>30分钟以上</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- cards grid -->
+    <div class="pg-grid" id="pgGrid" data-reveal-group>
+
+      <article class="pg-card glass" data-tilt data-goal="改善圆肩驼背" data-equip="无器械" data-level="入门" data-dur="15" data-title="圆肩驼背改善计划 背部训练 含胸驼背 久坐">
+        <div class="pg-cover"><img src="images/program-female.jpg" alt="背部训练动作示意"><span class="pg-lvl">入门</span></div>
+        <div class="pg-body">
+          <h3 class="pg-name">圆肩驼背改善计划</h3>
+          <ul class="pg-tags"><li>改善圆肩驼背</li><li>无器械</li><li>15分钟</li></ul>
+          <p class="pg-intro">针对久坐人群常见的圆肩驼背问题，通过放松胸肌、强化背部肌群、拉伸胸椎三个维度，系统改善含胸驼背体态</p>
+          <p class="pg-stats">12个动作 · 4周计划 · 预计改善率80%</p>
+          <button class="pg-btn" data-open="p1" data-cursor>查看详情 <i>→</i></button>
+        </div>
+      </article>
+
+      <article class="pg-card glass" data-tilt data-goal="改善骨盆前倾" data-equip="瑜伽垫" data-level="进阶" data-dur="20" data-title="骨盆前倾矫正计划 核心训练 小腹前凸 腰椎">
+        <div class="pg-cover"><img src="images/program-functional.jpg" alt="核心训练动作示意"><span class="pg-lvl">进阶</span></div>
+        <div class="pg-body">
+          <h3 class="pg-name">骨盆前倾矫正计划</h3>
+          <ul class="pg-tags"><li>改善骨盆前倾</li><li>瑜伽垫</li><li>20分钟</li></ul>
+          <p class="pg-intro">针对腰椎过度前凸、小腹前凸的骨盆前倾问题，强化腹肌与臀肌，放松髂腰肌与下背，重建骨盆中立位</p>
+          <p class="pg-stats">15个动作 · 4周计划 · 预计改善率75%</p>
+          <button class="pg-btn" data-open="p2" data-cursor>查看详情 <i>→</i></button>
+        </div>
+      </article>
+
+      <article class="pg-card glass" data-tilt data-goal="改善头前伸" data-equip="无器械" data-level="入门" data-dur="10" data-title="头前伸改善计划 颈部拉伸 探颈 低头">
+        <div class="pg-cover"><img src="images/program-neck.jpg" alt="颈部拉伸动作示意"><span class="pg-lvl">入门</span></div>
+        <div class="pg-body">
+          <h3 class="pg-name">头前伸改善计划</h3>
+          <ul class="pg-tags"><li>改善头前伸</li><li>无器械</li><li>10分钟</li></ul>
+          <p class="pg-intro">针对长期低头导致的探颈问题，放松颈部紧张肌群，强化颈深屈肌，改善耳垂与肩峰的对位关系</p>
+          <p class="pg-stats">8个动作 · 3周计划 · 预计改善率85%</p>
+          <button class="pg-btn" data-open="p3" data-cursor>查看详情 <i>→</i></button>
+        </div>
+      </article>
+
+      <article class="pg-card glass" data-tilt data-goal="改善高低肩" data-equip="弹力带" data-level="进阶" data-dur="15" data-title="高低肩矫正计划 肩部训练 肩胛对称 哑铃">
+        <div class="pg-cover"><img src="images/program-shoulder.jpg" alt="肩部训练动作示意"><span class="pg-lvl">进阶</span></div>
+        <div class="pg-body">
+          <h3 class="pg-name">高低肩矫正计划</h3>
+          <ul class="pg-tags"><li>改善高低肩</li><li>弹力带</li><li>15分钟</li></ul>
+          <p class="pg-intro">针对两侧肩峰高度不一致问题，放松高侧紧张肌群，强化低侧薄弱肌群，改善肩胛对称性与脊柱排列</p>
+          <p class="pg-stats">10个动作 · 4周计划 · 预计改善率70%</p>
+          <button class="pg-btn" data-open="p4" data-cursor>查看详情 <i>→</i></button>
+        </div>
+      </article>
+
+      <article class="pg-card glass" data-tilt data-goal="减脂塑形" data-equip="无器械" data-level="进阶" data-dur="25" data-title="居家全身燃脂计划 HIIT 高强度间歇 心肺">
+        <div class="pg-cover"><img src="images/program-cardio.jpg" alt="高强度间歇训练示意"><span class="pg-lvl">进阶</span></div>
+        <div class="pg-body">
+          <h3 class="pg-name">居家全身燃脂计划</h3>
+          <ul class="pg-tags"><li>减脂塑形</li><li>无器械</li><li>25分钟</li></ul>
+          <p class="pg-intro">无需器械的高强度间歇训练（HIIT），通过多关节复合动作快速提升心率，高效燃烧脂肪，同时改善心肺功能</p>
+          <p class="pg-stats">20个动作 · 8周计划 · 预计减脂3-5kg</p>
+          <button class="pg-btn" data-open="p5" data-cursor>查看详情 <i>→</i></button>
+        </div>
+      </article>
+
+      <article class="pg-card glass" data-tilt data-goal="增肌力量" data-equip="瑜伽垫" data-level="高阶" data-dur="20" data-title="核心力量强化计划 平板支撑 腹肌 稳定性">
+        <div class="pg-cover"><img src="images/hero-trainer.jpg" alt="平板支撑类动作示意"><span class="pg-lvl">高阶</span></div>
+        <div class="pg-body">
+          <h3 class="pg-name">核心力量强化计划</h3>
+          <ul class="pg-tags"><li>增肌力量</li><li>瑜伽垫</li><li>20分钟</li></ul>
+          <p class="pg-intro">系统强化腹直肌、腹斜肌、腹横肌及下背部肌群，提升核心稳定性，改善体态根基，预防运动损伤</p>
+          <p class="pg-stats">18个动作 · 6周计划 · 核心评分提升40%</p>
+          <button class="pg-btn" data-open="p6" data-cursor>查看详情 <i>→</i></button>
+        </div>
+      </article>
+
+      <article class="pg-card glass" data-tilt data-goal="柔韧性提升" data-equip="瑜伽垫" data-level="入门" data-dur="15" data-title="全身拉伸放松计划 瑜伽 柔韧性 关节活动度">
+        <div class="pg-cover"><img src="images/program-stretch.jpg" alt="瑜伽拉伸动作示意"><span class="pg-lvl">入门</span></div>
+        <div class="pg-body">
+          <h3 class="pg-name">全身拉伸放松计划</h3>
+          <ul class="pg-tags"><li>柔韧性提升</li><li>瑜伽垫</li><li>15分钟</li></ul>
+          <p class="pg-intro">覆盖颈、肩、背、腰、髋、腿全身主要肌群的静态拉伸方案，缓解肌肉紧张，提升柔韧性与关节活动度</p>
+          <p class="pg-stats">16个动作 · 每日可练 · 柔韧性提升30%</p>
+          <button class="pg-btn" data-open="p7" data-cursor>查看详情 <i>→</i></button>
+        </div>
+      </article>
+
+      <article class="pg-card glass" data-tilt data-goal="改善X/O型腿" data-equip="无器械" data-level="进阶" data-dur="20" data-title="下肢体态矫正计划 X型腿 O型腿 膝盖内扣 下肢力线">
+        <div class="pg-cover"><img src="images/why-accordion.jpg" alt="下肢训练动作示意"><span class="pg-lvl">进阶</span></div>
+        <div class="pg-body">
+          <h3 class="pg-name">下肢体态矫正计划（X/O型腿）</h3>
+          <ul class="pg-tags"><li>改善X/O型腿</li><li>无器械</li><li>20分钟</li></ul>
+          <p class="pg-intro">针对膝关节内扣或外展的下肢力线异常问题，强化臀中肌与大腿内侧肌群，调整髌骨轨迹，改善下肢排列</p>
+          <p class="pg-stats">14个动作 · 6周计划 · 预计改善率72%</p>
+          <button class="pg-btn" data-open="p8" data-cursor>查看详情 <i>→</i></button>
+        </div>
+      </article>
+
+    </div>
+    <p class="pg-empty" id="pgEmpty">没有匹配的训练项目，试试调整筛选条件或搜索关键词</p>
+  </div>
+</section>
+
+<!-- ══════════ RECOMMEND ══════════ -->
+<section class="section" style="padding-top:20px">
+  <div class="container">
+    <div class="sec-head" data-reveal>
+      <span class="tag-orange">// 个性化推荐</span>
+      <h2 class="h2-poppins">为你<span class="orange">推荐</span></h2>
+    </div>
+    <p class="pg-rec-sub" data-reveal>基于你的体态评估结果，AI智能匹配最适合你的训练项目</p>
+    <div class="pg-recs" data-reveal-group>
+      <div class="pg-rec glass" data-cursor>
+        <span class="pg-rec-rate">匹配度 95%</span>
+        <h3>圆肩驼背改善计划</h3>
+        <p>你的评估显示圆肩驼背中度，此项目针对性最强</p>
+        <button class="pg-btn" data-open="p1" data-cursor>查看详情 <i>→</i></button>
+      </div>
+      <div class="pg-rec glass" data-cursor>
+        <span class="pg-rec-rate">匹配度 80%</span>
+        <h3>全身拉伸放松计划</h3>
+        <p>配合主力训练，缓解肌肉紧张，提升训练效果</p>
+        <button class="pg-btn" data-open="p7" data-cursor>查看详情 <i>→</i></button>
+      </div>
+      <div class="pg-rec glass" data-cursor>
+        <span class="pg-rec-rate">匹配度 75%</span>
+        <h3>头前伸改善计划</h3>
+        <p>你的评估同时显示头前伸轻度，可搭配进行</p>
+        <button class="pg-btn" data-open="p3" data-cursor>查看详情 <i>→</i></button>
+      </div>
+    </div>
+    <div class="pg-rec-cta" data-reveal>
+      <a href="services.html#accordion" class="btn btn-ghost-orange" data-cursor data-magnetic><span>查看我的评估结果</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CTA ══════════ -->
+<section class="cta" id="pgCta">
+  <div class="orb orb-orange orb-cta" aria-hidden="true"></div>
+  <div class="container cta-inner" data-reveal>
+    <h2>还没有评估？<span class="orange">先做个体态评估</span></h2>
+    <p>AI根据你的体态问题，精准推荐最适合的训练项目</p>
+    <a href="services.html#accordion" class="btn btn-orange btn-lg" data-cursor data-magnetic><span>免费体态评估 <i>→</i></span></a>
+  </div>
+</section>
+</main>
+
+<!-- ══════════ PROGRAM DETAIL MODAL ══════════ -->
+<div class="pg-modal" id="pgModal" aria-hidden="true">
+  <div class="pg-modal-bg" id="pgModalBg"></div>
+  <div class="pg-panel glass-strong" role="dialog" aria-modal="true">
+    <button class="pg-close" id="pgClose" aria-label="关闭" data-cursor><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div id="pgDetail"></div>
+  </div>
+</div>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="f-brand">
+      <a href="index.html" class="logo" data-cursor>
+        <svg class="logo-ico" viewBox="0 0 40 24" fill="none"><rect x="1" y="8" width="4" height="8" rx="1" fill="currentColor"/><rect x="35" y="8" width="4" height="8" rx="1" fill="currentColor"/><rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="30" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="10" y="10.5" width="20" height="3" rx="1.5" fill="currentColor"/></svg>
+        <span class="logo-txt">C<b>-</b>ON<i class="logo-dot"></i></span>
+      </a>
+      <p>AI驱动的居家运动健康服务。从体态评估到训练执行，陪你走好每一步改善之路。</p>
+      <div class="f-socials"><a href="#" data-cursor aria-label="Facebook">Fb</a><a href="#" data-cursor aria-label="Instagram">Ig</a><a href="#" data-cursor aria-label="Youtube">Yt</a><a href="#" data-cursor aria-label="X">X</a></div>
+    </div>
+    <div class="f-col">
+      <h5>快速导航</h5>
+      <a href="index.html#home">首页</a><a href="index.html#about">关于我们</a><a href="services.html">服务</a><a href="programs.html">训练项目</a><a href="index.html#packages">套餐</a>
+    </div>
+    <div class="f-col">
+      <h5>热门项目</h5>
+      <a href="#pgGrid">圆肩驼背改善</a><a href="#pgGrid">骨盆前倾矫正</a><a href="#pgGrid">居家燃脂计划</a><a href="#pgGrid">核心力量强化</a><a href="#pgGrid">全身拉伸放松</a>
+    </div>
+    <div class="f-col">
+      <h5>联系我们</h5>
+      <a href="tel:+86718888">📞 +86 0718-8888</a>
+      <a href="mailto:hello@con-fitness.com">✉ hello@con-fitness.com</a>
+      <p>📍 21 Fitness Street, Los Angeles, CA</p>
+      <p>周一至周日 · 06:00 — 23:00</p>
+    </div>
+  </div>
+  <div class="footer-bar"><div class="container"><p>© 2026 C-ON FITNESS. All rights reserved.</p><a href="#" data-cursor onclick="scrollTo({top:0,behavior:'smooth'});return false">回到顶部 ↑</a></div></div>
+</footer>
+
+<button class="backtop" id="backtop" aria-label="Back to top"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+/* ═══ 训练项目页：筛选 / 搜索 / 详情弹窗 ═══ */
+(function () {
+  'use strict';
+
+  /* ── 筛选 + 搜索 ── */
+  const state = { goal: '全部', equip: '全部', level: '全部', dur: '全部', q: '' };
+  const cards = [...document.querySelectorAll('.pg-card')];
+  const empty = document.getElementById('pgEmpty');
+
+  function durMatch(d, v) {
+    if (v === '全部') return true;
+    if (v === '10分钟以内') return d <= 10;
+    if (v === '10-20分钟') return d > 10 && d <= 20;
+    if (v === '20-30分钟') return d > 20 && d <= 30;
+    return d > 30;
+  }
+  function applyFilters() {
+    let shown = 0;
+    cards.forEach(c => {
+      const ok =
+        (state.goal === '全部' || c.dataset.goal === state.goal) &&
+        (state.equip === '全部' || c.dataset.equip === state.equip) &&
+        (state.level === '全部' || c.dataset.level === state.level) &&
+        durMatch(+c.dataset.dur, state.dur) &&
+        (!state.q || (c.dataset.title + c.textContent).toLowerCase().includes(state.q));
+      c.style.display = ok ? '' : 'none';
+      if (ok) shown++;
+    });
+    empty.classList.toggle('is-show', !shown);
+  }
+  document.querySelectorAll('.pg-group').forEach(g => {
+    g.querySelectorAll('.pg-opt').forEach(btn => {
+      btn.addEventListener('click', () => {
+        g.querySelectorAll('.pg-opt').forEach(b => b.classList.remove('is-on'));
+        btn.classList.add('is-on');
+        state[g.dataset.group] = btn.dataset.v;
+        applyFilters();
+      });
+    });
+  });
+  document.getElementById('pgSearch').addEventListener('input', e => {
+    state.q = e.target.value.trim().toLowerCase();
+    applyFilters();
+  });
+
+  /* ── 项目详情数据 ── */
+  const NOTES = [
+    '训练前进行5分钟热身，避免肌肉拉伤',
+    '动作过程中保持呼吸顺畅，不要憋气',
+    '如出现尖锐疼痛，立即停止训练并咨询专业人士',
+    '本计划为运动健康训练方案，不构成医疗治疗建议',
+    '严重脊柱问题人群请先咨询医生后再进行训练'
+  ];
+  const CARDS = {};
+  cards.forEach((c, i) => {
+    CARDS['p' + (i + 1)] = {
+      name: c.querySelector('.pg-name').textContent,
+      tags: [...c.querySelectorAll('.pg-tags li')].map(li => li.textContent),
+      level: c.dataset.level,
+      intro: c.querySelector('.pg-intro').textContent,
+      stats: c.querySelector('.pg-stats').textContent.split('·').map(s => s.trim())
+    };
+  });
+  /* 圆肩驼背改善计划 —— 完整详情 */
+  CARDS.p1.full = {
+    stats: ['12个动作', '4周计划', '每周5次', '预计改善率80%'],
+    who: ['长期久坐伏案的上班族、学生', '双肩内扣、胸椎后凸、正面看含胸的人群', '背部薄弱、胸肌紧张的人群', '希望改善体态、提升气质的人群'],
+    effect: ['放松紧张的胸肌与胸前肌群', '强化中下斜方肌、菱形肌等背部薄弱肌群', '改善胸椎活动度，恢复脊柱中立位', '4周后可见肩部打开、背部挺直的明显变化'],
+    includes: [
+      '第1周：肌肉放松与激活（胸肌拉伸、肩胛激活、颈部放松）',
+      '第2周：背部基础强化（YTW推举、靠墙天使、小燕飞）',
+      '第3周：综合强化与拉伸（复合动作+胸椎旋转拉伸）',
+      '第4周：巩固与习惯养成（完整流程+日常姿势提醒）',
+      '每日训练动作清单（含组数、次数、休息时间）',
+      '每个动作的标准示范图与文字说明',
+      '常见错误与纠正要点',
+      '训练进度打卡表'
+    ]
+  };
+
+  /* ── 详情弹窗 ── */
+  const modal = document.getElementById('pgModal');
+  const detail = document.getElementById('pgDetail');
+
+  function liList(arr) { return '<ul>' + arr.map(t => '<li>' + t + '</li>').join('') + '</ul>'; }
+
+  function renderDetail(id) {
+    const d = CARDS[id];
+    if (!d) return;
+    const stats = d.full ? d.full.stats : d.stats;
+    let html =
+      '<span class="tag-orange">// 项目详情</span>' +
+      '<h3 class="pg-d-name">' + d.name + '</h3>' +
+      '<ul class="svc-chips pg-d-tags">' + d.tags.map(t => '<li>' + t + '</li>').concat(['<li>' + d.level + '</li>']).join('') + '</ul>' +
+      '<p class="pg-d-intro">' + d.intro + (id === 'p1' ? '无需器械，在家即可完成。' : '') + '</p>' +
+      '<div class="pg-d-stats">' + stats.map(s => {
+        const m = s.match(/^([0-9]+(?:\.[0-9]+)?(?:-[0-9]+)?\s*[%a-zA-Z]*)(.*)$/);
+        return '<div class="pg-d-stat"><strong>' + (m && m[1] ? m[1] : s) + '</strong><span>' + (m && m[2] ? m[2] : '') + '</span></div>';
+      }).join('') + '</div>';
+    if (d.full) {
+      html +=
+        '<div class="pg-d-sec"><h4>适合人群</h4>' + liList(d.full.who) + '</div>' +
+        '<div class="pg-d-sec"><h4>训练效果</h4>' + liList(d.full.effect) + '</div>' +
+        '<div class="pg-d-sec"><h4>项目包含内容</h4>' + liList(d.full.includes) + '</div>';
+    } else {
+      html += '<div class="pg-d-sec"><h4>项目包含内容</h4><p class="pg-d-soon">该项目的每周训练安排、动作清单与示范说明正在持续更新中，加入训练后即可查看完整内容。</p></div>';
+    }
+    html +=
+      '<div class="pg-d-sec"><h4>注意事项</h4>' + liList(NOTES) + '</div>' +
+      '<div class="pg-actions">' +
+        '<button class="btn btn-red" data-act="join" data-cursor><span>加入我的训练</span></button>' +
+        '<button class="btn btn-ghost" data-act="fav" data-cursor><span>收藏项目</span></button>' +
+        '<button class="btn btn-ghost" data-act="share" data-cursor><span>分享项目</span></button>' +
+      '</div>';
+    detail.innerHTML = html;
+  }
+
+  function openModal(id) {
+    renderDetail(id);
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    modal.querySelector('.pg-panel').scrollTop = 0;
+  }
+  function closeModal() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('click', e => {
+    const opener = e.target.closest('[data-open]');
+    if (opener) { openModal(opener.dataset.open); return; }
+    const act = e.target.closest('[data-act]');
+    if (act) {
+      const span = act.querySelector('span');
+      const map = { join: '✓ 已加入训练', fav: '✓ 已收藏', share: '✓ 链接已复制' };
+      if (!act.dataset.done) {
+        act.dataset.done = '1';
+        span.textContent = map[act.dataset.act];
+        setTimeout(() => {
+          span.textContent = { join: '加入我的训练', fav: '收藏项目', share: '分享项目' }[act.dataset.act];
+          delete act.dataset.done;
+        }, 1600);
+      }
+    }
+  });
+  document.getElementById('pgClose').addEventListener('click', closeModal);
+  document.getElementById('pgModalBg').addEventListener('click', closeModal);
+  addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+})();
+</script>
+</body>
+</html>
