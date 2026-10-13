@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>动衡智助 — 加入我们</title>
+<meta name="description" content="动衡智助招聘 — 和我们一起，用AI改变健康管理的未来。热招AI算法、前端、产品、运动健康等多个职位。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0b0e'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23e8102e'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+/* ═══════════ JOIN PAGE — page-specific styles ═══════════ */
+/* hero */
+.join-hero{position:relative;padding:200px 0 80px;overflow:hidden}
+.join-hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.join-title{font:800 clamp(2rem,4.6vw,3.6rem)/1.18 var(--poppins);color:#fff;letter-spacing:.01em}
+.join-title .orange{color:var(--orange)}
+.join-sub{margin-top:24px;max-width:560px;color:var(--muted);font-size:1rem;line-height:2}
+.join-visual{
+  position:relative;border-radius:28px;padding:60px 44px;min-height:380px;
+  background:
+    radial-gradient(circle at 22% 18%,rgba(255,107,43,.55),transparent 55%),
+    radial-gradient(circle at 78% 82%,rgba(232,16,46,.5),transparent 55%),
+    linear-gradient(135deg,#2a0d0f,#120708 70%);
+  border:1px solid rgba(255,138,77,.25);overflow:hidden;
+  box-shadow:0 50px 100px -30px rgba(232,16,46,.5),inset 0 1px 0 rgba(255,255,255,.1);
+}
+.join-visual::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(45deg,rgba(255,255,255,.018) 0 1px,transparent 1px 18px);
+}
+.jv-float{position:absolute;border-radius:18px;padding:18px 22px;font:600 .82rem var(--poppins);color:#fff;
+  background:rgba(10,10,13,.45);border:1px solid rgba(255,255,255,.14);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  display:flex;align-items:center;gap:10px;white-space:nowrap;
+  box-shadow:0 20px 40px -16px rgba(0,0,0,.6);
+}
+.jv-float i{font-style:normal;font-size:1.15rem}
+.jv-float.f1{top:36px;left:32px;animation:jfloat 6s ease-in-out infinite}
+.jv-float.f2{top:48%;right:24px;animation:jfloat 7s ease-in-out infinite .8s}
+.jv-float.f3{bottom:34px;left:60px;animation:jfloat 5.5s ease-in-out infinite .4s}
+.jv-float.f4{bottom:80px;right:64px;animation:jfloat 6.5s ease-in-out infinite 1.2s}
+@keyframes jfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.jv-center{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:130px;height:130px;border-radius:50%;display:grid;place-items:center;
+  background:radial-gradient(circle,rgba(255,107,43,.35),transparent 70%);
+  border:1px solid rgba(255,138,77,.4);
+}
+.jv-center span{font:800 1.4rem var(--poppins);color:#fff;letter-spacing:.04em}
+
+/* why join — 4 cards */
+.join-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.join-card{padding:38px 28px 34px;transition:transform .5s var(--ease),border-color .5s,box-shadow .5s}
+.join-card:hover{border-color:rgba(255,138,77,.5);box-shadow:0 40px 80px -26px rgba(255,107,43,.3),inset 0 1px 0 rgba(255,255,255,.1)}
+.join-card .fi{
+  width:64px;height:64px;display:grid;place-items:center;margin-bottom:20px;
+  font-size:1.7rem;border-radius:16px;
+  background:rgba(255,107,43,.1);border:1px solid rgba(255,138,77,.3);
+}
+.join-card h3{font:600 1.15rem var(--poppins);color:#fff;margin-bottom:12px}
+.join-card p{color:var(--muted);font-size:.86rem;line-height:1.85}
+
+/* culture list */
+.culture-list{display:grid;grid-template-columns:1fr;gap:14px;max-width:880px}
+.culture-item{
+  display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:baseline;
+  padding:26px 30px;border-radius:18px;
+  background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.08);
+  transition:border-color .4s,background .4s,transform .4s var(--ease);
+}
+.culture-item:hover{border-color:rgba(255,138,77,.4);background:rgba(255,107,43,.04);transform:translateX(6px)}
+.culture-num{font:600 1.5rem var(--oswald);letter-spacing:.1em;color:var(--orange);min-width:40px}
+.culture-body strong{display:block;font:600 1.05rem var(--poppins);color:#fff;margin-bottom:6px}
+.culture-body p{color:var(--muted);font-size:.9rem;line-height:1.8}
+
+/* benefits 3 cards */
+.benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;align-items:stretch}
+.benefit-card{padding:38px 30px 34px;transition:transform .5s var(--ease),border-color .5s,box-shadow .5s}
+.benefit-card:hover{border-color:rgba(255,138,77,.5);box-shadow:0 40px 80px -26px rgba(255,107,43,.3),inset 0 1px 0 rgba(255,255,255,.1)}
+.benefit-card .fi{
+  width:60px;height:60px;display:grid;place-items:center;margin-bottom:22px;
+  font-size:1.55rem;border-radius:16px;
+  background:rgba(255,107,43,.1);border:1px solid rgba(255,138,77,.3);
+}
+.benefit-card h3{font:600 1.25rem var(--poppins);color:#fff;margin-bottom:18px}
+.benefit-card ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.benefit-card ul li{position:relative;padding-left:22px;font-size:.86rem;color:var(--muted);line-height:1.7}
+.benefit-card ul li::before{content:'▸';position:absolute;left:0;top:0;color:var(--orange);font-weight:700}
+
+/* jobs filter */
+.filter-bar{display:flex;flex-direction:column;gap:18px;margin-bottom:42px;padding:26px 30px;border-radius:20px;
+  background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.08)}
+.filter-group{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.filter-group label{font:600 .78rem var(--poppins);letter-spacing:.08em;color:var(--orange);min-width:80px;text-transform:uppercase}
+.filter-tags{display:flex;gap:10px;flex-wrap:wrap}
+.filter-tag{
+  padding:7px 16px;border-radius:30px;cursor:pointer;
+  font:500 .8rem var(--poppins);color:var(--muted);
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);
+  transition:all .3s var(--ease);
+}
+.filter-tag:hover{color:#fff;border-color:rgba(255,138,77,.5)}
+.filter-tag.is-active{background:linear-gradient(135deg,#ff8a4d,#e14e15);color:#fff;border-color:transparent;
+  box-shadow:0 8px 22px -8px rgba(255,107,43,.6)}
+
+/* jobs grid */
+.jobs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.job-card{padding:30px 28px;display:flex;flex-direction:column;transition:transform .5s var(--ease),border-color .5s,box-shadow .5s}
+.job-card.is-hidden{display:none}
+.job-card:hover{border-color:rgba(255,138,77,.5);box-shadow:0 40px 80px -26px rgba(255,107,43,.3),inset 0 1px 0 rgba(255,255,255,.1)}
+.job-cat{font:600 .72rem var(--poppins);letter-spacing:.08em;color:var(--orange);text-transform:uppercase;margin-bottom:10px}
+.job-card h3{font:600 1.15rem var(--poppins);color:#fff;margin-bottom:14px;line-height:1.4}
+.job-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.job-meta span{font:400 .74rem var(--poppins);color:var(--muted);padding:4px 10px;border-radius:8px;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
+.job-salary{font:700 1.05rem var(--poppins);color:#ff8a4d;margin-bottom:14px}
+.job-brief{color:var(--muted);font-size:.84rem;line-height:1.8;flex:1;margin-bottom:20px}
+.job-btn{align-self:flex-start;padding:10px 22px;border-radius:30px;cursor:pointer;
+  font:500 .8rem var(--poppins);color:#fff;
+  background:rgba(255,107,43,.12);border:1px solid rgba(255,138,77,.4);
+  transition:all .3s var(--ease);
+}
+.job-btn:hover{background:linear-gradient(135deg,#ff8a4d,#e14e15);border-color:transparent;
+  box-shadow:0 12px 26px -10px rgba(255,107,43,.7);transform:translateY(-2px)}
+
+/* modal */
+.modal-overlay{
+  position:fixed;inset:0;z-index:3000;display:none;align-items:center;justify-content:center;
+  padding:40px 20px;background:rgba(5,5,8,.78);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+}
+.modal-overlay.is-open{display:flex}
+.modal{
+  width:min(720px,100%);max-height:88vh;overflow-y:auto;border-radius:24px;padding:42px 40px 38px;
+  background:linear-gradient(180deg,#161013,#0c0c10);
+  border:1px solid rgba(255,138,77,.25);
+  box-shadow:0 50px 100px -30px rgba(0,0,0,.8),inset 0 1px 0 rgba(255,255,255,.08);
+  position:relative;animation:modalIn .45s var(--ease);
+}
+@keyframes modalIn{from{opacity:0;transform:translateY(24px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+.modal-close{
+  position:absolute;top:18px;right:18px;width:38px;height:38px;border-radius:50%;cursor:pointer;
+  display:grid;place-items:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);
+  color:#fff;transition:all .3s var(--ease);
+}
+.modal-close:hover{background:var(--red);border-color:var(--red);transform:rotate(90deg)}
+.modal-cat{font:600 .72rem var(--poppins);letter-spacing:.08em;color:var(--orange);text-transform:uppercase;margin-bottom:10px}
+.modal h3{font:600 1.6rem var(--poppins);color:#fff;margin-bottom:18px;line-height:1.3}
+.modal-overview{display:grid;grid-template-columns:repeat(2,auto);gap:10px 28px;margin-bottom:28px;padding:22px 26px;
+  border-radius:16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08)}
+.modal-overview div{font-size:.86rem;color:var(--muted)}
+.modal-overview div strong{color:#fff;font-weight:600;margin-right:6px}
+.modal-sec{margin-bottom:24px}
+.modal-sec h4{font:600 1rem var(--poppins);color:#fff;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.modal-sec h4::before{content:'';width:4px;height:18px;background:var(--orange);border-radius:2px;display:inline-block}
+.modal-sec ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.modal-sec ul li{position:relative;padding-left:24px;font-size:.88rem;color:var(--muted);line-height:1.75}
+.modal-sec ul li::before{content:'▸';position:absolute;left:0;top:0;color:var(--orange);font-weight:700}
+.modal-apply{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding-top:8px;border-top:1px solid rgba(255,255,255,.08);margin-top:6px}
+.modal-apply p{font-size:.84rem;color:var(--muted)}
+.modal-apply a{color:var(--orange);font-weight:600}
+
+/* stories */
+.stories-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.story-card{padding:36px 30px;display:flex;flex-direction:column;transition:transform .5s var(--ease),border-color .5s,box-shadow .5s}
+.story-card:hover{border-color:rgba(255,138,77,.5);box-shadow:0 40px 80px -26px rgba(255,107,43,.3),inset 0 1px 0 rgba(255,255,255,.1)}
+.story-card .quote{font-size:2.4rem;color:var(--orange);line-height:1;margin-bottom:14px;font-family:var(--poppins)}
+.story-card p{color:#dcdce0;font-size:.9rem;line-height:1.95;flex:1;margin-bottom:22px}
+.story-card .who{font-size:.84rem;color:var(--muted)}
+.story-card .who strong{color:#fff;font-weight:600}
+
+/* responsive */
+@media (max-width:1024px){
+  .join-hero{padding-top:160px}
+  .join-hero-grid{grid-template-columns:1fr;gap:40px}
+  .join-visual{min-height:340px}
+  .join-cards{grid-template-columns:repeat(2,1fr)}
+  .benefits-grid{grid-template-columns:1fr;max-width:560px;margin:0 auto}
+  .jobs-grid{grid-template-columns:repeat(2,1fr)}
+  .stories-grid{grid-template-columns:1fr;max-width:640px;margin:0 auto}
+}
+@media (max-width:640px){
+  .join-cards{grid-template-columns:1fr}
+  .jobs-grid{grid-template-columns:1fr}
+  .modal{padding:32px 22px 28px}
+  .modal-overview{grid-template-columns:1fr;padding:18px 20px}
+  .filter-bar{padding:20px}
+  .filter-group{flex-direction:column;align-items:flex-start;gap:8px}
+  .filter-group label{min-width:0}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════ PRELOADER ══════════ -->
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-logo"><span>C</span><span>-</span><span>O</span><span>N</span></div>
+    <div class="preloader-bar"><i></i></div>
+    <div class="preloader-count">0%</div>
+  </div>
+</div>
+
+<!-- ══════════ CUSTOM CURSOR ══════════ -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ══════════ SCROLL PROGRESS ══════════ -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ══════════ NOISE OVERLAY ══════════ -->
+<div class="noise" aria-hidden="true"></div>
+
+<!-- ══════════ NAVBAR ══════════ -->
+<header class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo" data-cursor>
+      <svg class="logo-ico" viewBox="0 0 40 24" fill="none"><rect x="1" y="8" width="4" height="8" rx="1" fill="currentColor"/><rect x="35" y="8" width="4" height="8" rx="1" fill="currentColor"/><rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="30" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="10" y="10.5" width="20" height="3" rx="1.5" fill="currentColor"/></svg>
+      <span class="logo-txt">动衡智助<i class="logo-dot"></i></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html#home" class="nav-link">首页</a>
+      <a href="about.html" class="nav-link">关于我们</a>
+      <a href="services.html" class="nav-link">服务</a>
+      <a href="programs.html" class="nav-link">训练项目</a>
+      <a href="ai.html" class="nav-link">AI技术底座</a>
+      <a href="index.html#contact" class="nav-link">联系我们</a>
+      <a href="join.html" class="nav-link is-active">加入我们</a>
+    </nav>
+    <a href="#joinCta" class="btn btn-red nav-cta" data-cursor data-magnetic>
+      <span>立即加入</span><em>0718</em>
+    </a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- mobile menu -->
+<div class="m-menu" id="mMenu">
+  <nav class="m-menu-links">
+    <a href="index.html#home" class="m-link"><small>01</small>首页</a>
+    <a href="about.html" class="m-link"><small>02</small>关于我们</a>
+    <a href="services.html" class="m-link"><small>03</small>服务</a>
+    <a href="programs.html" class="m-link"><small>04</small>训练项目</a>
+    <a href="ai.html" class="m-link"><small>05</small>AI技术底座</a>
+    <a href="index.html#contact" class="m-link"><small>06</small>联系我们</a>
+    <a href="join.html" class="m-link"><small>07</small>加入我们</a>
+  </nav>
+  <div class="m-menu-foot">
+    <a href="#joinCta" class="btn btn-red">立即加入我们</a>
+    <p>0718 · 1283019010@qq.com</p>
+  </div>
+</div>
+
+<main>
+<!-- ══════════ HERO ══════════ -->
+<section class="join-hero" id="joinHero">
+  <div class="orb orb-red-soft orb-left" aria-hidden="true"></div>
+  <div class="container join-hero-grid">
+    <div data-reveal>
+      <span class="tag-orange">// 加入我们</span>
+      <h1 class="join-title">和我们一起，用AI<span class="orange">改变健康管理的未来</span></h1>
+      <p class="join-sub">我们正在寻找充满热情、专业过硬的伙伴，共同打造全球领先的AI居家运动健康管理平台</p>
+      <a href="#jobs" class="btn btn-orange" data-cursor data-magnetic><span>查看热招职位 <i>↗</i></span></a>
+    </div>
+    <div class="join-visual" data-reveal data-tilt data-cursor>
+      <div class="jv-center"><span>JOIN<br>US</span></div>
+      <div class="jv-float f1"><i>🤖</i>AI算法</div>
+      <div class="jv-float f2"><i>💪</i>健康管理</div>
+      <div class="jv-float f3"><i>🚀</i>昇腾910B</div>
+      <div class="jv-float f4"><i>🎯</i>上万用户</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ WHY JOIN ══════════ -->
+<section class="section" id="whyJoin">
+  <div class="container">
+    <div class="sec-head sec-head-left" data-reveal>
+      <span class="tag-orange">// 为什么加入我们</span>
+      <h2 class="h2-poppins">为什么<span class="orange">加入我们</span></h2>
+    </div>
+    <div class="join-cards" data-reveal-group>
+      <div class="glass join-card" data-tilt data-cursor data-reveal>
+        <div class="fi">🎯</div>
+        <h3>做有意义的事</h3>
+        <p>你的工作将直接帮助上万用户改善体态、提升健康水平，用技术创造真实的社会价值。</p>
+      </div>
+      <div class="glass join-card" data-tilt data-cursor data-reveal>
+        <div class="fi">🚀</div>
+        <h3>技术成长飞速</h3>
+        <p>基于华为昇腾910B算力底座，深耕多模态大模型前沿应用，与顶尖技术团队共同成长。</p>
+      </div>
+      <div class="glass join-card" data-tilt data-cursor data-reveal>
+        <div class="fi">🤝</div>
+        <h3>团队氛围融洽</h3>
+        <p>扁平化管理，尊重每个人的想法，团队成员专业且友善，拒绝内耗与形式主义。</p>
+      </div>
+      <div class="glass join-card" data-tilt data-cursor data-reveal>
+        <div class="fi">🎁</div>
+        <h3>福利保障完善</h3>
+        <p>有竞争力的薪资 + 五险一金 + 弹性工作 + 定期团建 + 健康体检 + 运动健身福利。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CULTURE ══════════ -->
+<section class="section" id="culture">
+  <div class="orb orb-orange" style="right:-180px;top:6%" aria-hidden="true"></div>
+  <div class="container">
+    <div class="sec-head sec-head-left" data-reveal>
+      <span class="tag-orange">// 我们的工作方式</span>
+      <h2 class="h2-poppins">我们的<span class="orange">文化</span></h2>
+    </div>
+    <div class="culture-list" data-reveal-group>
+      <div class="culture-item" data-reveal data-cursor>
+        <span class="culture-num">01</span>
+        <div class="culture-body">
+          <strong>用户至上</strong>
+          <p>一切决策从用户需求出发，用数据说话，用效果验证。</p>
+        </div>
+      </div>
+      <div class="culture-item" data-reveal data-cursor>
+        <span class="culture-num">02</span>
+        <div class="culture-body">
+          <strong>持续创新</strong>
+          <p>鼓励尝试新技术、新方法，容忍合理试错，追求产品与技术的持续突破。</p>
+        </div>
+      </div>
+      <div class="culture-item" data-reveal data-cursor>
+        <span class="culture-num">03</span>
+        <div class="culture-body">
+          <strong>科学严谨</strong>
+          <p>健康领域容不得马虎，每一个功能、每一句输出都经过专业审核。</p>
+        </div>
+      </div>
+      <div class="culture-item" data-reveal data-cursor>
+        <span class="culture-num">04</span>
+        <div class="culture-body">
+          <strong>开放协作</strong>
+          <p>跨团队紧密协作，信息透明共享，每个人都可以参与产品决策。</p>
+        </div>
+      </div>
+      <div class="culture-item" data-reveal data-cursor>
+        <span class="culture-num">05</span>
+        <div class="culture-body">
+          <strong>结果导向</strong>
+          <p>关注产出与 impact，不看加班时长，高效完成工作即可。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ BENEFITS ══════════ -->
+<section class="section" id="benefits">
+  <div class="container">
+    <div class="sec-head sec-head-left" data-reveal>
+      <span class="tag-orange">// 工作环境与员工福利</span>
+      <h2 class="h2-poppins">工作环境与<span class="orange">员工福利</span></h2>
+    </div>
+    <div class="benefits-grid" data-reveal-group>
+      <div class="glass benefit-card" data-tilt data-cursor data-reveal>
+        <div class="fi">🏢</div>
+        <h3>办公环境</h3>
+        <ul>
+          <li>地点：北京市海淀区中关村科技园，地铁直达</li>
+          <li>开放式办公空间，配备人体工学座椅、双显示器</li>
+          <li>休闲区：沙发、咖啡机、零食柜、桌游区</li>
+          <li>健身区：配备瑜伽垫、弹力带、哑铃，鼓励员工运动</li>
+        </ul>
+      </div>
+      <div class="glass benefit-card" data-tilt data-cursor data-reveal>
+        <div class="fi">💰</div>
+        <h3>薪酬福利</h3>
+        <ul>
+          <li>有竞争力的基本工资 + 年终奖金 + 项目奖金</li>
+          <li>五险一金（按实际工资基数缴纳）</li>
+          <li>带薪年假（入职即享10天，逐年递增）</li>
+          <li>弹性工作时间，不打卡</li>
+          <li>定期团建（季度团建 + 年度旅游）</li>
+          <li>年度健康体检</li>
+          <li>员工本人及家属享受产品Pro会员终身免费</li>
+          <li>运动健身补贴（每月200元）</li>
+        </ul>
+      </div>
+      <div class="glass benefit-card" data-tilt data-cursor data-reveal>
+        <div class="fi">🌱</div>
+        <h3>成长发展</h3>
+        <ul>
+          <li>入职导师制，一对一辅导</li>
+          <li>定期技术分享会与产品复盘会</li>
+          <li>外部培训与会议参会支持</li>
+          <li>清晰的晋升通道与职级体系</li>
+          <li>鼓励内部转岗，探索不同方向</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ JOBS ══════════ -->
+<section class="section" id="jobs">
+  <div class="orb orb-red-soft" style="left:-180px;top:8%" aria-hidden="true"></div>
+  <div class="container">
+    <div class="sec-head sec-head-left" data-reveal>
+      <span class="tag-orange">// 热招职位</span>
+      <h2 class="h2-poppins">热招<span class="orange">职位</span></h2>
+    </div>
+
+    <!-- filter -->
+    <div class="filter-bar" data-reveal>
+      <div class="filter-group">
+        <label>职位类别</label>
+        <div class="filter-tags" data-filter="cat">
+          <button class="filter-tag is-active" data-val="all">全部</button>
+          <button class="filter-tag" data-val="tech">技术研发</button>
+          <button class="filter-tag" data-val="product">产品设计</button>
+          <button class="filter-tag" data-val="operation">运营市场</button>
+          <button class="filter-tag" data-val="health">运动健康</button>
+          <button class="filter-tag" data-val="support">职能支持</button>
+        </div>
+      </div>
+      <div class="filter-group">
+        <label>工作地点</label>
+        <div class="filter-tags" data-filter="loc">
+          <button class="filter-tag is-active" data-val="all">全部</button>
+          <button class="filter-tag" data-val="beijing">北京</button>
+          <button class="filter-tag" data-val="remote">远程</button>
+        </div>
+      </div>
+      <div class="filter-group">
+        <label>经验要求</label>
+        <div class="filter-tags" data-filter="exp">
+          <button class="filter-tag is-active" data-val="all">全部</button>
+          <button class="filter-tag" data-val="fresh">应届</button>
+          <button class="filter-tag" data-val="1-3">1-3年</button>
+          <button class="filter-tag" data-val="3-5">3-5年</button>
+          <button class="filter-tag" data-val="5+">5年以上</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- jobs grid -->
+    <div class="jobs-grid" data-reveal-group>
+      <div class="glass job-card" data-tilt data-cursor data-reveal
+           data-cat="tech" data-loc="beijing" data-exp="3-5"
+           data-job="1">
+        <div class="job-cat">技术研发 · 北京 · 3-5年 · 全职</div>
+        <h3>AI多模态算法工程师</h3>
+        <div class="job-meta">
+          <span>技术研发</span><span>北京·海淀</span><span>3-5年</span><span>本科及以上</span>
+        </div>
+        <div class="job-salary">25K-45K · 14薪</div>
+        <p class="job-brief">负责多模态大模型的训练与优化，基于华为昇腾910B算力底座，提升体态识别与方案生成的效果与效率。</p>
+        <button class="job-btn" data-cursor>查看详情</button>
+      </div>
+
+      <div class="glass job-card" data-tilt data-cursor data-reveal
+           data-cat="tech" data-loc="beijing" data-exp="1-3"
+           data-job="2">
+        <div class="job-cat">技术研发 · 北京 · 1-3年 · 全职</div>
+        <h3>计算机视觉算法工程师</h3>
+        <div class="job-meta">
+          <span>技术研发</span><span>北京·海淀</span><span>1-3年</span><span>本科及以上</span>
+        </div>
+        <div class="job-salary">20K-35K · 14薪</div>
+        <p class="job-brief">负责人体骨骼关键点检测、姿态估计、动作对比等视觉算法的研发与落地，持续提升识别准确率。</p>
+        <button class="job-btn" data-cursor>查看详情</button>
+      </div>
+
+      <div class="glass job-card" data-tilt data-cursor data-reveal
+           data-cat="tech" data-loc="beijing" data-exp="1-3"
+           data-job="3">
+        <div class="job-cat">技术研发 · 北京 · 1-3年 · 全职</div>
+        <h3>前端开发工程师</h3>
+        <div class="job-meta">
+          <span>技术研发</span><span>北京·海淀</span><span>1-3年</span><span>本科及以上</span>
+        </div>
+        <div class="job-salary">18K-30K · 14薪</div>
+        <p class="job-brief">负责Web端产品的前端开发，打造流畅的用户体验，参与组件库建设与性能优化。</p>
+        <button class="job-btn" data-cursor>查看详情</button>
+      </div>
+
+      <div class="glass job-card" data-tilt data-cursor data-reveal
+           data-cat="product" data-loc="beijing" data-exp="3-5"
+           data-job="4">
+        <div class="job-cat">产品设计 · 北京 · 3-5年 · 全职</div>
+        <h3>产品经理</h3>
+        <div class="job-meta">
+          <span>产品设计</span><span>北京·海淀</span><span>3-5年</span><span>本科及以上</span>
+        </div>
+        <div class="job-salary">20K-35K · 14薪</div>
+        <p class="job-brief">负责健康管理产品线的规划与迭代，深入理解用户需求，设计产品功能与交互流程，推动项目落地。</p>
+        <button class="job-btn" data-cursor>查看详情</button>
+      </div>
+
+      <div class="glass job-card" data-tilt data-cursor data-reveal
+           data-cat="health" data-loc="beijing" data-exp="3-5"
+           data-job="5">
+        <div class="job-cat">运动健康 · 北京 · 3-5年 · 全职</div>
+        <h3>运动健康专家</h3>
+        <div class="job-meta">
+          <span>运动健康</span><span>北京·海淀</span><span>3-5年</span><span>本科及以上</span>
+        </div>
+        <div class="job-salary">15K-25K · 14薪</div>
+        <p class="job-brief">负责运动健康知识库建设、训练方案专业审核、体态评估标准制定，确保产品内容的专业性与科学性。</p>
+        <button class="job-btn" data-cursor>查看详情</button>
+      </div>
+
+      <div class="glass job-card" data-tilt data-cursor data-reveal
+           data-cat="operation" data-loc="beijing" data-exp="1-3"
+           data-job="6">
+        <div class="job-cat">运营市场 · 北京 · 1-3年 · 全职</div>
+        <h3>用户运营专员</h3>
+        <div class="job-meta">
+          <span>运营市场</span><span>北京·海淀</span><span>1-3年</span><span>本科及以上</span>
+        </div>
+        <div class="job-salary">10K-18K · 13薪</div>
+        <p class="job-brief">负责用户增长与留存运营，策划运营活动，维护用户社群，分析用户数据，提升用户活跃度与满意度。</p>
+        <button class="job-btn" data-cursor>查看详情</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ JOB DETAIL MODAL ══════════ -->
+<div class="modal-overlay" id="jobModal">
+  <div class="modal" id="jobModalInner">
+    <button class="modal-close" id="modalClose" aria-label="关闭" data-cursor>
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="modal-cat" id="mCat">技术研发部</div>
+    <h3 id="mTitle">AI多模态算法工程师</h3>
+
+    <div class="modal-overview" id="mOverview">
+      <div><strong>所属部门：</strong>技术研发部</div>
+      <div><strong>工作地点：</strong>北京·海淀</div>
+      <div><strong>经验要求：</strong>3-5年</div>
+      <div><strong>学历要求：</strong>本科及以上</div>
+      <div><strong>薪资待遇：</strong>25K-45K · 14薪</div>
+      <div><strong>工作性质：</strong>全职</div>
+    </div>
+
+    <div class="modal-sec" id="mDuty">
+      <h4>岗位职责</h4>
+      <ul>
+        <li>负责多模态大模型（视觉+文本+姿态数据）的预训练、指令微调与对齐优化，提升体态识别与方案生成的准确率</li>
+        <li>基于华为昇腾910B算力底座，进行模型训练任务的工程化落地与性能调优，提升训练效率与资源利用率</li>
+        <li>跟踪多模态大模型、人体姿态估计、动作识别等方向的前沿论文与开源进展，完成技术调研与复现</li>
+        <li>与产品、运动健康团队紧密协作，将算法能力转化为可上线的功能，并持续迭代优化效果</li>
+        <li>参与建立模型评测体系，设计合理的评测指标与数据集，保障模型质量可量化、可追踪</li>
+      </ul>
+    </div>
+
+    <div class="modal-sec" id="mReq">
+      <h4>任职要求</h4>
+      <ul>
+        <li>计算机、人工智能、自动化等相关专业，本科及以上学历，3年以上AI算法相关工作经验</li>
+        <li>扎实的深度学习与机器学习基础，熟悉Transformer、CLIP、BLIP、LLaVA等多模态模型架构</li>
+        <li>熟练使用PyTorch，有大规模模型训练与微调经验，熟悉LoRA、QLoRA、RLHF等技术</li>
+        <li>有人体姿态估计、目标检测、图像分割等计算机视觉项目落地经验者优先</li>
+        <li>熟悉华为昇腾/CANN生态，或有国产芯片适配经验者优先</li>
+        <li>良好的工程能力与协作意识，能独立完成从调研到上线的全流程</li>
+      </ul>
+    </div>
+
+    <div class="modal-sec" id="mBonus">
+      <h4>加分项</h4>
+      <ul>
+        <li>在CVPR/ICCV/ECCV/NeurIPS等顶会有论文发表</li>
+        <li>有开源项目贡献或高星开源项目维护经验</li>
+        <li>有运动健康、健身、康复等垂直领域算法落地经验</li>
+        <li>有从0到1搭建多模态大模型训练流水线的完整经验</li>
+      </ul>
+    </div>
+
+    <div class="modal-sec" id="mOffer">
+      <h4>我们提供</h4>
+      <ul>
+        <li>有竞争力的薪资 + 14薪 + 项目奖金 + 期权激励</li>
+        <li>昇腾910B算力资源充裕，可放手尝试前沿技术</li>
+        <li>扁平化团队，直接参与产品决策，影响力可见</li>
+        <li>五险一金 + 弹性工作 + 健康体检 + 运动健身补贴</li>
+        <li>员工本人及家属享受产品Pro会员终身免费</li>
+      </ul>
+    </div>
+
+    <div class="modal-apply">
+      <a href="mailto:1283019010@qq.com?subject=应聘-AI多模态算法工程师" class="btn btn-orange" data-cursor data-magnetic><span>立即投递 <i>↗</i></span></a>
+      <p>投递后3个工作日内回复 · 邮箱：<a href="mailto:1283019010@qq.com">1283019010@qq.com</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ STORIES ══════════ -->
+<section class="section" id="stories">
+  <div class="orb orb-orange" style="right:-180px;top:10%" aria-hidden="true"></div>
+  <div class="container">
+    <div class="sec-head sec-head-left" data-reveal>
+      <span class="tag-orange">// 听听团队成员怎么说</span>
+      <h2 class="h2-poppins">员工<span class="orange">故事</span></h2>
+    </div>
+    <div class="stories-grid" data-reveal-group>
+      <div class="glass story-card" data-tilt data-cursor data-reveal>
+        <div class="quote">“</div>
+        <p>加入动衡智助最大的感受是技术氛围浓厚，基于昇腾910B做模型训练，算力充裕，能放手去尝试各种idea。更重要的是，看到用户因为我们的算法改善了体态，那种成就感是前所未有的。</p>
+        <div class="who"><strong>张XX</strong> · AI算法工程师 · 入职1年</div>
+      </div>
+      <div class="glass story-card" data-tilt data-cursor data-reveal>
+        <div class="quote">“</div>
+        <p>团队非常扁平化，我的想法可以直接和创始人沟通，好的idea很快就能落地。健康领域的产品需要对用户有真正的同理心，这里每个人都在用心做产品。</p>
+        <div class="who"><strong>王XX</strong> · 产品经理 · 入职8个月</div>
+      </div>
+      <div class="glass story-card" data-tilt data-cursor data-reveal>
+        <div class="quote">“</div>
+        <p>作为运动康复专业出身，我很高兴能把专业知识通过AI产品传递给上万用户。团队非常尊重专业意见，每一个训练方案、每一句健康建议都经过严格审核。</p>
+        <div class="who"><strong>李XX</strong> · 运动健康专家 · 入职1年半</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FAQ ══════════ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="sec-head sec-head-left" data-reveal>
+      <span class="tag-orange">// 常见问题</span>
+      <h2 class="h2-poppins">常见<span class="orange">问题</span></h2>
+    </div>
+
+    <div class="accordion svc-acc" id="faqAccordion" data-reveal>
+      <div class="acc-item is-open">
+        <button class="acc-head" data-cursor>
+          <span><em class="svc-num">Q1</em>投递简历后多久能收到回复？</span>
+          <i class="acc-ico"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7l10 10M17 7v10H7"/></svg></i>
+        </button>
+        <div class="acc-body"><div class="acc-inner">
+          <p>我们会在收到简历后的3个工作日内完成初筛并回复，无论是否进入下一轮都会邮件通知。如超过5个工作日未收到回复，可发邮件至 1283019010@qq.com 咨询进度。校招/实习岗位的回复周期可能略长，请耐心等待。</p>
+        </div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-head" data-cursor>
+          <span><em class="svc-num">Q2</em>是否接受应届生和实习生？</span>
+          <i class="acc-ico"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7l10 10M17 7v10H7"/></svg></i>
+        </button>
+        <div class="acc-body"><div class="acc-inner">
+          <p>接受。我们为应届生和实习生提供专属培养计划，配备一对一导师，参与真实项目并承担可上线的模块。对算法岗应届生，我们更看重基础扎实、学习能力强、对前沿技术有热情；对前端/产品/运营岗，会优先考虑有实际项目或实习经验的同学。</p>
+        </div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-head" data-cursor>
+          <span><em class="svc-num">Q3</em>是否支持远程办公？</span>
+          <i class="acc-ico"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7l10 10M17 7v10H7"/></svg></i>
+        </button>
+        <div class="acc-body"><div class="acc-inner">
+          <p>目前大部分岗位为北京 onsite，办公地点在海淀区中关村科技园。我们采用弹性工作时间，不打卡，更看重产出而非坐班时长。部分职能支持岗位支持混合办公模式（每周2天远程），具体可在面试阶段与HR沟通确认。</p>
+        </div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-head" data-cursor>
+          <span><em class="svc-num">Q4</em>面试流程是怎样的？</span>
+          <i class="acc-ico"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7l10 10M17 7v10H7"/></svg></i>
+        </button>
+        <div class="acc-body"><div class="acc-inner">
+          <p>技术岗通常为4轮：简历筛选 → 电话初聊（15-30分钟）→ 技术面试（1-2轮，含算法/系统设计/项目深挖）→ 终面（与创始人沟通，了解文化匹配）。非技术岗通常3轮：简历筛选 → 业务面试 → 终面。整体流程一般2-3周内完成，我们会尽量压缩周期，避免让候选人久等。</p>
+        </div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-head" data-cursor>
+          <span><em class="svc-num">Q5</em>公司处于什么阶段？融资情况如何？</span>
+          <i class="acc-ico"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7l10 10M17 7v10H7"/></svg></i>
+        </button>
+        <div class="acc-body"><div class="acc-inner">
+          <p>动衡智助已完成天使轮融资，资金充裕，产品已上线服务上万用户。我们正处在产品快速迭代、技术持续深化的关键阶段，这也是加入团队最好的时机——既能享受到创业公司扁平高效的文化，又能获得与成熟公司相当的薪资福利保障。具体融资信息可在面试阶段详细沟通。</p>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ BOTTOM CTA ══════════ -->
+<section class="cta" id="joinCta">
+  <div class="orb orb-orange orb-cta" aria-hidden="true"></div>
+  <div class="container cta-inner" data-reveal>
+    <h2>准备好<span class="orange">加入我们</span>了吗？</h2>
+    <p>和动衡智助一起，用AI技术让健康管理触手可及。</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <a href="#jobs" class="btn btn-orange btn-lg" data-cursor data-magnetic><span>查看全部职位 <i>↗</i></span></a>
+      <a href="mailto:1283019010@qq.com" class="btn btn-ghost btn-lg" data-cursor data-magnetic><span>投递简历 <i>↗</i></span></a>
+    </div>
+    <p style="margin-top:28px;font-size:.86rem">邮箱：<a href="mailto:1283019010@qq.com" style="color:var(--orange);font-weight:600">1283019010@qq.com</a></p>
+  </div>
+</section>
+</main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="f-brand">
+      <a href="index.html" class="logo" data-cursor>
+        <svg class="logo-ico" viewBox="0 0 40 24" fill="none"><rect x="1" y="8" width="4" height="8" rx="1" fill="currentColor"/><rect x="35" y="8" width="4" height="8" rx="1" fill="currentColor"/><rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="30" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="10" y="10.5" width="20" height="3" rx="1.5" fill="currentColor"/></svg>
+        <span class="logo-txt">动衡智助<i class="logo-dot"></i></span>
+      </a>
+      <p>AI驱动的居家运动健康服务。从体态评估到训练执行，陪你走好每一步改善之路。</p>
+      <div class="f-socials"><a href="#" data-cursor aria-label="Facebook">Fb</a><a href="#" data-cursor aria-label="Instagram">Ig</a><a href="#" data-cursor aria-label="Youtube">Yt</a><a href="#" data-cursor aria-label="X">X</a></div>
+    </div>
+    <div class="f-col">
+      <h5>快速导航</h5>
+      <a href="index.html#home">首页</a><a href="about.html">关于我们</a><a href="services.html">服务</a><a href="programs.html">训练项目</a><a href="ai.html">AI技术底座</a><a href="join.html">加入我们</a>
+    </div>
+    <div class="f-col">
+      <h5>核心服务</h5>
+      <a href="services.html#accordion">AI体态评估</a><a href="services.html#accordion">训练方案定制</a><a href="services.html#accordion">动作拍照纠错</a><a href="services.html#accordion">健康AI问答</a><a href="services.html#accordion">健康数据档案</a>
+    </div>
+    <div class="f-col">
+      <h5>联系我们</h5>
+      <a href="tel:+86718888">📞 +86 0718-8888</a>
+      <a href="mailto:1283019010@qq.com">✉ 1283019010@qq.com</a>
+      <p>📍 北京市海淀区中关村科技园</p>
+      <p>周一至周日 · 06:00 — 23:00</p>
+    </div>
+  </div>
+  <div class="footer-bar"><div class="container"><p>© 2026 动衡智助. 保留所有权利.</p><a href="#" data-cursor onclick="scrollTo({top:0,behavior:'smooth'});return false">回到顶部 ↑</a></div></div>
+</footer>
+
+<button class="backtop" id="backtop" aria-label="Back to top"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+/* ═══════════ JOIN PAGE — inline scripts ═══════════ */
+(function(){
+  /* ─── 1. JOB FILTER ─── */
+  const cards = document.querySelectorAll('.job-card');
+  const state = { cat:'all', loc:'all', exp:'all' };
+
+  document.querySelectorAll('.filter-tags').forEach(group => {
+    const key = group.dataset.filter;
+    group.addEventListener('click', e => {
+      const btn = e.target.closest('.filter-tag');
+      if (!btn) return;
+      group.querySelectorAll('.filter-tag').forEach(b => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      state[key] = btn.dataset.val;
+      applyFilter();
+    });
+  });
+
+  function applyFilter(){
+    cards.forEach(card => {
+      const okCat = state.cat === 'all' || card.dataset.cat === state.cat;
+      const okLoc = state.loc === 'all' || card.dataset.loc === state.loc;
+      const okExp = state.exp === 'all' || card.dataset.exp === state.exp;
+      card.classList.toggle('is-hidden', !(okCat && okLoc && okExp));
+    });
+  }
+
+  /* ─── 2. JOB MODAL ─── */
+  const modal = document.getElementById('jobModal');
+  const mCat = document.getElementById('mCat');
+  const mTitle = document.getElementById('mTitle');
+  const mOverview = document.getElementById('mOverview');
+  const mDuty = document.getElementById('mDuty');
+  const mReq = document.getElementById('mReq');
+  const mBonus = document.getElementById('mBonus');
+  const mOffer = document.getElementById('mOffer');
+  const modalClose = document.getElementById('modalClose');
+
+  // Full data for job 1; generic data for the rest (built from card content)
+  const JOB1 = {
+    cat: '技术研发部',
+    title: 'AI多模态算法工程师',
+    overview: [
+      ['所属部门：','技术研发部'],
+      ['工作地点：','北京·海淀'],
+      ['经验要求：','3-5年'],
+      ['学历要求：','本科及以上'],
+      ['薪资待遇：','25K-45K · 14薪'],
+      ['工作性质：','全职']
+    ],
+    duty: [
+      '负责多模态大模型（视觉+文本+姿态数据）的预训练、指令微调与对齐优化，提升体态识别与方案生成的准确率',
+      '基于华为昇腾910B算力底座，进行模型训练任务的工程化落地与性能调优，提升训练效率与资源利用率',
+      '跟踪多模态大模型、人体姿态估计、动作识别等方向的前沿论文与开源进展，完成技术调研与复现',
+      '与产品、运动健康团队紧密协作，将算法能力转化为可上线的功能，并持续迭代优化效果',
+      '参与建立模型评测体系，设计合理的评测指标与数据集，保障模型质量可量化、可追踪'
+    ],
+    req: [
+      '计算机、人工智能、自动化等相关专业，本科及以上学历，3年以上AI算法相关工作经验',
+      '扎实的深度学习与机器学习基础，熟悉Transformer、CLIP、BLIP、LLaVA等多模态模型架构',
+      '熟练使用PyTorch，有大规模模型训练与微调经验，熟悉LoRA、QLoRA、RLHF等技术',
+      '有人体姿态估计、目标检测、图像分割等计算机视觉项目落地经验者优先',
+      '熟悉华为昇腾/CANN生态，或有国产芯片适配经验者优先',
+      '良好的工程能力与协作意识，能独立完成从调研到上线的全流程'
+    ],
+    bonus: [
+      '在CVPR/ICCV/ECCV/NeurIPS等顶会有论文发表',
+      '有开源项目贡献或高星开源项目维护经验',
+      '有运动健康、健身、康复等垂直领域算法落地经验',
+      '有从0到1搭建多模态大模型训练流水线的完整经验'
+    ],
+    offer: [
+      '有竞争力的薪资 + 14薪 + 项目奖金 + 期权激励',
+      '昇腾910B算力资源充裕，可放手尝试前沿技术',
+      '扁平化团队，直接参与产品决策，影响力可见',
+      '五险一金 + 弹性工作 + 健康体检 + 运动健身补贴',
+      '员工本人及家属享受产品Pro会员终身免费'
+    ]
+  };
+
+  function buildGeneric(card){
+    const title = card.querySelector('h3').textContent;
+    const catLine = card.querySelector('.job-cat').textContent;
+    const metaSpans = card.querySelectorAll('.job-meta span');
+    const salary = card.querySelector('.job-salary').textContent;
+    const brief = card.querySelector('.job-brief').textContent;
+    const parts = catLine.split('·').map(s => s.trim());
+    const dept = parts[0] || '';
+    const loc = (metaSpans[1] && metaSpans[1].textContent) || parts[1] || '北京·海淀';
+    const exp = (metaSpans[2] && metaSpans[2].textContent) || parts[2] || '';
+    const edu = (metaSpans[3] && metaSpans[3].textContent) || '本科及以上';
+    const nature = parts[3] || '全职';
+    return {
+      cat: dept + '部',
+      title: title,
+      overview: [
+        ['所属部门：', dept + '部'],
+        ['工作地点：', loc],
+        ['经验要求：', exp],
+        ['学历要求：', edu],
+        ['薪资待遇：', salary],
+        ['工作性质：', nature]
+      ],
+      duty: [brief + '。具体职责将在面试阶段详细沟通，包括核心模块设计、跨团队协作、效果持续优化等。'],
+      req: [
+        '相关领域本科及以上学历，符合岗位经验要求',
+        '扎实的专业基础与工程能力，能独立完成任务交付',
+        '良好的沟通协作能力，能与产品、技术、运营团队高效配合',
+        '对健康管理/运动科学领域有热情或相关经验者优先',
+        '认同动衡智助的用户至上、科学严谨、结果导向的团队文化'
+      ],
+      bonus: [
+        '有健康管理、运动科学垂直领域经验',
+        '有从0到1的完整项目经历',
+        '有开源项目或社区贡献',
+        '有跨学科背景（运动康复+技术复合型等）'
+      ],
+      offer: JOB1.offer
+    };
+  }
+
+  function render(data){
+    mCat.textContent = data.cat;
+    mTitle.textContent = data.title;
+    mOverview.innerHTML = data.overview.map(p => `<div><strong>${p[0]}</strong>${p[1]}</div>`).join('');
+    mDuty.querySelector('ul').innerHTML = data.duty.map(li => `<li>${li}</li>`).join('');
+    mReq.querySelector('ul').innerHTML = data.req.map(li => `<li>${li}</li>`).join('');
+    mBonus.querySelector('ul').innerHTML = data.bonus.map(li => `<li>${li}</li>`).join('');
+    mOffer.querySelector('ul').innerHTML = data.offer.map(li => `<li>${li}</li>`).join('');
+    const applyA = modal.querySelector('.modal-apply a');
+    applyA.href = `mailto:1283019010@qq.com?subject=应聘-${data.title}`;
+  }
+
+  function openModal(data){
+    render(data);
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(){
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.job-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.job-card');
+      const jobId = card.dataset.job;
+      if (jobId === '1') openModal(JOB1);
+      else openModal(buildGeneric(card));
+    });
+  });
+
+  modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal(); });
+
+  /* ─── 3. FAQ ACCORDION ─── */
+  // main.js handles #accordion only — handle #faqAccordion here with the same pattern
+  const faqItems = document.querySelectorAll('#faqAccordion .acc-item');
+  faqItems.forEach(item => {
+    const head = item.querySelector('.acc-head');
+    if (!head) return;
+    head.addEventListener('click', () => {
+      const isOpen = item.classList.contains('is-open');
+      faqItems.forEach(i => i.classList.remove('is-open'));
+      if (!isOpen) item.classList.add('is-open');
+    });
+  });
+})();
+</script>
+</body>
+</html>
