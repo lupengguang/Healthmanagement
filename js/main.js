@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
-   C-ON FITNESS — interactions
+   动衡智助 — interactions
    ═══════════════════════════════════════════════════════════ */
 (function () {
   'use strict';
@@ -495,7 +495,7 @@
         tip.style.left = (crect.left - wrect.left + hov.x) + 'px';
         tip.style.top = (crect.top - wrect.top + hov.y) + 'px';
         tip.classList.toggle('flip-below', hov.y < 80);
-        tip.innerHTML = '<b>C-ON</b> ' + hov.n;
+        tip.innerHTML = '<b>动衡智助</b> ' + hov.n;
         tip.classList.add('is-show');
       } else {
         tip.classList.remove('is-show');
