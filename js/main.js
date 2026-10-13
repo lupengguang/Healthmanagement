@@ -254,6 +254,14 @@
       scrollTrigger: { trigger: '#whyStage', start: 'top 72%', once: true }
     });
 
+    /* health-scan radar pop-in */
+    if (document.getElementById('hsRadar')) {
+      gsap.from('#hsRadar', {
+        scale: 0.8, opacity: 0, duration: 0.6, ease: 'power2.out',
+        scrollTrigger: { trigger: '#healthScan', start: 'top 82%', once: true }
+      });
+    }
+
     /* stats slide-up */
     gsap.from('#stats', {
       y: 70, opacity: 0, duration: 1.1, ease: 'power3.out',
