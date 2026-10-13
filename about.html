@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C-ON FITNESS — 关于我们</title>
+<meta name="description" content="动衡智助 — 用AI技术，让每个人在家就能获得专业健康指导。AI体态评估、运动健康管理平台。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0b0e'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23e8102e'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ══════════ PRELOADER ══════════ -->
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-logo"><span>C</span><span>-</span><span>O</span><span>N</span></div>
+    <div class="preloader-bar"><i></i></div>
+    <div class="preloader-count">0%</div>
+  </div>
+</div>
+
+<!-- ══════════ CUSTOM CURSOR ══════════ -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ══════════ SCROLL PROGRESS ══════════ -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ══════════ NOISE OVERLAY ══════════ -->
+<div class="noise" aria-hidden="true"></div>
+
+<!-- ══════════ NAVBAR ══════════ -->
+<header class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo" data-cursor>
+      <svg class="logo-ico" viewBox="0 0 40 24" fill="none"><rect x="1" y="8" width="4" height="8" rx="1" fill="currentColor"/><rect x="35" y="8" width="4" height="8" rx="1" fill="currentColor"/><rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="30" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="10" y="10.5" width="20" height="3" rx="1.5" fill="currentColor"/></svg>
+      <span class="logo-txt">C<b>-</b>ON<i class="logo-dot"></i></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html#home" class="nav-link">首页</a>
+      <a href="about.html" class="nav-link is-active">关于我们</a>
+      <a href="services.html" class="nav-link">服务</a>
+      <a href="programs.html" class="nav-link">训练项目</a>
+      <a href="index.html#contact" class="nav-link">联系我们</a>
+    </nav>
+    <a href="#abCta" class="btn btn-red nav-cta" data-cursor data-magnetic>
+      <span>加入我们</span><em>0718</em>
+    </a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- mobile menu -->
+<div class="m-menu" id="mMenu">
+  <nav class="m-menu-links">
+    <a href="index.html#home" class="m-link"><small>01</small>首页</a>
+    <a href="about.html" class="m-link"><small>02</small>关于我们</a>
+    <a href="services.html" class="m-link"><small>03</small>服务</a>
+    <a href="programs.html" class="m-link"><small>04</small>训练项目</a>
+    <a href="index.html#contact" class="m-link"><small>05</small>联系我们</a>
+  </nav>
+  <div class="m-menu-foot">
+    <a href="#abCta" class="btn btn-red">立即加入我们</a>
+    <p>0718 · hello@con-fitness.com</p>
+  </div>
+</div>
+
+<main>
+<!-- ══════════ PAGE TITLE ══════════ -->
+<section class="svc-hero">
+  <div class="orb orb-red-soft orb-left" aria-hidden="true"></div>
+  <div class="container svc-hero-grid">
+    <div data-reveal><span class="tag-orange">// 关于我们</span></div>
+    <div data-reveal>
+      <h1 class="svc-title">用AI技术，让每个人<span class="orange">在家就能获得专业健康指导</span></h1>
+      <p class="svc-sub">动衡智助致力于将人工智能与运动健康科学深度融合，打造 accessible 的居家体态健康管理平台</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ BRAND STORY ══════════ -->
+<section class="section ab-story">
+  <div class="orb orb-orange" style="right:-180px;top:8%" aria-hidden="true"></div>
+  <div class="container">
+    <div class="sec-head" data-reveal>
+      <span class="tag-orange">// 我们的故事</span>
+    </div>
+    <div class="ab-story-grid">
+      <div class="ab-story-left glass" data-reveal>
+        <img src="images/about-trainer.jpg" alt="动衡智助团队" data-parallax>
+      </div>
+      <div class="ab-story-right" data-reveal>
+        <h2 class="ab-story-title">让健康指导，<span class="orange">触手可及</span></h2>
+        <p>动衡智助诞生于一个简单的观察——越来越多的人因久坐、不良姿势而饱受体态问题困扰，但专业的体态评估和康复指导门槛高、费用贵，普通人难以持续获得。我们相信，AI技术可以改变这一现状。</p>
+        <p>2025年，一支由人工智能工程师、运动康复专家和产品设计师组成的团队走到一起，开始探索如何用计算机视觉和大模型技术，将专业级的体态评估能力搬到每个人的手机和电脑上。经过一年的研发与迭代，动衡智助正式上线。</p>
+        <p>我们的目标不是替代医生或私教，而是成为每个人身边的健康助手——让评估更便捷、让训练更科学、让健康管理融入日常生活。</p>
+        <div class="ab-signature">
+          <span>— 动衡智助团队</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ MISSION / VISION / VALUES ══════════ -->
+<section class="section" style="padding-top:20px">
+  <div class="container">
+    <div class="svc-feats" data-reveal-group>
+      <div class="svc-feat glass" data-tilt data-cursor>
+        <div class="fi">🎯</div>
+        <h3>我们的使命</h3>
+        <p>让专业级体态评估与运动健康指导触手可及，帮助每个人建立健康的身体姿态和运动习惯。</p>
+      </div>
+      <div class="svc-feat glass" data-tilt data-cursor>
+        <div class="fi">🔭</div>
+        <h3>我们的愿景</h3>
+        <p>成为全球领先的AI居家运动健康管理平台，服务1亿用户，让健康管理不再有门槛。</p>
+      </div>
+      <div class="svc-feat glass" data-tilt data-cursor>
+        <div class="fi">💎</div>
+        <h3>我们的价值观</h3>
+        <p>科学严谨 · 用户至上 · 持续创新 · 安全可信</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ TEAM ══════════ -->
+<section class="section ab-team-sec">
+  <div class="container">
+    <div class="sec-head" data-reveal>
+      <span class="tag-orange">// 核心团队</span>
+      <h2 class="h2-poppins">汇聚<span class="orange">专业力量</span></h2>
+    </div>
+    <p class="pg-rec-sub" data-reveal>我们的团队汇聚了人工智能、运动康复、产品设计三大领域的专业人才</p>
+    <div class="ab-team" data-reveal-group>
+
+      <div class="ab-member glass" data-tilt data-cursor>
+        <div class="ab-avatar" style="background:linear-gradient(135deg,#ff8a4d,#e14e15)">张</div>
+        <h3>张XX</h3>
+        <span class="ab-role">联合创始人 &amp; CTO</span>
+        <p>前大厂AI算法专家，深耕计算机视觉与大模型应用8年，主导多个AI产品从0到1落地。</p>
+      </div>
+
+      <div class="ab-member glass" data-tilt data-cursor>
+        <div class="ab-avatar" style="background:linear-gradient(135deg,#ff2740,#c00d25)">李</div>
+        <h3>李XX</h3>
+        <span class="ab-role">联合创始人 &amp; 首席运动健康顾问</span>
+        <p>运动人体科学硕士，认证体能训练师，10年运动康复与体态矫正经验，服务用户超5000人。</p>
+      </div>
+
+      <div class="ab-member glass" data-tilt data-cursor>
+        <div class="ab-avatar" style="background:linear-gradient(135deg,#8a5cff,#4a2dc1)">王</div>
+        <h3>王XX</h3>
+        <span class="ab-role">产品总监</span>
+        <p>7年互联网产品经验，专注健康科技领域，擅长将复杂技术转化为简单易用的产品体验。</p>
+      </div>
+
+      <div class="ab-member glass" data-tilt data-cursor>
+        <div class="ab-avatar" style="background:linear-gradient(135deg,#2ecc71,#16a085)">陈</div>
+        <h3>陈XX</h3>
+        <span class="ab-role">设计总监</span>
+        <p>资深UI/UX设计师，曾主导多款千万级用户产品的设计，追求功能与美学的平衡。</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ TIMELINE ══════════ -->
+<section class="section ab-timeline-sec">
+  <div class="orb orb-red-soft" style="left:-180px;top:20%" aria-hidden="true"></div>
+  <div class="container">
+    <div class="sec-head" data-reveal>
+      <span class="tag-orange">// 发展历程</span>
+      <h2 class="h2-poppins">我们的<span class="orange">成长足迹</span></h2>
+    </div>
+    <div class="ab-timeline" data-reveal-group>
+
+      <div class="ab-tl-item">
+        <div class="ab-tl-dot"></div>
+        <div class="ab-tl-card glass">
+          <span class="ab-tl-date">2025年3月 · 团队组建</span>
+          <p>核心团队成立，启动AI体态评估技术预研。</p>
+        </div>
+      </div>
+
+      <div class="ab-tl-item">
+        <div class="ab-tl-dot"></div>
+        <div class="ab-tl-card glass">
+          <span class="ab-tl-date">2025年7月 · 技术验证</span>
+          <p>完成骨骼关键点检测算法验证，体态问题识别准确率达92%。</p>
+        </div>
+      </div>
+
+      <div class="ab-tl-item">
+        <div class="ab-tl-dot"></div>
+        <div class="ab-tl-card glass">
+          <span class="ab-tl-date">2025年10月 · 产品内测</span>
+          <p>动衡智助1.0版本内部测试，邀请1000名种子用户体验。</p>
+        </div>
+      </div>
+
+      <div class="ab-tl-item">
+        <div class="ab-tl-dot ab-tl-dot--accent"></div>
+        <div class="ab-tl-card glass">
+          <span class="ab-tl-date">2026年3月 · 正式上线</span>
+          <p>产品正式发布，上线体态评估、训练方案、动作纠错三大核心功能。</p>
+        </div>
+      </div>
+
+      <div class="ab-tl-item">
+        <div class="ab-tl-dot"></div>
+        <div class="ab-tl-card glass">
+          <span class="ab-tl-date">2026年6月 · 用户突破</span>
+          <p>注册用户突破10,000人，累计完成体态评估超30,000次。</p>
+        </div>
+      </div>
+
+      <div class="ab-tl-item">
+        <div class="ab-tl-dot"></div>
+        <div class="ab-tl-card glass">
+          <span class="ab-tl-date">2026年9月 · 功能升级</span>
+          <p>上线AI运动健康问答、健康数据档案、生活方式建议等功能，完成全流程健康管理闭环。</p>
+        </div>
+      </div>
+
+      <div class="ab-tl-item">
+        <div class="ab-tl-dot ab-tl-dot--future"></div>
+        <div class="ab-tl-card glass">
+          <span class="ab-tl-date">未来 · 持续进化</span>
+          <p>持续优化AI算法，拓展更多体态问题检测，引入视频动态评估能力。</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ACHIEVEMENTS ══════════ -->
+<section class="section ab-stats-sec">
+  <div class="container">
+    <div class="ab-stats glass" data-reveal>
+      <div class="ab-stat">
+        <strong><span class="count" data-count="10000">0</span>+</strong>
+        <span>注册用户</span>
+      </div>
+      <div class="ab-stat">
+        <strong><span class="count" data-count="30000">0</span>+</strong>
+        <span>累计评估次数</span>
+      </div>
+      <div class="ab-stat">
+        <strong><span class="count" data-count="85">0</span>%</strong>
+        <span>用户体态改善率</span>
+      </div>
+      <div class="ab-stat">
+        <strong>4.9<span>/5</span></strong>
+        <span>用户满意度评分</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ TECH STRENGTH ══════════ -->
+<section class="section" style="padding-top:20px">
+  <div class="container">
+    <div class="sec-head" data-reveal>
+      <span class="tag-orange">// 技术实力</span>
+      <h2 class="h2-poppins">我们的<span class="orange">核心能力</span></h2>
+    </div>
+    <div class="svc-feats" data-reveal-group>
+      <div class="svc-feat glass" data-tilt data-cursor>
+        <div class="fi">👁️</div>
+        <h3>计算机视觉</h3>
+        <ul class="ab-tech-list">
+          <li>基于深度学习的人体骨骼关键点检测，精准识别20+关键骨骼点</li>
+          <li>支持正面、侧面、背面三姿态分析，覆盖10余种常见体态问题</li>
+        </ul>
+      </div>
+      <div class="svc-feat glass" data-tilt data-cursor>
+        <div class="fi">🧠</div>
+        <h3>大模型应用</h3>
+        <ul class="ab-tech-list">
+          <li>基于运动健康专业知识库的RAG问答系统，输出严谨可靠</li>
+          <li>AI自动生成个性化训练方案，支持难度动态调整</li>
+        </ul>
+      </div>
+      <div class="svc-feat glass" data-tilt data-cursor>
+        <div class="fi">🔐</div>
+        <h3>数据安全</h3>
+        <ul class="ab-tech-list">
+          <li>用户照片仅用于实时分析，不存储原始图片</li>
+          <li>所有健康数据加密存储，支持随时导出或删除</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PARTNERS ══════════ -->
+<section class="section ab-partners-sec">
+  <div class="container">
+    <div class="sec-head" data-reveal>
+      <span class="tag-orange">// 合作伙伴</span>
+      <h2 class="h2-poppins">携手<span class="orange">行业领先</span>伙伴</h2>
+    </div>
+    <p class="pg-rec-sub" data-reveal>与行业领先机构和平台携手合作</p>
+    <div class="ab-partners" data-reveal-group>
+      <div class="ab-partner glass">
+        <h4>技术合作</h4>
+        <p>百度智能云（AI能力支持）</p>
+        <p>文心快码（AI Coding开发工具）</p>
+      </div>
+      <div class="ab-partner glass">
+        <h4>学术合作</h4>
+        <p>运动人体科学研究机构</p>
+        <p>高校体育学院</p>
+      </div>
+      <div class="ab-partner glass">
+        <h4>内容合作</h4>
+        <p>运动健康科普平台</p>
+        <p>专业健身KOL</p>
+      </div>
+      <div class="ab-partner glass">
+        <h4>赛事合作</h4>
+        <p>新致杯AI创新大赛</p>
+        <p>（获奖项目）</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CONTACT ══════════ -->
+<section class="section ab-contact-sec">
+  <div class="orb orb-orange" style="right:-180px;top:10%" aria-hidden="true"></div>
+  <div class="container">
+    <div class="sec-head" data-reveal>
+      <span class="tag-orange">// 联系我们</span>
+      <h2 class="h2-poppins">期待与你<span class="orange">连接</span></h2>
+    </div>
+    <div class="ab-contact-grid">
+
+      <div class="ab-contact-info glass" data-reveal>
+        <div class="ab-contact-item"><span class="ab-c-ico">📧</span><div><b>邮箱</b><a href="mailto:1283019010@qq.com">1283019010@qq.com</a></div></div>
+        <div class="ab-contact-item"><span class="ab-c-ico">🤝</span><div><b>商务合作</b><a href="mailto:1283019010@qq.com">1283019010@qq.com</a></div></div>
+        <div class="ab-contact-item"><span class="ab-c-ico">💬</span><div><b>用户反馈</b><a href="mailto:1283019010@qq.com">1283019010@qq.com</a></div></div>
+        <div class="ab-contact-item"><span class="ab-c-ico">📍</span><div><b>办公地址</b><span>北京市海淀区中关村科技园</span></div></div>
+        <div class="ab-contact-item"><span class="ab-c-ico">🕘</span><div><b>工作时间</b><span>周一至周五 9:00 - 18:00</span></div></div>
+      </div>
+
+      <div class="ab-social glass" data-reveal>
+        <h3>社交媒体</h3>
+        <div class="ab-social-grid">
+          <a href="#" class="ab-social-card" data-cursor>
+            <span class="ab-s-ico">💚</span><b>微信公众号</b><p>碳基智能-Mind Mirror</p>
+          </a>
+          <a href="#" class="ab-social-card" data-cursor>
+            <span class="ab-s-ico">🔴</span><b>微博</b><p>@碳基智能-Mind Mirror</p>
+          </a>
+          <a href="#" class="ab-social-card" data-cursor>
+            <span class="ab-s-ico">📕</span><b>小红书</b><p>碳基智能-Mind Mirror</p>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CTA ══════════ -->
+<section class="cta" id="abCta">
+  <div class="orb orb-orange orb-cta" aria-hidden="true"></div>
+  <div class="container cta-inner" data-reveal>
+    <h2>加入我们，一起改善<span class="orange">更多人的健康</span></h2>
+    <p>无论是用户、合作伙伴还是人才，我们都欢迎你的加入</p>
+    <div class="ab-cta-group">
+      <a href="services.html#accordion" class="btn btn-orange btn-lg" data-cursor data-magnetic><span>免费体验产品 <i>↗</i></span></a>
+      <a href="mailto:1283019010@qq.com" class="btn btn-ghost btn-lg" data-cursor data-magnetic><span>联系我们</span></a>
+      <a href="mailto:1283019010@qq.com" class="btn btn-ghost btn-lg" data-cursor data-magnetic><span>加入团队</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="f-brand">
+      <a href="index.html" class="logo" data-cursor>
+        <svg class="logo-ico" viewBox="0 0 40 24" fill="none"><rect x="1" y="8" width="4" height="8" rx="1" fill="currentColor"/><rect x="35" y="8" width="4" height="8" rx="1" fill="currentColor"/><rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="30" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="10" y="10.5" width="20" height="3" rx="1.5" fill="currentColor"/></svg>
+        <span class="logo-txt">C<b>-</b>ON<i class="logo-dot"></i></span>
+      </a>
+      <p>AI驱动的居家运动健康服务。从体态评估到训练执行，陪你走好每一步改善之路。</p>
+      <div class="f-socials"><a href="#" data-cursor aria-label="Facebook">Fb</a><a href="#" data-cursor aria-label="Instagram">Ig</a><a href="#" data-cursor aria-label="Youtube">Yt</a><a href="#" data-cursor aria-label="X">X</a></div>
+    </div>
+    <div class="f-col">
+      <h5>快速导航</h5>
+      <a href="index.html#home">首页</a><a href="about.html">关于我们</a><a href="services.html">服务</a><a href="programs.html">训练项目</a><a href="index.html#packages">套餐</a>
+    </div>
+    <div class="f-col">
+      <h5>了解我们</h5>
+      <a href="#ab-team">核心团队</a><a href="#ab-contact">联系方式</a><a href="#ab-partners">合作伙伴</a><a href="#ab-timeline">发展历程</a><a href="#abCta">加入我们</a>
+    </div>
+    <div class="f-col">
+      <h5>联系我们</h5>
+      <a href="mailto:1283019010@qq.com">📧 1283019010@qq.com</a>
+      <p>📍 北京市海淀区中关村科技园</p>
+      <p>周一至周五 · 9:00 — 18:00</p>
+    </div>
+  </div>
+  <div class="footer-bar"><div class="container"><p>© 2026 动衡智助 Mind Mirror. All rights reserved.</p><a href="#" data-cursor onclick="scrollTo({top:0,behavior:'smooth'});return false">回到顶部 ↑</a></div></div>
+</footer>
+
+<button class="backtop" id="backtop" aria-label="Back to top"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
