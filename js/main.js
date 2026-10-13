@@ -48,19 +48,19 @@
 
   /* hero intro (plays after preloader) */
   const heroWords = document.querySelectorAll('.hero-title .word');
-  const heroFades = ['.hero-kicker', '.hero-text', '.hero-actions', '.hero-socials', '#heroBadge', '.hero-media'];
+  const heroFades = ['.hero-kicker', '.hero-text', '.hero-actions', '.hero-socials', '#heroBadge', '.hero-bg-img'];
 
   if (hasGSAP && !reduceMotion) {
     gsap.set(heroWords, { yPercent: 112 });
     gsap.set(heroFades, { opacity: 0, y: 34 });
-    gsap.set('.hero-media', { opacity: 0, y: 0, scale: 1.06 });
+    gsap.set('.hero-bg-img', { opacity: 0, scale: 1.06 });
   }
 
   function heroIntro() {
     if (!hasGSAP || reduceMotion) return;
     const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
     tl.to(heroWords, { yPercent: 0, duration: 1.15, stagger: 0.13 })
-      .to('.hero-media', { opacity: 1, scale: 1, duration: 1.5, ease: 'power3.out' }, 0.1)
+      .to('.hero-bg-img', { opacity: 0.32, scale: 1, duration: 1.5, ease: 'power3.out' }, 0.1)
       .to('.hero-kicker', { opacity: 1, y: 0, duration: 0.8 }, 0.35)
       .to('.hero-text', { opacity: 1, y: 0, duration: 0.8 }, 0.5)
       .to('.hero-actions', { opacity: 1, y: 0, duration: 0.8 }, 0.62)
@@ -263,7 +263,7 @@
 
   /* hero mouse parallax */
   if (fine && hasGSAP && !reduceMotion) {
-    const media = document.getElementById('heroMedia');
+    const media = document.getElementById('heroImg');
     const orb1 = document.getElementById('heroOrb1');
     const xM = gsap.quickTo(media, 'x', { duration: 0.9, ease: 'power3.out' });
     const yM = gsap.quickTo(media, 'y', { duration: 0.9, ease: 'power3.out' });
