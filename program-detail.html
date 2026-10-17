@@ -219,11 +219,12 @@
     '<div class="dt-sec-head dt-reveal"><span class="tag-orange">// 阶段安排</span><h2>训练计划 · <em>每周动作清单</em></h2>' +
     '<p>' + p.cycle + '，科学分阶段推进，每周按清单执行，循序渐进</p></div>' +
     '<div class="dt-weeks dt-reveal-group">' +
-      p.weeks.map((w, i) =>
-        '<div class="dt-week glass dt-reveal"><span class="dt-week-badge">WEEK ' + (i + 1) + '</span>' +
-        '<h4>' + w.t.replace(/^第\d+周 · /, '') + '</h4><small>' + (w.sub || '') + '</small>' +
-        '<ul>' + w.list.map(l => '<li>' + l + '</li>').join('') + '</ul></div>'
-      ).join('') +
+      p.weeks.map((w, i) => {
+        const wk = (w.t.match(/^第([\d\-]+)周/) || [])[1] || (i + 1);
+        return '<div class="dt-week glass dt-reveal"><span class="dt-week-badge">WEEK ' + wk + '</span>' +
+        '<h4>' + w.t.replace(/^第[\d\-]+周 · /, '') + '</h4><small>' + (w.sub || '') + '</small>' +
+        '<ul>' + w.list.map(l => '<li>' + l + '</li>').join('') + '</ul></div>';
+      }).join('') +
     '</div>' +
   '</div></section>';
 
