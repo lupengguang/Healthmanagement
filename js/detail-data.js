@@ -769,6 +769,112 @@
         '孕期女性',
         '感冒发热、头晕胸闷等身体不适时禁止训练'
       ]
+    },
+
+    /* ─────────── 11 功能性训练（首页编号03） ─────────── */
+    p11: {
+      num: '03',
+      name: '功能性训练',
+      tags: ['力量', '复合动作', '高阶', '30分钟'],
+      level: '高阶', dur: '30分钟', cycle: '4周计划', moveCount: '12个动作',
+      cover: 'images/program-functional.jpg',
+      coverAlt: '杠铃深蹲硬拉推举等复合力量训练展示',
+      intro: '以深蹲、硬拉、推举等多关节复合动作为核心，模拟日常生活动作模式，全面强化下肢推力、下肢拉力、上肢推力、上肢拉力及核心稳定性。提升全身力量、协调性与运动表现，降低日常活动与运动中的损伤风险。',
+      who: [
+        '有一定训练基础、希望突破力量瓶颈的健身者',
+        '想要提升运动表现（跑步、球类、格斗等）的运动爱好者',
+        '希望改善身体功能、预防日常损伤的人群',
+        '能够正确掌握基础复合动作技术的训练者'
+      ],
+      effect: [
+        '全面提升下肢、上肢及核心最大力量',
+        '改善神经肌肉协调性与动作效率',
+        '提升基础代谢，促进肌肉生长',
+        '增强关节稳定性，预防运动损伤',
+        '提升日常活动能力（搬运、攀爬、长时间站立等）'
+      ],
+      weeks: [
+        { t: '第1周 · 动作技术巩固', sub: '空杆/轻重量 · 高次数', list: ['深蹲、硬拉、卧推、推举以空杆或轻重量练习动作模式', '每个主力动作 3组×12次，重量取1RM的40-50%', '录像自查：下蹲深度、背部刚性、杠铃轨迹', '每周训练3次，隔天安排'] },
+        { t: '第2周 · 基础力量构建', sub: '中等重量 5×5', list: ['深蹲、硬拉、卧推 5组×5次（1RM的70-75%）', '辅助动作：箭步蹲、引体向上 3组×8-10次', '渐进超负荷：每次训练较上次加重约2.5%', '组间休息3分钟，每周训练3-4次'] },
+        { t: '第3周 · 力量强化', sub: '较大重量 4×3-5', list: ['主力动作 4组×3-5次（1RM的80-85%）', '增加辅助动作：罗马尼亚硬拉、俯身划船 3组×6-8次', '农夫行走 3组×30米，强化核心与握力', '上下肢分化安排，每周训练4次'] },
+        { t: '第4周 · 峰值测试', sub: '极限重量 · 1RM挑战', list: ['减量周：主力动作 3组×2次（1RM的85-90%）', '测试日：深蹲、硬拉、卧推、推举逐一挑战新1RM', '记录所有1RM数据，与第1周对比评估进步', '测试后完全休息2-3天，进入下一循环'] }
+      ],
+      moves: [
+        {
+          name: '杠铃深蹲', img: demo('Gym demonstration photo, athlete performing barbell back squat at bottom position, thighs parallel to floor, neutral spine, barbell on upper traps, power rack background, professional lighting, side view'),
+          steps: ['杠铃置于斜方肌上部，双手握稳，双脚与肩同宽、脚尖略外展', '吸气收紧核心，屈髋屈膝同时下蹲至大腿平行或略低于地面', '脚跟发力站起，全程保持背部刚性与杠铃轨迹垂直'],
+          errs: ['膝盖内扣，膝关节承受剪切力', '弓腰或过度前倾，腰椎压力剧增', '脚跟离地，重心前移至脚尖']
+        },
+        {
+          name: '箭步蹲', img: demo('Gym demonstration photo, athlete performing dumbbell lunge, front knee bent 90 degrees, torso upright, rear knee near floor, gym background, professional lighting, side view'),
+          steps: ['直立，一腿向前跨出一大步，后脚跟抬起', '垂直下蹲至前后膝均约90度，前膝不超过脚尖', '前脚发力蹬地站起，两侧交替重复'],
+          errs: ['前膝内扣或超过脚尖过多', '上身前倾、重心左右晃动', '步距过小，后膝重重触地']
+        },
+        {
+          name: '腿举', img: demo('Gym demonstration photo, athlete using 45 degree leg press machine, feet shoulder width on platform, knees bent deeply, lower back flat against pad, gym background, side view'),
+          steps: ['仰卧于腿举机，双脚与肩同宽踩于踏板中部', '屈膝下放至大腿接近胸口，腰部始终贴靠背垫', '脚掌发力推起，膝盖接近伸直但不锁死'],
+          errs: ['下放过深导致腰部离开背垫卷曲', '顶端膝盖完全锁死借力', '双脚位置过低，膝关节压力过大']
+        },
+        {
+          name: '传统硬拉', img: demo('Gym demonstration photo, athlete performing conventional barbell deadlift at top lockout position, neutral spine, barbell close to legs, gym background, professional lighting, side view'),
+          steps: ['双脚踩稳杠下，屈髋俯身握杠，背部平直挺胸', '蹬地拉起，杠铃贴身沿腿部上行，髋膝同步伸展', '顶端站直锁定肩胛，再沿原轨迹贴身下放还原'],
+          errs: ['圆背起拉，腰椎承受极大剪切力', '杠铃离身体过远，力臂增大腰部代偿', '顶端过度后仰锁腰']
+        },
+        {
+          name: '罗马尼亚硬拉', img: demo('Gym demonstration photo, athlete performing romanian deadlift, hips pushed back, barbell sliding down thighs with flat back, slight knee bend, hamstring stretch, gym background, side view'),
+          steps: ['站立握杠于髋前，膝盖微屈并固定', '屈髋向后推臀，杠铃贴大腿下滑至小腿上段', '感受腘绳肌强烈牵拉后，伸髋夹臀拉起还原'],
+          errs: ['变成屈膝下蹲，腘绳肌无牵拉感', '弓背或杠铃远离身体', '顶端过度挺腰']
+        },
+        {
+          name: '臀桥', img: demo('Gym demonstration photo, athlete performing barbell hip thrust with upper back on bench, hips fully extended in straight line, padded barbell on hips, gym background, side view'),
+          steps: ['上背靠凳，杠铃护垫置于髋部，双脚踩实地面', '呼气伸髋向上顶起，肩髋膝呈一条直线', '顶端夹臀停顿1秒，缓慢下放不负重触地重复'],
+          errs: ['腰椎过度反弓代替伸髋发力', '双脚位置过远，腘绳肌代偿', '顶端不停顿，靠惯性起伏']
+        },
+        {
+          name: '卧推', img: demo('Gym demonstration photo, athlete performing barbell bench press with bar touching chest, elbows at 45 degrees, shoulder blades retracted, feet planted, gym background, side view'),
+          steps: ['仰卧凳上，双脚踩实地面，肩胛后缩下沉，握距略宽于肩', '杠铃下放至胸口连线附近，肘部约45-70度夹角', '胸部发力推起至手臂伸直，杠铃轨迹微向肩部回勾'],
+          errs: ['臀部离开凳面起桥借力', '杠铃在胸口反弹卸力', '肘部过度外展至90度，肩关节受压']
+        },
+        {
+          name: '站姿推举', img: demo('Gym demonstration photo, athlete performing standing barbell overhead press, bar locked out overhead in line with body, core and glutes braced, gym background, front side view'),
+          steps: ['杠铃置于锁骨前，握距略宽于肩，核心与臀部收紧', '杠沿垂直或微向后弧线推过头顶，头部适时前穿回位', '顶端杠铃位于头顶正上方，肩胛上举锁定，缓慢还原'],
+          errs: ['推起时腰部过度反弓', '杠铃绕头前弧线过大偏离重心', '膝盖弹抖借力变成借力推']
+        },
+        {
+          name: '引体向上', img: demo('Gym demonstration photo, athlete performing pull-up with chin over bar, shoulder blades depressed, controlled full range motion, gym background, front view'),
+          steps: ['正握单杠略宽于肩，肩胛先下沉启动（沉肩引体）', '肘部向下向后拉，胸口趋近单杠', '有控制地下放至手臂近伸直，全程保持肩胛张力'],
+          errs: ['借力蹬腿甩身', '只做半程，下巴未过杠', '下放时完全放松挂杠，肩关节受拉']
+        },
+        {
+          name: '俯身划船', img: demo('Gym demonstration photo, athlete performing bent over barbell row, torso hinged 45 degrees with flat back, bar pulled to lower abdomen, elbows close to body, gym background, side view'),
+          steps: ['屈髋俯身约45度，背部平直，杠铃悬垂于体前', '肘部贴近身体将杠拉向下腹部，肩胛主动后缩', '顶端停顿挤压背肌，缓慢下放还原'],
+          errs: ['弓背或起身借力', '只用手臂拉，肩胛不参与', '杠铃离身体过远，下背代偿']
+        },
+        {
+          name: '农夫行走', img: demo('Gym demonstration photo, athlete performing farmers walk carrying heavy dumbbells in both hands, upright posture, core braced, mid walk, gym background, front side view'),
+          steps: ['双手各握一只大重量哑铃或壶铃，站直挺胸收核心', '肩胛稳定下沉，小步快速向前行走', '全程躯干刚性不左右倾斜，到达规定距离后缓慢放下'],
+          errs: ['弯腰驼背拎重物', '身体向一侧倾斜', '重物晃荡远离身体中线']
+        },
+        {
+          name: '平板支撑', img: demo('Fitness demonstration photo, athletic person holding perfect forearm plank on yoga mat, straight rigid line, core braced hard, studio lighting, side view'),
+          steps: ['前臂撑地，肘在肩正下方，双脚与髋同宽', '腹部臀部同时收紧，骨盆微微后倾', '全身刚性保持，匀速呼吸坚持规定时间'],
+          errs: ['塌腰撅臀', '肩胛下陷或耸肩', '时间优先于质量，动作变形硬撑']
+        }
+      ],
+      notes: [
+        '训练前必须充分热身，动态拉伸+空杆动作练习',
+        '严格遵守动作技术规范，大重量训练需找人保护',
+        '遵循渐进超负荷原则，每周增重不超过2.5%',
+        '如出现关节尖锐疼痛，立即停止，不要带伤训练',
+        '高阶训练建议在专业教练指导下进行',
+        '训练后保证充足营养与睡眠恢复'
+      ],
+      taboo: [
+        '严重心血管疾病、血压未控制的高血压人群',
+        '腰背损伤未愈合（如椎间盘问题）者',
+        '肩、肘、膝、踝关节急性损伤期人群',
+        '未掌握基础动作技术、无保护条件的训练新手'
+      ]
     }
 
   };
