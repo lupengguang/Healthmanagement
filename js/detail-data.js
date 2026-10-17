@@ -664,6 +664,111 @@
         '颈椎病急性发作期暂停头颈相关拉伸',
         '训练中出现单侧手臂麻木立即停止'
       ]
+    },
+
+    /* ─────────── 02 心肺燃脂（首页专属） ─────────── */
+    p10: {
+      num: '02',
+      name: '心肺燃脂',
+      tags: ['燃脂', '拳击', '进阶', '25分钟'],
+      level: '进阶', dur: '25分钟', cycle: '4周计划', moveCount: '12个动作',
+      cover: 'images/program-cardio.jpg',
+      coverAlt: '拳击靶击打与间歇训练展示',
+      intro: '将高强度间歇训练（HIIT）与拳击靶击打相结合，通过快速出拳、移动、组合动作持续提升心率，在短时间内实现高效燃脂，同时提升心肺功能、爆发力与协调性。无需专业拳馆，居家即可完成基础版本——没有拳靶时对着空气出拳（影子拳）同样有效。',
+      who: [
+        '希望高效减脂、缩短训练时间的人群',
+        '想要提升心肺耐力与爆发力的健身者',
+        '对拳击运动感兴趣、想尝试新训练形式的人',
+        '有一定运动基础、能承受高强度间歇训练的人'
+      ],
+      effect: [
+        '25分钟训练可消耗300-400千卡，高效制造热量缺口',
+        '提升最大摄氧量（VO2max），心肺耐力显著增强',
+        '出拳速度与爆发力提升，拳峰更果断有力',
+        '改善协调性、反应速度与核心稳定性',
+        '训练后持续燃脂，后燃效应可达12-24小时'
+      ],
+      weeks: [
+        { t: '第1周 · 基础动作学习', sub: '低强度间歇 20s/40s', list: ['拳击三基础：直拳、摆拳、勾拳技术', '前后滑步、左右侧滑步伐练习', '间歇节奏：20秒运动 + 40秒休息 × 10组', '每周训练3-4次'] },
+        { t: '第2周 · 组合动作练习', sub: '中等强度间歇 30s/30s', list: ['1-2拳组合：直拳+直拳、直拳+摆拳', '组合中加入环绕步移动出拳', '间歇节奏：30秒运动 + 30秒休息 × 10组', '每周训练4次'] },
+        { t: '第3周 · 完整组合', sub: '高强度间歇 40s/20s', list: ['3-4拳组合 + 移动 + 防守格挡', '组合间穿插开合跳、登山跑', '间歇节奏：40秒运动 + 20秒休息 × 10组', '每周训练4-5次'] },
+        { t: '第4周 · 模拟对练节奏', sub: '极限间歇 50s/10s', list: ['模拟对练：组合拳+步伐+间歇动作连续执行', '极限间歇：50秒运动 + 10秒休息 × 12组', '结课测试：3分钟回合 × 3组挑战', '录屏对比出拳速度与体能变化'] }
+      ],
+      moves: [
+        {
+          name: '直拳（Jab & Cross）', img: demo('Boxing training demonstration photo, athlete throwing straight jab cross punches at focus pads, athletic stance, fists guarding chin, dark gym background, professional lighting, front view'),
+          steps: ['实战姿势站立，双手护于下颌，核心收紧', '前手快速沿直线击出（Jab），出拳后立即收回护脸', '后手蹬地转髋跟进沿直线击出（Cross），力量从地面开始传导'],
+          errs: ['出拳时耸肩或肘关节完全锁死', '仅用手臂发力，没有蹬地转髋', '出拳后收手过慢，下颌暴露空档']
+        },
+        {
+          name: '摆拳（Hook）', img: demo('Boxing training demonstration photo, athlete throwing horizontal hook punch with bent elbow at 90 degrees, hips rotating, dark gym background, professional lighting, side view'),
+          steps: ['实战姿势，肘部抬起与肩同高、屈肘约90度', '转髋带动肩部，拳头沿水平弧线击向目标侧面', '击中后快速沿弧线收回，回到防御姿势'],
+          errs: ['抡大臂甩拳，动作轨迹过大暴露空档', '手腕未扣紧，击打瞬间容易受伤', '双脚离地跳动，重心不稳']
+        },
+        {
+          name: '勾拳（Uppercut）', img: demo('Boxing training demonstration photo, athlete throwing uppercut punch rising from low position with palm facing self, knees bent, dark gym background, professional lighting, side view'),
+          steps: ['屈膝降重心，拳头下沉、掌心朝向自己', '蹬地转髋，拳头由下向上沿短弧线击出', '击打后迅速收拳护脸，恢复实战姿势'],
+          errs: ['发力前大幅预摆，动作像抡锤', '上身过度前倾失去平衡', '收拳缓慢，中路门户大开']
+        },
+        {
+          name: '前后滑步', img: demo('Boxing training demonstration photo, athlete in boxing stance performing forward and backward footwork slide, weight on balls of feet, guard up, dark gym background, side view'),
+          steps: ['实战姿势，重心置于双腿前脚掌', '向前时前脚先滑半步，后脚随即跟进保持间距', '后退时后脚先行、前脚跟随，双脚全程不交叉'],
+          errs: ['跳跃式移动，重心起伏过大', '步幅过大导致双脚交叉失去平衡', '脚跟拖地，移动迟缓']
+        },
+        {
+          name: '左右侧滑', img: demo('Boxing training demonstration photo, athlete performing lateral side step boxing footwork, sliding sideways with guard up, knees slightly bent, dark gym background, front view'),
+          steps: ['实战姿势，向一侧横向滑动半步', '另一侧脚快速跟进，身体始终面向目标', '滑动中保持双手护脸与出拳角度'],
+          errs: ['身体转动过大，侧面暴露', '出现交叉步', '滑步后忘记归位，间距失控']
+        },
+        {
+          name: '环绕步', img: demo('Boxing training demonstration photo, athlete performing pivoting circle footwork in boxing stance, front foot acting as pivot, moving along arc, guard up, dark gym background, front side view'),
+          steps: ['以前脚为轴，后脚沿弧线绕行', '全程面向目标方向，保持实战距离', '绕行中随时可衔接组合拳'],
+          errs: ['绕行时低头看脚', '步伐忽大忽小，距离失控', '背部转向目标']
+        },
+        {
+          name: '开合跳', img: demo('Fitness demonstration photo, athletic person performing jumping jacks, arms overhead, legs apart mid-jump, dynamic motion, home living room background, bright lighting, front view'),
+          steps: ['站立起跳同时双脚分开、双手头顶击掌', '再跳回并拢，节奏均匀', '前脚掌落地，膝盖微屈缓冲'],
+          errs: ['脚跟重重落地，膝盖冲击大', '手臂未完全举过头顶', '弯腰驼背']
+        },
+        {
+          name: '高抬腿', img: demo('Fitness demonstration photo, person performing high knees running in place, knee lifted to hip height, core upright, home background, bright lighting, front view'),
+          steps: ['原地快速交替抬腿，膝盖抬至髋部高度', '手臂配合摆动，重心略前倾', '前脚掌着地，保持弹性节奏'],
+          errs: ['膝盖未抬到髋部高度，强度不足', '上身后仰', '全脚掌沉重落地']
+        },
+        {
+          name: '波比跳', img: demo('Fitness demonstration photo, athletic person mid burpee jump with arms overhead, dynamic full body movement, home background, bright lighting, side view'),
+          steps: ['下蹲双手撑地，双脚向后跳成平板', '完成一次俯卧撑（可选），双脚跳回蹲姿', '垂直向上跳起击掌，落地缓冲重复'],
+          errs: ['塌腰撅臀，平板阶段核心松弛', '跳回时脚落位太远，下背代偿', '全程无节奏、忽快忽慢']
+        },
+        {
+          name: '登山跑', img: demo('Fitness demonstration photo, person in plank position performing mountain climbers, alternating knees driving toward chest, fast pace, home background, side view'),
+          steps: ['平板支撑起始，肩在腕正上方', '双腿快速交替将膝盖拉向胸口', '臀部保持水平，不上下晃动'],
+          errs: ['臀部抬得过高，变成俯撑姿势', '肩部位置偏移超过手腕', '节奏忽快忽慢']
+        },
+        {
+          name: '平板支撑', img: demo('Fitness demonstration photo, athletic person holding perfect forearm plank on yoga mat, straight rigid line, core braced hard, studio lighting, side view'),
+          steps: ['前臂撑地，肘在肩正下方，双脚与髋同宽', '腹部臀部同时收紧，骨盆微微后倾', '全身刚性保持，匀速呼吸坚持规定时间'],
+          errs: ['塌腰撅臀', '肩胛下陷或耸肩', '时间优先于质量，动作变形硬撑']
+        },
+        {
+          name: '俄罗斯转体', img: demo('Fitness demonstration photo, person performing russian twist seated on yoga mat, torso rotated, hands clasped moving side to side, feet elevated optional, studio lighting, front view'),
+          steps: ['坐姿后倾45度，核心收紧，双脚可离地', '双手合握随躯干向左右交替转动', '转动来自胸椎与核心，而非手臂甩动'],
+          errs: ['弓背塌胸', '只摆手臂躯干不转', '速度快、幅度小']
+        }
+      ],
+      notes: [
+        '训练前充分热身5-10分钟，重点活动肩、腕、膝关节',
+        '出拳时保持核心收紧，避免耸肩，保护肩关节',
+        '无拳靶时可对着空气出拳（影子拳），或用抱枕替代',
+        '如出现头晕、心慌、关节疼痛，立即停止训练',
+        '每次训练后进行5-10分钟拉伸放松，重点放松肩背'
+      ],
+      taboo: [
+        '高血压、心脏病及心脑血管疾病高危人群',
+        '肩、腕、膝关节损伤未完全恢复者',
+        '孕期女性',
+        '感冒发热、头晕胸闷等身体不适时禁止训练'
+      ]
     }
 
   };
