@@ -8,7 +8,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0b0e'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23e8102e'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/purchase.css">
 </head>
@@ -97,7 +97,7 @@
         <div class="py-plan-price"><sup>¥</sup><span id="pyPrice">199</span></div>
         <p class="py-per" id="pyPer">按月计费 · 随时取消</p>
         <ul class="py-perks" id="pyPerks"></ul>
-        <p class="py-note">支持 <b>7 天无理由退款</b>（未使用私教课程）；会员期内可随时升级套餐，差价按天折算。</p>
+        <p class="py-note">支持 <b>7 天无理由退款</b>（未使用教练在线指导课）；会员期内可随时升级套餐，差价按天折算。</p>
       </div>
 
       <!-- 右：切换套餐 -->
@@ -220,9 +220,9 @@
     yearly:  { name: '年度会员', nameHtml: '年度 <span>会员</span>', price: 1999, per: '按年计费 · 立省 40%',   sum: '年度会员', succ: '年度会员已开通，权益即时生效。' }
   };
   const PERKS = {
-    single:  ['全场馆力量区与有氧区使用', '1 次私教指导', '身体成分分析', '免费储物柜与毛巾', '有效期 30 天'],
-    monthly: ['24/7 不限时场馆使用', '8 次私教课程', '定制营养方案', '桑拿与恢复区', '免费团课'],
-    yearly:  ['24/7 不限时场馆使用', '60 次私教课程', '季度身体分析', '泳池、桑拿与水疗', '每月嘉宾通行证']
+    single:  ['全部居家训练课程使用', '1 次 AI 体态评估', '身体成分分析', '专属训练数据报告', '有效期 30 天'],
+    monthly: ['AI 动作库全量解锁', '8 次教练在线指导课', '定制营养方案', 'AI 动作实时纠错', '免费直播团课'],
+    yearly:  ['AI 体态评估全年不限次', '60 次教练在线指导课', '季度身体分析', '1对1 定制训练方案', '每月嘉宾体验码']
   };
   const PICKS = [
     { id: 'single',  em: '01', name: '单次体验', sub: '先来试试 · 30 天有效',  price: 99 },

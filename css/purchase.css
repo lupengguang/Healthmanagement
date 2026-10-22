@@ -16,10 +16,10 @@
 
 /* ─── 套餐详情卡 ─── */
 .py-plan{padding:44px 40px;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
-.py-plan:hover{transform:translateY(-5px);box-shadow:0 42px 84px -26px rgba(232,16,46,.3),inset 0 1px 0 rgba(255,255,255,.12)}
-.py-plan-tag{display:inline-flex;align-items:center;gap:8px;font:600 .68rem var(--oswald);letter-spacing:.26em;color:var(--red-2);border:1px solid rgba(232,16,46,.4);padding:7px 14px;border-radius:99px;margin-bottom:20px}
+.py-plan:hover{transform:translateY(-5px);box-shadow:0 42px 84px -26px rgba(255,77,46,.3),inset 0 1px 0 rgba(255,255,255,.12)}
+.py-plan-tag{display:inline-flex;align-items:center;gap:8px;font:600 .68rem var(--oswald);letter-spacing:.26em;color:var(--red-2);border:1px solid rgba(255,77,46,.4);padding:7px 14px;border-radius:99px;margin-bottom:20px}
 .py-plan-tag i{width:6px;height:6px;border-radius:50%;background:var(--red-2);animation:pyPulse 1.6s infinite}
-@keyframes pyPulse{0%,100%{box-shadow:0 0 0 0 rgba(232,16,46,.5)}55%{box-shadow:0 0 0 7px rgba(232,16,46,0)}}
+@keyframes pyPulse{0%,100%{box-shadow:0 0 0 0 rgba(255,77,46,.5)}55%{box-shadow:0 0 0 7px rgba(255,77,46,0)}}
 .py-plan-name{font:700 2.1rem/1.1 var(--oswald);letter-spacing:.06em;color:#fff}
 .py-plan-name span{color:var(--red-2)}
 .py-plan-price{font:600 4.6rem/1 var(--oswald);color:#fff;margin:20px 0 6px;display:flex;align-items:flex-start;gap:5px}
@@ -28,14 +28,14 @@
 .py-perks{list-style:none;display:grid;gap:12px;margin-bottom:32px}
 .py-perks li{position:relative;padding:11px 14px 11px 42px;font-size:.9rem;color:#dcdce2;background:rgba(255,255,255,.035);border:1px solid var(--line);border-radius:12px;transition:border-color .4s,background .4s,transform .4s var(--ease)}
 .py-perks li::before{content:'✓';position:absolute;left:16px;top:11px;color:var(--red-2);font-weight:700}
-.py-perks li:hover{border-color:rgba(232,16,46,.45);background:rgba(232,16,46,.07);transform:translateX(5px)}
+.py-perks li:hover{border-color:rgba(255,77,46,.45);background:rgba(255,77,46,.07);transform:translateX(5px)}
 
 /* ─── 套餐切换卡 ─── */
 .py-side-title{font:600 .74rem var(--oswald);letter-spacing:.3em;color:var(--muted);margin-bottom:16px;text-transform:uppercase}
 .py-picks{display:grid;gap:14px;margin-bottom:34px}
 .py-pick{position:relative;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:20px 22px;border-radius:16px;border:1px solid var(--line);background:linear-gradient(150deg,rgba(255,255,255,.055),rgba(255,255,255,.012) 60%);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);cursor:pointer;transition:transform .45s var(--ease),border-color .45s,box-shadow .45s,background .45s;text-align:left;width:100%}
-.py-pick:hover{transform:translateY(-4px) translateX(3px);border-color:rgba(232,16,46,.5);box-shadow:0 24px 50px -20px rgba(232,16,46,.35)}
-.py-pick.is-on{border-color:var(--red-2);background:linear-gradient(150deg,rgba(232,16,46,.16),rgba(232,16,46,.04));box-shadow:0 20px 46px -18px rgba(232,16,46,.4)}
+.py-pick:hover{transform:translateY(-4px) translateX(3px);border-color:rgba(255,77,46,.5);box-shadow:0 24px 50px -20px rgba(255,77,46,.35)}
+.py-pick.is-on{border-color:var(--red-2);background:linear-gradient(150deg,rgba(255,77,46,.16),rgba(255,77,46,.04));box-shadow:0 20px 46px -18px rgba(255,77,46,.4)}
 .py-pick.is-on::after{content:'✓';position:absolute;top:12px;right:14px;color:var(--red-2);font-weight:700;font-size:.85rem}
 .py-pick h4{font:600 1.02rem var(--oswald);letter-spacing:.12em;color:#fff}
 .py-pick h4 em{font-style:normal;color:var(--red-2);margin-right:7px}
@@ -50,7 +50,7 @@
 .py-sec-head{display:flex;align-items:center;gap:16px;margin-bottom:28px}
 .py-sec-head h3{font:700 1.5rem var(--oswald);letter-spacing:.1em;color:#fff;white-space:nowrap}
 .py-sec-head h3 span{color:var(--red-2)}
-.py-sec-head i{flex:1;height:1px;background:linear-gradient(90deg,rgba(232,16,46,.55),rgba(255,255,255,.06));display:block}
+.py-sec-head i{flex:1;height:1px;background:linear-gradient(90deg,rgba(255,77,46,.55),rgba(255,255,255,.06));display:block}
 
 /* 付款方式 */
 .py-methods{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:30px}
@@ -58,11 +58,11 @@
 .py-method{position:relative;display:flex;align-items:center;gap:14px;padding:20px 18px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.03);cursor:pointer;overflow:hidden;transition:transform .45s var(--ease),border-color .45s,box-shadow .45s,background .45s}
 .py-method::before{content:'';position:absolute;top:0;left:-80%;width:55%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.09),transparent);transform:skewX(-18deg);transition:left .65s var(--ease)}
 .py-method:hover::before{left:130%}
-.py-method:hover{transform:translateY(-4px);border-color:rgba(232,16,46,.5);box-shadow:0 22px 46px -18px rgba(232,16,46,.32)}
-.py-method.is-on{border-color:var(--red-2);background:rgba(232,16,46,.1);box-shadow:0 18px 40px -16px rgba(232,16,46,.38)}
+.py-method:hover{transform:translateY(-4px);border-color:rgba(255,77,46,.5);box-shadow:0 22px 46px -18px rgba(255,77,46,.32)}
+.py-method.is-on{border-color:var(--red-2);background:rgba(255,77,46,.1);box-shadow:0 18px 40px -16px rgba(255,77,46,.38)}
 .py-method .py-m-ico{width:44px;height:44px;flex:none;border-radius:12px;display:grid;place-items:center;font:700 .8rem var(--oswald);letter-spacing:.02em;color:#fff;background:linear-gradient(150deg,#26262e,#141419);border:1px solid var(--line);transition:transform .45s var(--ease)}
 .py-method:hover .py-m-ico{transform:scale(1.1) rotate(-6deg)}
-.py-method.is-on .py-m-ico{background:linear-gradient(150deg,var(--red),#a30d20);border-color:rgba(255,255,255,.25)}
+.py-method.is-on .py-m-ico{background:linear-gradient(150deg,var(--red),#c93317);border-color:rgba(255,255,255,.25)}
 .py-method h4{font:600 .92rem var(--oswald);letter-spacing:.1em;color:#fff}
 .py-method p{font-size:.72rem;color:var(--muted);margin-top:2px}
 .py-method .py-m-check{position:absolute;top:10px;right:12px;width:18px;height:18px;border-radius:50%;border:1px solid rgba(255,255,255,.25);display:grid;place-items:center;font-size:.6rem;color:transparent;transition:all .35s}
@@ -74,7 +74,7 @@
 .py-srow{display:flex;justify-content:space-between;align-items:center;padding:14px 22px;font-size:.88rem;color:#d8d8de;border-bottom:1px dashed rgba(255,255,255,.08)}
 .py-srow:last-child{border-bottom:0}
 .py-srow span{color:var(--muted)}
-.py-srow.py-total{background:rgba(232,16,46,.06);font:600 1.25rem var(--oswald);color:#fff;letter-spacing:.05em}
+.py-srow.py-total{background:rgba(255,77,46,.06);font:600 1.25rem var(--oswald);color:#fff;letter-spacing:.05em}
 .py-srow.py-total span{color:#ff8a9a;font:600 .8rem var(--oswald);letter-spacing:.24em}
 .py-srow .py-discount{color:#4ade80}
 
@@ -82,7 +82,7 @@
 .py-coupon{display:flex;gap:12px;margin-bottom:24px}
 .py-coupon input{flex:1;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:12px;padding:14px 18px;color:#fff;font:400 .88rem var(--poppins);outline:0;transition:border-color .35s,box-shadow .35s}
 .py-coupon input::placeholder{color:#66666e}
-.py-coupon input:focus{border-color:rgba(232,16,46,.6);box-shadow:0 0 0 4px rgba(232,16,46,.12)}
+.py-coupon input:focus{border-color:rgba(255,77,46,.6);box-shadow:0 0 0 4px rgba(255,77,46,.12)}
 .py-coupon .btn{padding:0 26px;white-space:nowrap}
 .py-coupon-msg{font-size:.78rem;margin:-14px 0 20px 4px;min-height:1.2em;transition:opacity .3s}
 .py-coupon-msg.ok{color:#4ade80}
@@ -97,10 +97,10 @@
 
 /* 支付按钮 */
 .py-actions{display:grid;gap:14px}
-.btn-pay{position:relative;overflow:hidden;display:flex;justify-content:center;align-items:center;gap:12px;width:100%;padding:19px;border-radius:14px;background:linear-gradient(135deg,var(--red) 0%,#b50e23 100%);color:#fff;font:600 1.05rem var(--oswald);letter-spacing:.22em;cursor:pointer;transition:transform .4s var(--ease),box-shadow .4s var(--ease);box-shadow:0 22px 50px -18px rgba(232,16,46,.55)}
+.btn-pay{position:relative;overflow:hidden;display:flex;justify-content:center;align-items:center;gap:12px;width:100%;padding:19px;border-radius:14px;background:linear-gradient(135deg,var(--red) 0%,#b50e23 100%);color:#fff;font:600 1.05rem var(--oswald);letter-spacing:.22em;cursor:pointer;transition:transform .4s var(--ease),box-shadow .4s var(--ease);box-shadow:0 22px 50px -18px rgba(255,77,46,.55)}
 .btn-pay::before{content:'';position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.22),transparent);transform:skewX(-18deg);transition:left .7s var(--ease)}
 .btn-pay:hover::before{left:140%}
-.btn-pay:hover{transform:translateY(-3px);box-shadow:0 30px 64px -18px rgba(232,16,46,.7)}
+.btn-pay:hover{transform:translateY(-3px);box-shadow:0 30px 64px -18px rgba(255,77,46,.7)}
 .btn-pay:active{transform:translateY(-1px) scale(.99)}
 .btn-pay:disabled{opacity:.45;cursor:not-allowed;box-shadow:none;transform:none}
 .btn-pay em{font-style:normal;font-size:1.35rem}
@@ -110,7 +110,7 @@
 /* ─── 支付成功覆盖层 ─── */
 .py-success{position:fixed;inset:0;z-index:3000;display:none;align-items:center;justify-content:center;background:rgba(7,7,10,.86);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
 .py-success.show{display:flex}
-.py-success-card{width:min(440px,90%);padding:52px 40px;text-align:center;border-radius:22px;border:1px solid rgba(232,16,46,.35);background:linear-gradient(160deg,rgba(30,30,36,.92),rgba(14,14,18,.94));box-shadow:0 50px 110px -30px rgba(0,0,0,.85),0 0 70px -18px rgba(232,16,46,.35);animation:pyIn .55s var(--ease)}
+.py-success-card{width:min(440px,90%);padding:52px 40px;text-align:center;border-radius:22px;border:1px solid rgba(255,77,46,.35);background:linear-gradient(160deg,rgba(30,30,36,.92),rgba(14,14,18,.94));box-shadow:0 50px 110px -30px rgba(0,0,0,.85),0 0 70px -18px rgba(255,77,46,.35);animation:pyIn .55s var(--ease)}
 @keyframes pyIn{from{transform:translateY(34px) scale(.94);opacity:0}to{transform:none;opacity:1}}
 .py-ok-ring{width:92px;height:92px;margin:0 auto 26px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,rgba(74,222,128,.18),transparent 70%);border:2px solid #4ade80;animation:pyPop .6s var(--ease) .15s backwards}
 .py-ok-ring span{font-size:2.4rem;color:#4ade80;font-weight:700}

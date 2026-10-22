@@ -26,7 +26,7 @@
 .dt-tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin-bottom:26px}
 .dt-tags li{
   padding:7px 15px;border-radius:999px;font:500 .74rem var(--poppins);letter-spacing:.05em;
-  color:#ffc9d0;background:rgba(232,16,46,.1);border:1px solid rgba(255,39,64,.3);
+  color:#ffc9d0;background:rgba(255,77,46,.1);border:1px solid rgba(255,107,74,.3);
 }
 .dt-tags li:first-child{color:var(--orange-2);background:rgba(255,107,43,.1);border-color:rgba(255,138,77,.35)}
 
@@ -54,7 +54,7 @@
 }
 .dt-cover-badge strong{font:700 1.5rem/1 var(--bebas);color:var(--red-2)}
 .dt-cover-badge span{font:500 .74rem var(--poppins);color:#cfcfd6;letter-spacing:.06em}
-.dt-cover-frame{position:absolute;inset:-14px 14px 14px -14px;border:1px solid rgba(255,39,64,.25);border-radius:22px;pointer-events:none}
+.dt-cover-frame{position:absolute;inset:-14px 14px 14px -14px;border:1px solid rgba(255,107,74,.25);border-radius:22px;pointer-events:none}
 
 /* ─── Stats strip ─── */
 .dt-stats{
@@ -79,7 +79,7 @@
 /* intro card */
 .dt-card{padding:34px 34px 36px}
 .dt-card h3{font:600 1.06rem var(--poppins);color:#fff;margin-bottom:18px;display:flex;align-items:center;gap:10px}
-.dt-card h3 i{width:30px;height:30px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;background:rgba(232,16,46,.14);color:var(--red-2);font-style:normal;flex-shrink:0}
+.dt-card h3 i{width:30px;height:30px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,77,46,.14);color:var(--red-2);font-style:normal;flex-shrink:0}
 .dt-card h3 i svg{width:15px;height:15px}
 .dt-intro-txt{color:#c9c9d1;font-size:.92rem;line-height:2}
 .dt-intro-txt+.dt-intro-txt{margin-top:14px}
@@ -95,16 +95,16 @@
 }
 .dt-list.is-check li i{background:rgba(46,204,113,.14);color:#5fd39a;border:1px solid rgba(46,204,113,.3)}
 .dt-list.is-check li b{color:#fff;font-weight:600}
-.dt-list.is-warn li i{background:rgba(232,16,46,.14);color:#ff6577;border:1px solid rgba(255,39,64,.35)}
+.dt-list.is-warn li i{background:rgba(255,77,46,.14);color:#ff6577;border:1px solid rgba(255,107,74,.35)}
 .dt-list.is-warn li{color:#d6d6dd}
 
 /* effects */
 .dt-effects{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
 .dt-effect{padding:28px 28px 30px;display:flex;gap:20px;align-items:flex-start;transition:transform .5s var(--ease),border-color .5s,box-shadow .5s}
-.dt-effect:hover{transform:translateY(-5px);border-color:rgba(255,39,64,.4);box-shadow:0 30px 66px -26px rgba(232,16,46,.32),inset 0 1px 0 rgba(255,255,255,.1)}
+.dt-effect:hover{transform:translateY(-5px);border-color:rgba(255,107,74,.4);box-shadow:0 30px 66px -26px rgba(255,77,46,.32),inset 0 1px 0 rgba(255,255,255,.1)}
 .dt-effect i{
   font:700 1.7rem/1 var(--bebas);font-style:normal;color:var(--red-2);
-  padding:10px 13px;border-radius:12px;background:rgba(232,16,46,.12);border:1px solid rgba(255,39,64,.28);flex-shrink:0;
+  padding:10px 13px;border-radius:12px;background:rgba(255,77,46,.12);border:1px solid rgba(255,107,74,.28);flex-shrink:0;
 }
 .dt-effect h4{font:600 .95rem var(--poppins);color:#fff;margin-bottom:8px;line-height:1.5}
 .dt-effect p{color:var(--muted);font-size:.82rem;line-height:1.85}
@@ -112,11 +112,11 @@
 /* ─── Week plan ─── */
 .dt-weeks{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .dt-week{padding:26px 24px 28px;display:flex;flex-direction:column;transition:transform .5s var(--ease),border-color .5s,box-shadow .5s}
-.dt-week:hover{transform:translateY(-5px);border-color:rgba(255,39,64,.4);box-shadow:0 30px 66px -26px rgba(232,16,46,.32),inset 0 1px 0 rgba(255,255,255,.1)}
+.dt-week:hover{transform:translateY(-5px);border-color:rgba(255,107,74,.4);box-shadow:0 30px 66px -26px rgba(255,77,46,.32),inset 0 1px 0 rgba(255,255,255,.1)}
 .dt-week-badge{
   align-self:flex-start;padding:6px 13px;border-radius:8px;margin-bottom:16px;
   font:600 .72rem var(--oswald);letter-spacing:.16em;color:#fff;
-  background:linear-gradient(135deg,#ff2740,#c00d25);
+  background:linear-gradient(135deg,#ff6b4a,#c00d25);
 }
 .dt-week:nth-child(2) .dt-week-badge{background:linear-gradient(135deg,#ff8a4d,#e14e15)}
 .dt-week:nth-child(3) .dt-week-badge{background:linear-gradient(135deg,#a06bff,#6c3df0)}
@@ -158,7 +158,7 @@
 
 /* ─── Notes & taboo ─── */
 .dt-warn-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:stretch}
-.dt-taboo-card{border-color:rgba(255,39,64,.28);background:linear-gradient(150deg,rgba(232,16,46,.08),rgba(255,255,255,.015) 55%)}
+.dt-taboo-card{border-color:rgba(255,107,74,.28);background:linear-gradient(150deg,rgba(255,77,46,.08),rgba(255,255,255,.015) 55%)}
 
 /* ─── Action bar ─── */
 .dt-actions{position:sticky;bottom:22px;z-index:50;margin-top:10px;padding:20px 26px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
