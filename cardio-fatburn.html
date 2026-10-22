@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>动衡智助 — 心肺燃脂项目详情</title>
+<meta name="description" content="动衡智助心肺燃脂项目详情 — HIIT与拳击靶击打结合的4周训练计划、标准动作示范与常见错误纠正，高效燃脂提升心肺。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0b0e'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23e8102e'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/detail.css">
+</head>
+<body>
+
+<!-- ══════════ PRELOADER ══════════ -->
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-logo"><span>C</span><span>-</span><span>O</span><span>N</span></div>
+    <div class="preloader-bar"><i></i></div>
+    <div class="preloader-count">0%</div>
+  </div>
+</div>
+
+<!-- ══════════ CUSTOM CURSOR ══════════ -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ══════════ SCROLL PROGRESS ══════════ -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ══════════ NOISE OVERLAY ══════════ -->
+<div class="noise" aria-hidden="true"></div>
+
+<!-- ══════════ NAVBAR ══════════ -->
+<header class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo" data-cursor>
+      <svg class="logo-ico" viewBox="0 0 40 24" fill="none"><rect x="1" y="8" width="4" height="8" rx="1" fill="currentColor"/><rect x="35" y="8" width="4" height="8" rx="1" fill="currentColor"/><rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="30" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="10" y="10.5" width="20" height="3" rx="1.5" fill="currentColor"/></svg>
+      <span class="logo-txt">动衡智助<i class="logo-dot"></i></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html#home" class="nav-link">首页</a>
+      <a href="about.html" class="nav-link">关于我们</a>
+      <a href="services.html" class="nav-link">服务</a>
+      <a href="programs.html" class="nav-link">训练项目</a>
+      <a href="ai.html" class="nav-link">AI技术底座</a>
+      <a href="index.html#contact" class="nav-link">联系我们</a>
+      <a href="join.html" class="nav-link">加入我们</a>
+    </nav>
+    <a href="programs.html#pgCta" class="btn btn-red nav-cta" data-cursor data-magnetic>
+      <span>加入我们</span><em>0718</em>
+    </a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- mobile menu -->
+<div class="m-menu" id="mMenu">
+  <nav class="m-menu-links">
+    <a href="index.html#home" class="m-link"><small>01</small>首页</a>
+    <a href="about.html" class="m-link"><small>02</small>关于我们</a>
+    <a href="services.html" class="m-link"><small>03</small>服务</a>
+    <a href="programs.html" class="m-link"><small>04</small>训练项目</a>
+    <a href="ai.html" class="m-link"><small>05</small>AI技术底座</a>
+    <a href="index.html#contact" class="m-link"><small>06</small>联系我们</a>
+    <a href="join.html" class="m-link"><small>07</small>加入我们</a>
+  </nav>
+  <div class="m-menu-foot">
+    <a href="programs.html#pgCta" class="btn btn-red">立即加入我们</a>
+    <p>0718 · 1283019010@qq.com</p>
+  </div>
+</div>
+
+<main id="dtApp"></main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="f-brand">
+      <a href="index.html" class="logo" data-cursor>
+        <svg class="logo-ico" viewBox="0 0 40 24" fill="none"><rect x="1" y="8" width="4" height="8" rx="1" fill="currentColor"/><rect x="35" y="8" width="4" height="8" rx="1" fill="currentColor"/><rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="30" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="10" y="10.5" width="20" height="3" rx="1.5" fill="currentColor"/></svg>
+        <span class="logo-txt">动衡智助<i class="logo-dot"></i></span>
+      </a>
+      <p>AI驱动的居家运动健康服务。从体态评估到训练执行，陪你走好每一步改善之路。</p>
+      <div class="f-socials"><a href="#" data-cursor aria-label="Facebook">Fb</a><a href="#" data-cursor aria-label="Instagram">Ig</a><a href="#" data-cursor aria-label="Youtube">Yt</a><a href="#" data-cursor aria-label="X">X</a></div>
+    </div>
+    <div class="f-col">
+      <h5>快速导航</h5>
+      <a href="index.html#home">首页</a><a href="about.html">关于我们</a><a href="services.html">服务</a><a href="programs.html">训练项目</a><a href="ai.html">AI技术底座</a><a href="join.html">加入我们</a><a href="index.html#packages">套餐</a>
+    </div>
+    <div class="f-col">
+      <h5>热门项目</h5>
+      <a href="program-detail.html?id=p02">圆肩驼背改善</a><a href="program-detail.html?id=p03">骨盆前倾矫正</a><a href="cardio-fatburn.html">心肺燃脂</a><a href="program-detail.html?id=p05">核心力量强化</a><a href="program-detail.html?id=p06">全身拉伸放松</a>
+    </div>
+    <div class="f-col">
+      <h5>联系我们</h5>
+      <a href="tel:+86718888">📞 +86 0718-8888</a>
+      <a href="mailto:1283019010@qq.com">✉ 1283019010@qq.com</a>
+      <p>📍 北京市海淀区中关村科技园</p>
+      <p>周一至周日 · 06:00 — 23:00</p>
+    </div>
+  </div>
+  <div class="footer-bar"><div class="container"><p>© 2026 动衡智助 Mind Mirror. 保留所有权利.</p><a href="#" data-cursor onclick="scrollTo({top:0,behavior:'smooth'});return false">回到顶部 ↑</a></div></div>
+</footer>
+
+<button class="backtop" id="backtop" aria-label="Back to top"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/detail-data.js"></script>
+<script>
+/* ═══ 心肺燃脂专属详情页：固定渲染 p10 ═══ */
+(function () {
+  'use strict';
+
+  const app = document.getElementById('dtApp');
+  const id = 'p10';
+  const p = (window.PROJECTS || {})[id];
+
+  const ICON = {
+    level: '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 21h16a1 1 0 0 0 .8-1.6L12.8 4.8a1 1 0 0 0-1.6 0L3.2 19.4A1 1 0 0 0 4 21z"/></svg>',
+    clock: '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>',
+    cal: '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4m8-4v4"/></svg>',
+    moves: '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="9" width="3" height="6" rx="1"/><rect x="19" y="9" width="3" height="6" rx="1"/><rect x="6" y="5" width="3" height="14" rx="1"/><rect x="15" y="5" width="3" height="14" rx="1"/><path d="M9 12h6"/></svg>',
+    check: '<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="3"><path d="M4 12.5l5 5L20 6.5"/></svg>',
+    alert: '<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v9m0 4.5v.5"/></svg>',
+    info: '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-8.5v.5"/></svg>',
+    users: '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M21.5 20a6.5 6.5 0 0 0-4.5-6.2"/></svg>',
+    shield: '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2l8 3.5V11c0 5-3.4 8.8-8 11-4.6-2.2-8-6-8-11V5.5z"/></svg>',
+    stop: '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M6 6l12 12"/></svg>'
+  };
+
+  /* ── 未找到项目 ── */
+  if (!p) {
+    document.title = '动衡智助 — 项目未找到';
+    app.innerHTML =
+      '<div class="dt-none"><div class="container">' +
+      '<span class="tag-orange">// 404</span>' +
+      '<h1>未找到该训练项目</h1>' +
+      '<p>链接可能已失效，请返回训练项目列表重新选择</p>' +
+      '<a href="programs.html" class="btn btn-red" data-cursor><span>返回训练项目</span></a>' +
+      '</div></div>';
+    return;
+  }
+
+  document.title = '动衡智助 — ' + p.name + '项目详情';
+  const lead = (p.intro.split('。')[0] || p.intro) + '。';
+
+  /* ── 组装 HTML ── */
+  let h = '';
+
+  /* hero */
+  h +=
+  '<section class="dt-hero">' +
+    '<div class="orb orb-red-soft" aria-hidden="true"></div>' +
+    '<div class="container dt-hero-grid">' +
+      '<div class="dt-hero-copy dt-reveal">' +
+        '<nav class="dt-crumb"><a href="index.html">首页</a><i>/</i><a href="programs.html">训练项目</a><i>/</i><b>' + p.name + '</b></nav>' +
+        '<div class="dt-num">' + p.num + '</div>' +
+        '<h1 class="dt-title">' + p.name + ' <em>训练计划</em></h1>' +
+        '<ul class="dt-tags">' + p.tags.map(t => '<li>' + t + '</li>').join('') + '</ul>' +
+        '<div class="dt-meta">' +
+          '<span>' + ICON.level + '难度：' + p.level + '</span>' +
+          '<span>' + ICON.clock + '单次 ' + p.dur + '</span>' +
+          '<span>' + ICON.cal + p.cycle + '</span>' +
+          '<span>' + ICON.moves + p.moveCount + '</span>' +
+        '</div>' +
+        '<p class="dt-lead">' + lead + '</p>' +
+      '</div>' +
+      '<div class="dt-cover-wrap dt-reveal">' +
+        '<div class="dt-cover-frame" aria-hidden="true"></div>' +
+        '<figure class="dt-cover"><img src="' + p.cover + '" alt="' + p.coverAlt + '">' +
+          '<figcaption class="dt-cover-badge"><strong>' + p.level + '</strong><span>' + p.cycle + ' · ' + p.dur + '/次</span></figcaption>' +
+        '</figure>' +
+      '</div>' +
+    '</div>' +
+  '</section>';
+
+  /* stats */
+  h +=
+  '<section class="section" style="padding:10px 0 0"><div class="container">' +
+    '<div class="dt-stats glass dt-reveal">' +
+      '<div class="dt-stat"><strong>' + p.num + '</strong><span>项目编号</span></div>' +
+      '<div class="dt-stat"><strong>' + p.moveCount.replace('个动作', '') + '<em> 个</em></strong><span>训练动作</span></div>' +
+      '<div class="dt-stat"><strong>' + p.dur.replace('分钟', '') + '<em> 分钟</em></strong><span>单次时长</span></div>' +
+      '<div class="dt-stat"><strong>' + p.cycle.replace('计划', '') + '</strong><span>训练周期</span></div>' +
+    '</div>' +
+  '</div></section>';
+
+  /* 简介 + 适合人群 */
+  h +=
+  '<section class="dt-sec"><div class="container">' +
+    '<div class="dt-sec-head dt-reveal"><span class="tag-orange">// 项目概况</span><h2>项目简介与<em>适合人群</em></h2></div>' +
+    '<div class="dt-grid2">' +
+      '<div class="dt-card glass dt-reveal"><h3><i>' + ICON.info + '</i>项目简介</h3>' +
+        '<p class="dt-intro-txt">' + p.intro + '</p></div>' +
+      '<div class="dt-card glass dt-reveal"><h3><i>' + ICON.users + '</i>适合人群</h3>' +
+        '<ul class="dt-list is-check">' + p.who.map(w => '<li><i>' + ICON.check + '</i><span>' + w + '</span></li>').join('') + '</ul></div>' +
+    '</div>' +
+  '</div></section>';
+
+  /* 训练效果 */
+  h +=
+  '<section class="dt-sec" style="padding-top:0"><div class="container">' +
+    '<div class="dt-sec-head dt-reveal"><span class="tag-orange">// 训练收益</span><h2>训练<em>效果</em>说明</h2></div>' +
+    '<div class="dt-effects dt-reveal-group">' +
+      p.effect.map((e, i) =>
+        '<div class="dt-effect glass dt-reveal"><i>0' + (i + 1) + '</i><div><h4>' + e.split('，')[0] + '</h4><p>' + e + '</p></div></div>'
+      ).join('') +
+    '</div>' +
+  '</div></section>';
+
+  /* 4周训练计划 */
+  h +=
+  '<section class="dt-sec" style="padding-top:0"><div class="container">' +
+    '<div class="dt-sec-head dt-reveal"><span class="tag-orange">// 阶段安排</span><h2>训练计划 · <em>每周动作清单</em></h2>' +
+    '<p>' + p.cycle + '，科学分阶段推进，每周按清单执行，循序渐进</p></div>' +
+    '<div class="dt-weeks dt-reveal-group">' +
+      p.weeks.map((w, i) => {
+        const wk = (w.t.match(/^第([\d\-]+)周/) || [])[1] || (i + 1);
+        return '<div class="dt-week glass dt-reveal"><span class="dt-week-badge">WEEK ' + wk + '</span>' +
+        '<h4>' + w.t.replace(/^第[\d\-]+周 · /, '') + '</h4><small>' + (w.sub || '') + '</small>' +
+        '<ul>' + w.list.map(l => '<li>' + l + '</li>').join('') + '</ul></div>';
+      }).join('') +
+    '</div>' +
+  '</div></section>';
+
+  /* 动作示范 */
+  h +=
+  '<section class="dt-sec" style="padding-top:0"><div class="container">' +
+    '<div class="dt-sec-head dt-reveal"><span class="tag-orange">// 动作库</span><h2>标准动作<em>示范</em>与常见错误</h2>' +
+    '<p>共 ' + p.moves.length + ' 个动作，对照示范与错误提示，保证每一次训练的质量</p></div>' +
+    '<div class="dt-moves dt-reveal-group">' +
+      p.moves.map((m, i) =>
+        '<article class="dt-move glass dt-reveal">' +
+          '<div class="dt-move-img"><span class="dt-move-no">' + String(i + 1).padStart(2, '0') + '</span><img src="' + m.img + '" alt="' + m.name + '标准示范" loading="lazy"></div>' +
+          '<div class="dt-move-body">' +
+            '<h4>' + m.name + '</h4>' +
+            '<div class="dt-move-cols">' +
+              '<div><span class="dt-move-label is-step">标准步骤</span><ol class="dt-steps">' + m.steps.map(s => '<li>' + s + '</li>').join('') + '</ol></div>' +
+              '<div><span class="dt-move-label is-err">常见错误</span><ul class="dt-errs">' + m.errs.map(er => '<li>' + er + '</li>').join('') + '</ul></div>' +
+            '</div>' +
+          '</div>' +
+        '</article>'
+      ).join('') +
+    '</div>' +
+  '</div></section>';
+
+  /* 注意事项 + 禁忌人群 */
+  h +=
+  '<section class="dt-sec" style="padding-top:0"><div class="container">' +
+    '<div class="dt-sec-head dt-reveal"><span class="tag-orange">// 安全须知</span><h2>注意事项与<em>禁忌人群</em></h2></div>' +
+    '<div class="dt-warn-grid">' +
+      '<div class="dt-card glass dt-reveal"><h3><i>' + ICON.shield + '</i>注意事项</h3>' +
+        '<ul class="dt-list is-check">' + p.notes.map(n => '<li><i>' + ICON.check + '</i><span>' + n + '</span></li>').join('') + '</ul></div>' +
+      '<div class="dt-card glass dt-taboo-card dt-reveal"><h3><i>' + ICON.stop + '</i>禁忌人群</h3>' +
+        '<ul class="dt-list is-warn">' + p.taboo.map(t => '<li><i>' + ICON.alert + '</i><span>' + t + '</span></li>').join('') + '</ul></div>' +
+    '</div>' +
+  '</div></section>';
+
+  /* actions */
+  h +=
+  '<section class="dt-sec" style="padding-top:0"><div class="container">' +
+    '<div class="dt-actions glass-strong dt-reveal">' +
+      '<button class="btn btn-red" data-act="join" data-cursor><span>加入我的训练</span></button>' +
+      '<button class="btn btn-ghost" data-act="fav" data-cursor><span>收藏项目</span></button>' +
+      '<span class="dt-share-hint">本计划为运动健康方案，如有伤病请先咨询医生</span>' +
+    '</div>' +
+  '</div></section>';
+
+  app.innerHTML = h;
+
+  /* ── 入场动画 ── */
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (window.gsap && window.ScrollTrigger && !reduceMotion) {
+    gsap.set('.dt-reveal', { opacity: 0, y: 46 });
+    ScrollTrigger.batch('.dt-reveal', {
+      start: 'top 90%',
+      once: true,
+      onEnter: els => gsap.to(els, { opacity: 1, y: 0, duration: 1, ease: 'power3.out', stagger: 0.1 })
+    });
+  }
+
+  /* ── 加入 / 收藏 反馈 ── */
+  document.addEventListener('click', e => {
+    const act = e.target.closest('[data-act]');
+    if (!act || act.dataset.done) return;
+    act.dataset.done = '1';
+    const span = act.querySelector('span');
+    const doneTxt = { join: '✓ 已加入训练', fav: '✓ 已收藏' }[act.dataset.act];
+    const restTxt = { join: '加入我的训练', fav: '收藏项目' }[act.dataset.act];
+    span.textContent = doneTxt;
+    setTimeout(() => { span.textContent = restTxt; delete act.dataset.done; }, 1600);
+  });
+})();
+</script>
+</body>
+</html>

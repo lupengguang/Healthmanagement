@@ -8,7 +8,8 @@
 
   const demo = p =>
     'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=' +
-    encodeURIComponent(p) + '&image_size=portrait_4_3';
+    encodeURIComponent(p + ', all subjects wearing modest full-coverage athletic clothing with long sleeves and long pants, no bare torso') +
+    '&image_size=portrait_4_3';
 
   window.PROJECTS = {
 
@@ -18,7 +19,7 @@
       name: '女性塑形',
       tags: ['塑形', '哑铃', '进阶', '20分钟'],
       level: '进阶', dur: '20分钟', cycle: '4周计划', moveCount: '6个动作',
-      cover: 'images/program-female.jpg',
+      cover: 'images/program-shoulder.jpg',
       coverAlt: '女性在健身房进行哑铃划船训练',
       intro: '针对女性身体特点设计，以哑铃划船、臀桥、核心稳定动作为主，科学塑形不粗壮，打造紧致有线条的健康体态。女性睾酮水平仅为男性的1/15左右，常规哑铃训练并不会练出大块肌肉，反而通过适度阻力刺激提升肌肉线条感与基础代谢，让身体在静息状态下也持续消耗热量。',
       who: [
@@ -455,7 +456,7 @@
       name: '头前伸改善',
       tags: ['体态改善', '无器械', '入门', '10分钟'],
       level: '入门', dur: '10分钟', cycle: '3周计划', moveCount: '6个动作',
-      cover: 'images/program-neck.jpg',
+      cover: 'images/about-trainer.jpg',
       coverAlt: '颈部拉伸动作侧面展示',
       intro: '针对长期低头导致的探颈问题，放松颈部紧张肌群，强化颈深屈肌，改善耳垂与肩峰的对位关系。头部每前伸2.5厘米，颈椎负荷增加约4.5公斤——低头60度看手机时颈椎承压高达27公斤。本计划从"放松枕下肌群、强化深层颈屈肌、调整日常姿势"三步重建头部中立位。',
       who: [

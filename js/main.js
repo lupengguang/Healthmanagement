@@ -20,7 +20,7 @@
   let preloaderDone = false;
 
   function finishPreloader() {
-    if (preloaderDone) return;
+    if (preloaderDone || !preloader) return;
     preloaderDone = true;
     preloader.style.transition = 'transform .85s cubic-bezier(.76,0,.24,1)';
     preloader.style.transform = 'translateY(-101%)';
@@ -29,7 +29,8 @@
   }
 
   function runPreloader() {
-    if (hasGSAP) {
+    if (!preloader) return;
+    if (hasGSAP && preLetters.length) {
       gsap.to(preLetters, { y: 0, opacity: 1, duration: 0.9, ease: 'power3.out', stagger: 0.09 });
     } else {
       preLetters.forEach(s => { s.style.transform = 'translateY(0)'; s.style.opacity = '1'; });
@@ -39,8 +40,8 @@
       const p = Math.min((now - t0) / DUR, 1);
       const e = 1 - Math.pow(1 - p, 3);
       const pct = Math.round(e * 100);
-      preCount.textContent = pct + '%';
-      preBar.style.width = pct + '%';
+      if (preCount) preCount.textContent = pct + '%';
+      if (preBar) preBar.style.width = pct + '%';
       if (p < 1) requestAnimationFrame(tick);
       else setTimeout(finishPreloader, 250);
     })(t0);
@@ -48,24 +49,25 @@
 
   /* hero intro (plays after preloader) */
   const heroWords = document.querySelectorAll('.hero-title .word');
-  const heroFades = ['.hero-kicker', '.hero-text', '.hero-actions', '.hero-socials', '#heroBadge', '.hero-media'];
+  /* filter to elements that actually exist on this page (shared script) */
+  const heroFades = ['.hero-kicker', '.hero-text', '.hero-actions', '.hero-socials', '#heroBadge', '.hero-media']
+    .filter(s => document.querySelector(s));
+  const hasHeroMedia = !!document.querySelector('.hero-media');
 
   if (hasGSAP && !reduceMotion) {
-    gsap.set(heroWords, { yPercent: 112 });
-    gsap.set(heroFades, { opacity: 0, y: 34 });
-    gsap.set('.hero-media', { opacity: 0, y: 0, scale: 1.06 });
+    if (heroWords.length) gsap.set(heroWords, { yPercent: 112 });
+    if (heroFades.length) gsap.set(heroFades, { opacity: 0, y: 34 });
+    if (hasHeroMedia) gsap.set('.hero-media', { opacity: 0, y: 0, scale: 1.06 });
   }
 
   function heroIntro() {
-    if (!hasGSAP || reduceMotion) return;
+    if (!hasGSAP || reduceMotion || !heroWords.length) return;
     const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
-    tl.to(heroWords, { yPercent: 0, duration: 1.15, stagger: 0.13 })
-      .to('.hero-media', { opacity: 1, scale: 1, duration: 1.5, ease: 'power3.out' }, 0.1)
-      .to('.hero-kicker', { opacity: 1, y: 0, duration: 0.8 }, 0.35)
-      .to('.hero-text', { opacity: 1, y: 0, duration: 0.8 }, 0.5)
-      .to('.hero-actions', { opacity: 1, y: 0, duration: 0.8 }, 0.62)
-      .to('.hero-socials', { opacity: 1, y: 0, duration: 0.8 }, 0.72)
-      .to('#heroBadge', { opacity: 1, y: 0, duration: 0.8 }, 0.8);
+    tl.to(heroWords, { yPercent: 0, duration: 1.15, stagger: 0.13 });
+    if (hasHeroMedia) tl.to('.hero-media', { opacity: 1, scale: 1, duration: 1.5, ease: 'power3.out' }, 0.1);
+    ['.hero-kicker', '.hero-text', '.hero-actions', '.hero-socials', '#heroBadge'].forEach((s, i) => {
+      if (document.querySelector(s)) tl.to(s, { opacity: 1, y: 0, duration: 0.8 }, 0.35 + i * 0.11);
+    });
   }
 
   /* safety: never trap the user behind the preloader */
@@ -215,12 +217,14 @@
      7. GSAP SCROLL REVEALS & PARALLAX
   ───────────────────────────────────────────── */
   if (hasGSAP && window.ScrollTrigger && !reduceMotion) {
-    gsap.set('[data-reveal]', { opacity: 0, y: 52 });
-    ScrollTrigger.batch('[data-reveal]', {
-      start: 'top 88%',
-      once: true,
-      onEnter: els => gsap.to(els, { opacity: 1, y: 0, duration: 1.05, ease: 'power3.out', stagger: 0.12 })
-    });
+    if (document.querySelector('[data-reveal]')) {
+      gsap.set('[data-reveal]', { opacity: 0, y: 52 });
+      ScrollTrigger.batch('[data-reveal]', {
+        start: 'top 88%',
+        once: true,
+        onEnter: els => gsap.to(els, { opacity: 1, y: 0, duration: 1.05, ease: 'power3.out', stagger: 0.12 })
+      });
+    }
 
     document.querySelectorAll('[data-reveal-group]').forEach(group => {
       const kids = [...group.children];
@@ -249,10 +253,12 @@
     });
 
     /* why-center pop-in */
-    gsap.from('#whyCenter', {
-      scale: 0.55, opacity: 0, duration: 1.3, ease: 'power3.out',
-      scrollTrigger: { trigger: '#whyStage', start: 'top 72%', once: true }
-    });
+    if (document.getElementById('whyCenter')) {
+      gsap.from('#whyCenter', {
+        scale: 0.55, opacity: 0, duration: 1.3, ease: 'power3.out',
+        scrollTrigger: { trigger: '#whyStage', start: 'top 72%', once: true }
+      });
+    }
 
     /* health-scan radar pop-in */
     if (document.getElementById('hsRadar')) {
@@ -263,26 +269,30 @@
     }
 
     /* stats slide-up */
-    gsap.from('#stats', {
-      y: 70, opacity: 0, duration: 1.1, ease: 'power3.out',
-      scrollTrigger: { trigger: '#stats', start: 'top 92%', once: true }
-    });
+    if (document.getElementById('stats')) {
+      gsap.from('#stats', {
+        y: 70, opacity: 0, duration: 1.1, ease: 'power3.out',
+        scrollTrigger: { trigger: '#stats', start: 'top 92%', once: true }
+      });
+    }
   }
 
   /* hero mouse parallax */
   if (fine && hasGSAP && !reduceMotion) {
     const media = document.getElementById('heroMedia');
     const orb1 = document.getElementById('heroOrb1');
-    const xM = gsap.quickTo(media, 'x', { duration: 0.9, ease: 'power3.out' });
-    const yM = gsap.quickTo(media, 'y', { duration: 0.9, ease: 'power3.out' });
-    const xO = gsap.quickTo(orb1, 'x', { duration: 1.4, ease: 'power3.out' });
-    const yO = gsap.quickTo(orb1, 'y', { duration: 1.4, ease: 'power3.out' });
-    addEventListener('pointermove', e => {
-      const nx = e.clientX / innerWidth - 0.5;
-      const ny = e.clientY / innerHeight - 0.5;
-      xM(nx * -26); yM(ny * -16);
-      xO(nx * 44); yO(ny * 34);
-    });
+    if (media && orb1) {
+      const xM = gsap.quickTo(media, 'x', { duration: 0.9, ease: 'power3.out' });
+      const yM = gsap.quickTo(media, 'y', { duration: 0.9, ease: 'power3.out' });
+      const xO = gsap.quickTo(orb1, 'x', { duration: 1.4, ease: 'power3.out' });
+      const yO = gsap.quickTo(orb1, 'y', { duration: 1.4, ease: 'power3.out' });
+      addEventListener('pointermove', e => {
+        const nx = e.clientX / innerWidth - 0.5;
+        const ny = e.clientY / innerHeight - 0.5;
+        xM(nx * -26); yM(ny * -16);
+        xO(nx * 44); yO(ny * 34);
+      });
+    }
   }
 
   /* ─────────────────────────────────────────────

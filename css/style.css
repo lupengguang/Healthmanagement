@@ -301,6 +301,50 @@ html.fine .cursor-dot,html.fine .cursor-ring{display:block}
 .p-link{display:inline-flex;align-items:center;gap:8px;font:600 .72rem var(--oswald);letter-spacing:.2em;color:var(--red-2)}
 .p-link svg{transition:transform .35s var(--ease)}
 .p-card:hover .p-link svg{transform:translateX(6px)}
+
+/* ─── Training card v2（编号徽章 + 标签行） ─── */
+.training-card{padding:18px 18px 26px;display:flex;flex-direction:column;transition:transform .5s var(--ease),border-color .5s,box-shadow .5s;transform-style:preserve-3d}
+.training-card:hover{border-color:rgba(255,39,64,.5);box-shadow:0 34px 70px -22px rgba(232,16,46,.28),inset 0 1px 0 rgba(255,255,255,.1)}
+.card-image{position:relative;height:280px;border-radius:13px;overflow:hidden;margin-bottom:20px}
+.card-image img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.training-card:hover .card-image img{transform:scale(1.12)}
+.card-image::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,13,.55),transparent 45%);pointer-events:none}
+.card-number{
+  position:absolute;z-index:2;top:14px;left:14px;
+  font:700 1.05rem var(--bebas);letter-spacing:.1em;color:#fff;
+  background:linear-gradient(135deg,var(--red),var(--red-2));
+  padding:5px 13px 3px;border-radius:9px;
+  box-shadow:0 10px 26px -8px rgba(232,16,46,.7);
+  transition:transform .4s var(--ease);
+}
+.training-card:hover .card-number{transform:translateY(-3px)}
+.card-content{padding:0 10px;display:flex;flex-direction:column;flex:1}
+.card-title{font:600 1.18rem var(--oswald);letter-spacing:.1em;color:#fff;margin-bottom:12px;transition:color .3s}
+.training-card:hover .card-title{color:var(--red-2)}
+.card-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.tag{
+  font:500 .68rem var(--poppins);letter-spacing:.04em;color:var(--text);
+  padding:5px 12px;border-radius:999px;white-space:nowrap;
+  background:rgba(255,255,255,.06);border:1px solid var(--line);
+  transition:border-color .3s,background .3s,color .3s;
+}
+.tag:first-child{color:var(--red-2);background:rgba(232,16,46,.12);border-color:rgba(232,16,46,.45)}
+.training-card:hover .tag:not(:first-child){border-color:rgba(232,16,46,.3)}
+.card-desc{
+  font-size:.87rem;color:var(--muted);line-height:1.72;margin-bottom:18px;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+}
+.card-link{
+  margin-top:auto;position:relative;width:fit-content;
+  font:600 .78rem var(--oswald);letter-spacing:.14em;color:var(--red-2);
+  transition:color .3s;
+}
+.card-link::before{
+  content:'';position:absolute;left:0;bottom:-5px;width:100%;height:1px;
+  background:linear-gradient(90deg,var(--red-2),transparent);
+  transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease);
+}
+.training-card:hover .card-link::before{transform:scaleX(1)}
 .sec-cta{text-align:center;margin-top:52px}
 
 /* ═══════════ WHY (circle stage) ═══════════ */
