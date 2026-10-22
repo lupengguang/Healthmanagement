@@ -172,11 +172,11 @@
       const el = en.target, target = +el.dataset.count, t0 = performance.now(), DUR = 1800;
       (function tick(now) {
         const p = Math.min((now - t0) / DUR, 1);
-        el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+        el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))).toLocaleString('en-US');
         if (p < 1) requestAnimationFrame(tick);
       })(t0);
     });
-  }, { threshold: 0.6 });
+  }, { threshold: 0.3 });
   document.querySelectorAll('.count').forEach(el => counterIO.observe(el));
 
   /* ─────────────────────────────────────────────
@@ -264,7 +264,7 @@
     if (document.getElementById('hsRadar')) {
       gsap.from('#hsRadar', {
         scale: 0.8, opacity: 0, duration: 0.6, ease: 'power2.out',
-        scrollTrigger: { trigger: '#healthScan', start: 'top 82%', once: true }
+        scrollTrigger: { trigger: '#health-check', start: 'top 82%', once: true }
       });
     }
 

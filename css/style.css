@@ -225,7 +225,7 @@ html.fine .cursor-dot,html.fine .cursor-ring{display:block}
 .hero-content{max-width:640px}
 .hero-kicker{display:flex;align-items:center;gap:14px;font:600 .74rem var(--poppins);letter-spacing:.34em;color:#d8d8de;margin-bottom:26px}
 .hero-kicker i{width:44px;height:2px;background:var(--red-2);box-shadow:0 0 12px var(--red)}
-.hero-title{font:700 clamp(3.4rem,8.4vw,6.8rem)/0.98 var(--oswald);text-transform:uppercase;letter-spacing:.015em;margin-bottom:26px}
+.hero-title{font:700 clamp(3rem,7vw,5.4rem)/1.04 var(--oswald);text-transform:uppercase;letter-spacing:.015em;margin-bottom:26px}
 .hero-title .line{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
 .hero-title .word{display:inline-block;will-change:transform}
 .hero-title .red{color:var(--red-2);text-shadow:0 0 42px rgba(255,77,46,.45)}
