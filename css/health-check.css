@@ -1,0 +1,98 @@
+/* ═══════════════════════════════════════════════════════════
+   健康检测页 — AI Body Check
+   ═══════════════════════════════════════════════════════════ */
+.hc-hero{position:relative;padding:150px 0 70px;overflow:hidden}
+.hc-hero .svc-title{font:600 clamp(2.4rem,5vw,4rem)/1.15 var(--oswald)}
+.hc-steps{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:44px;flex-wrap:wrap}
+.hc-step{display:flex;align-items:center;gap:10px}
+.hc-step i{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font:600 .85rem var(--poppins);font-style:normal;background:rgba(255,77,46,.14);border:1px solid rgba(255,77,46,.4);color:var(--red-2)}
+.hc-step span{font:500 .92rem var(--poppins);color:var(--text)}
+.hc-step-arrow{color:var(--muted);font-size:1rem}
+
+.hc-section{padding:60px 0;position:relative}
+.hc-sec-title{font:600 1.6rem/1.3 var(--oswald);margin-bottom:8px}
+.hc-sec-sub{color:var(--muted);font-size:.95rem;margin-bottom:34px}
+
+/* Step1 上传区 */
+.hc-guide-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:30px}
+.hc-guide{display:flex;gap:14px;align-items:flex-start;padding:20px;border-radius:20px}
+.hc-guide b{display:block;font:600 1rem var(--poppins);margin-bottom:6px}
+.hc-guide p{color:var(--muted);font-size:.88rem;line-height:1.6}
+.hc-guide-ico{flex:0 0 42px;height:42px;border-radius:12px;display:grid;place-items:center;background:rgba(255,77,46,.12);border:1px solid rgba(255,77,46,.3);color:var(--red-2);font:700 1rem var(--poppins)}
+.hc-upload-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.hc-upload{
+  position:relative;aspect-ratio:3/4;border-radius:20px;cursor:pointer;overflow:hidden;
+  border:2px dashed rgba(255,255,255,.18);background:rgba(255,255,255,.03);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+  transition:border-color .3s,background .3s,transform .3s;
+}
+.hc-upload:hover{border-color:var(--red);background:rgba(255,77,46,.06);transform:translateY(-4px)}
+.hc-upload input{display:none}
+.hc-upload .plus{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:rgba(255,77,46,.14);border:1px solid rgba(255,77,46,.35);color:var(--red-2);transition:transform .3s}
+.hc-upload:hover .plus{transform:rotate(90deg)}
+.hc-upload .plus svg{width:22px;height:22px}
+.hc-upload b{font:600 .95rem var(--poppins)}
+.hc-upload small{color:var(--muted);font-size:.78rem}
+.hc-upload img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hc-upload .done{position:absolute;top:10px;right:10px;width:26px;height:26px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-size:.8rem}
+
+/* Step2 检测动画 */
+.hc-scan-wrap{display:flex;flex-direction:column;align-items:center;gap:26px}
+.hc-radar{position:relative;width:280px;height:280px;border-radius:50%;overflow:hidden;border:1px solid rgba(255,77,46,.35);background:radial-gradient(circle,rgba(255,77,46,.12),rgba(13,13,13,.9) 70%)}
+.hc-radar::before,.hc-radar::after{content:'';position:absolute;background:rgba(255,77,46,.18)}
+.hc-radar::before{left:50%;top:0;bottom:0;width:1px}
+.hc-radar::after{top:50%;left:0;right:0;height:1px}
+.hc-radar .ring{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(255,77,46,.22)}
+.hc-radar .ring.r2{inset:18%}
+.hc-radar .ring.r3{inset:36%}
+.hc-sweep{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,rgba(255,77,46,.55),rgba(255,77,46,.08) 70deg,transparent 90deg);animation:hcSweep 2.4s linear infinite}
+@keyframes hcSweep{to{transform:rotate(360deg)}}
+.hc-scan-text{font:500 1rem var(--poppins);color:var(--text)}
+.hc-scan-text i{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--red);margin-right:9px;animation:hcBlink 1s infinite}
+@keyframes hcBlink{50%{opacity:.2}}
+.hc-dims{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.hc-dims span{padding:9px 20px;border-radius:99px;font:500 .88rem var(--poppins);color:var(--red-2);background:rgba(255,77,46,.1);border:1px solid rgba(255,77,46,.3)}
+
+/* Step3 报告 */
+.hc-report{border-radius:20px;padding:38px}
+.hc-report-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-bottom:30px}
+.hc-score{display:flex;align-items:center;gap:20px}
+.hc-score-ring{position:relative;width:130px;height:130px}
+.hc-score-ring svg{transform:rotate(-90deg)}
+.hc-score-ring .bg{stroke:rgba(255,255,255,.08)}
+.hc-score-ring .fg{stroke:var(--red);stroke-linecap:round;stroke-dasharray:314;stroke-dashoffset:314;animation:hcScore 1.6s var(--ease) .3s forwards}
+@keyframes hcScore{to{stroke-dashoffset:70.3}}
+.hc-score-num{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.hc-score-num strong{font:700 2.4rem/1 var(--oswald);color:var(--text)}
+.hc-score-num span{font:500 .72rem var(--poppins);color:var(--muted);letter-spacing:.1em}
+.hc-score-meta h3{font:600 1.3rem var(--poppins);margin-bottom:6px}
+.hc-score-meta p{color:var(--muted);font-size:.88rem;max-width:420px}
+.hc-badge{padding:7px 16px;border-radius:99px;font:600 .8rem var(--poppins);background:rgba(255,138,77,.15);border:1px solid rgba(255,138,77,.4);color:#ffb28a}
+.hc-issues{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+.hc-issue{display:flex;gap:14px;padding:16px 18px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--line);margin-bottom:14px}
+.hc-issue:last-child{margin-bottom:0}
+.hc-issue .lv{flex:0 0 auto;padding:4px 12px;height:fit-content;border-radius:99px;font:600 .75rem var(--poppins)}
+.lv-mid{background:rgba(255,77,46,.18);color:#ff8f75;border:1px solid rgba(255,77,46,.4)}
+.lv-light{background:rgba(255,170,60,.14);color:#ffc37a;border:1px solid rgba(255,170,60,.35)}
+.lv-tiny{background:rgba(255,255,255,.08);color:var(--muted);border:1px solid var(--line)}
+.hc-issue b{display:block;font:600 .98rem var(--poppins);margin-bottom:4px}
+.hc-issue p{color:var(--muted);font-size:.85rem}
+.hc-body-map{display:flex;justify-content:center}
+.hc-body-map svg{width:min(240px,80%)}
+.hc-dot{animation:hcPulse 1.6s infinite}
+@keyframes hcPulse{0%,100%{opacity:1}50%{opacity:.25}}
+.hc-actions{display:flex;justify-content:center;margin-top:34px}
+
+/* 底部说明 */
+.hc-disclaimer{padding:30px 0 40px}
+.hc-disclaimer p{text-align:center;color:var(--muted);font-size:.85rem;max-width:640px;margin:0 auto;line-height:1.8;padding:18px 26px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid var(--line)}
+
+@media(max-width:900px){
+  .hc-guide-grid,.hc-upload-grid{grid-template-columns:1fr 1fr}
+  .hc-issues{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .hc-guide-grid,.hc-upload-grid{grid-template-columns:1fr}
+  .hc-step span{font-size:.82rem}
+  .hc-report{padding:26px 20px}
+}

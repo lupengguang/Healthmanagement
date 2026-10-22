@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>动衡智助 — 健康AI问答</title>
+<meta name="description" content="动衡智助健康AI助手 — 体态改善、训练常识、损伤预防、饮食营养、作息调节，运动健康知识库驱动。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d0d0d'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23ff4d2e'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/ai-chat.css">
+</head>
+<body>
+
+<!-- ══════════ PRELOADER ══════════ -->
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-logo"><span>A</span><span>I</span><span>-</span><span>答</span></div>
+    <div class="preloader-bar"><i></i></div>
+    <div class="preloader-count">0%</div>
+  </div>
+</div>
+
+<!-- ══════════ CUSTOM CURSOR ══════════ -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ══════════ SCROLL PROGRESS ══════════ -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ══════════ NOISE OVERLAY ══════════ -->
+<div class="noise" aria-hidden="true"></div>
+
+<!-- ══════════ NAVBAR ══════════ -->
+<header class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo" data-cursor>
+      <svg class="logo-ico" viewBox="0 0 40 24" fill="none"><rect x="1" y="8" width="4" height="8" rx="1" fill="currentColor"/><rect x="35" y="8" width="4" height="8" rx="1" fill="currentColor"/><rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="30" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="10" y="10.5" width="20" height="3" rx="1.5" fill="currentColor"/></svg>
+      <span class="logo-txt">动衡智助<i class="logo-dot"></i></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html#home" class="nav-link">首页</a>
+      <a href="about.html" class="nav-link">关于我们</a>
+      <a href="programs.html" class="nav-link">训练项目</a>
+      <a href="health-check.html" class="nav-link is-active">健康检测</a>
+      <a href="ai.html" class="nav-link">AI技术底座</a>
+      <a href="index.html#packages" class="nav-link">会员套餐</a>
+      <a href="join.html" class="nav-link">加入我们</a>
+      <a href="index.html#contact" class="nav-link">联系我们</a>
+    </nav>
+    <a href="health-check.html" class="btn btn-red nav-cta" data-cursor data-magnetic>
+      <span>开始评估</span>
+    </a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- mobile menu -->
+<div class="m-menu" id="mMenu">
+  <nav class="m-menu-links">
+    <a href="index.html#home" class="m-link"><small>01</small>首页</a>
+    <a href="about.html" class="m-link"><small>02</small>关于我们</a>
+    <a href="programs.html" class="m-link"><small>03</small>训练项目</a>
+    <a href="health-check.html" class="m-link is-active"><small>04</small>健康检测</a>
+    <a href="ai.html" class="m-link"><small>05</small>AI技术底座</a>
+    <a href="index.html#packages" class="m-link"><small>06</small>会员套餐</a>
+    <a href="join.html" class="m-link"><small>07</small>加入我们</a>
+    <a href="index.html#contact" class="m-link"><small>08</small>联系我们</a>
+  </nav>
+  <div class="m-menu-foot">
+    <a href="health-check.html" class="btn btn-red">开始评估</a>
+    <p>0718 · 1283019010@qq.com</p>
+  </div>
+</div>
+
+<main>
+<div class="ac-wrap">
+  <div class="container">
+    <div class="ac-layout">
+
+      <!-- ── 左侧边栏 ── -->
+      <aside class="ac-side glass-strong">
+        <h2 class="ac-side-title"><i>AI</i>健康AI助手</h2>
+        <div class="ac-cats" id="acCats">
+          <button class="is-on" data-cursor>体态改善</button>
+          <button data-cursor>训练常识</button>
+          <button data-cursor>损伤预防</button>
+          <button data-cursor>饮食营养</button>
+          <button data-cursor>作息调节</button>
+        </div>
+        <p class="ac-quick-t">快捷问题</p>
+        <div class="ac-quick" id="acQuick">
+          <button data-q="圆肩驼背怎么改善？" data-cursor>圆肩驼背怎么改善？</button>
+          <button data-q="骨盆前倾有什么矫正动作？" data-cursor>骨盆前倾有什么矫正动作？</button>
+          <button data-q="居家训练需要注意什么？" data-cursor>居家训练需要注意什么？</button>
+          <button data-q="训练后肌肉酸痛正常吗？" data-cursor>训练后肌肉酸痛正常吗？</button>
+        </div>
+        <p class="ac-side-note">AI回答基于运动健康知识库，不构成医疗建议</p>
+      </aside>
+
+      <!-- ── 右侧对话区 ── -->
+      <section class="ac-main glass-strong">
+        <header class="ac-head">
+          <i></i>
+          <h1>健康AI问答</h1>
+          <small>在线</small>
+        </header>
+        <div class="ac-msgs" id="acMsgs">
+          <div class="ac-msg ai">
+            <span class="ac-ava">AI</span>
+            <div class="ac-bubble">你好，我是动衡智助健康AI助手。关于体态改善、训练方法、营养饮食等问题都可以问我。</div>
+          </div>
+        </div>
+        <div class="ac-input-wrap">
+          <label class="ac-img-tag" data-cursor>
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
+            支持图片提问（上传动作照片获取纠正建议）
+            <input type="file" accept="image/*" id="acImgInput" aria-label="上传动作照片">
+          </label>
+          <div class="ac-input-row">
+            <input type="text" id="acInput" placeholder="输入你的健康问题..." autocomplete="off">
+            <button class="ac-send" id="acSend" data-cursor>
+              发送
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+(function () {
+  var msgs = document.getElementById('acMsgs');
+  var input = document.getElementById('acInput');
+  var sendBtn = document.getElementById('acSend');
+  var imgInput = document.getElementById('acImgInput');
+
+  // 知识库预置回复
+  var KB = [
+    { k: ['圆肩', '驼背'], a: '圆肩驼背改善建议：\n1）胸肌放松：门框拉伸，每侧30秒×3组；\n2）背部强化：YTW字母操、俯身W夹背，每天2组；\n3）胸椎灵活性：泡沫轴滚胸椎、猫式伸展；\n4）日常习惯：屏幕抬高至视线水平，每小时起身活动。坚持4周以上可见明显改善。' },
+    { k: ['骨盆前倾'], a: '骨盆前倾矫正动作推荐：\n1）90/90呼吸训练：激活深层腹横肌，5分钟；\n2）死虫式：3组×每侧10次；\n3）臀桥：3组×15次，强化臀肌；\n4）跪姿髂腰肌拉伸：每侧45秒，放松紧张的髋前侧。\n同时注意站立时收腹卷尾骨，避免久坐。' },
+    { k: ['居家', '注意'], a: '居家训练注意事项：\n1）训练前动态热身5-10分钟，激活关节；\n2）保证动作质量优先于次数，宁少勿假；\n3）地面防滑、周围留出安全空间；\n4）循序渐进增加强度，每周增幅不超过10%；\n5）训练后进行静态拉伸与补水。如出现关节疼痛立即停止。' },
+    { k: ['酸痛'], a: '训练后肌肉酸痛多为延迟性肌肉酸痛（DOMS），属正常现象，通常24-72小时自行缓解。\n缓解建议：轻度活动（散步、拉伸）、充足睡眠、补充蛋白质与水分。\n但若出现尖锐疼痛、关节肿胀或持续超过5天，可能是损伤信号，建议就医检查。' },
+    { k: ['饮食', '营养', '吃'], a: '训练期饮食建议：\n1）训练前1-2小时：适量碳水+少量蛋白（如香蕉+酸奶）；\n2）训练后30-60分钟：蛋白质20-30g+碳水（如鸡蛋、鸡胸肉+米饭）；\n3）每日饮水1.5-2L，训练日适当增加；\n4）减脂期控制总热量但保证蛋白质摄入，避免极端节食。' },
+    { k: ['睡眠', '作息', '休息'], a: '作息对训练恢复至关重要：\n1）保证每晚7-9小时睡眠，肌肉修复主要发生在深度睡眠期；\n2）尽量固定入睡与起床时间；\n3）睡前1小时避免强光与剧烈运动；\n4）大强度训练日可安排午休20-30分钟辅助恢复。' }
+  ];
+  var FALLBACK = '根据运动健康知识库：建议先进行一次AI体态检测明确问题，再针对性选择训练项目。日常保持规律训练、均衡饮食与充足睡眠。你可以点击左侧快捷问题，或描述更具体的情况（如训练目标、不适部位），我会给出更精准的建议。';
+
+  function bubble(role, html) {
+    var div = document.createElement('div');
+    div.className = 'ac-msg ' + role;
+    div.innerHTML = '<span class="ac-ava">' + (role === 'ai' ? 'AI' : '我') + '</span>' +
+      '<div class="ac-bubble">' + html +
+      (role === 'ai' ? '<div class="ac-src">来源：运动健康知识库</div>' : '') +
+      '</div>';
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+    return div.querySelector('.ac-bubble');
+  }
+
+  function reply(question) {
+    var typing = bubble('ai', '<span class="ac-typing"><i></i><i></i><i></i></span>');
+    typing.querySelector('.ac-src').style.display = 'none';
+    var text = FALLBACK;
+    for (var i = 0; i < KB.length; i++) {
+      for (var j = 0; j < KB[i].k.length; j++) {
+        if (question.indexOf(KB[i].k[j]) > -1) { text = KB[i].a; break; }
+      }
+    }
+    setTimeout(function () {
+      typing.innerHTML = text.replace(/\n/g, '<br>') + '<div class="ac-src">来源：运动健康知识库</div>';
+      msgs.scrollTop = msgs.scrollHeight;
+    }, 900);
+  }
+
+  function ask(text) {
+    if (!text) return;
+    bubble('user', text);
+    input.value = '';
+    reply(text);
+  }
+
+  sendBtn.addEventListener('click', function () { ask(input.value.trim()); });
+  input.addEventListener('keydown', function (e) { if (e.key === 'Enter') ask(input.value.trim()); });
+
+  // 快捷问题
+  document.getElementById('acQuick').addEventListener('click', function (e) {
+    var b = e.target.closest('button');
+    if (b) ask(b.dataset.q);
+  });
+
+  // 功能标签切换
+  document.getElementById('acCats').addEventListener('click', function (e) {
+    var b = e.target.closest('button');
+    if (!b) return;
+    this.querySelectorAll('button').forEach(function (x) { x.classList.remove('is-on'); });
+    b.classList.add('is-on');
+  });
+
+  // 图片提问
+  imgInput.addEventListener('change', function () {
+    var f = imgInput.files && imgInput.files[0];
+    if (!f) return;
+    bubble('user', '<div>请帮我看看这个动作标准吗？</div><img src="' + URL.createObjectURL(f) + '" alt="上传的动作照片">');
+    setTimeout(function () {
+      var b = bubble('ai', '<span class="ac-typing"><i></i><i></i><i></i></span>');
+      setTimeout(function () {
+        b.innerHTML = '已收到你的动作照片。基于骨骼关键点对比分析：整体动作模式基本标准，建议注意发力时核心收紧、避免代偿。可前往<a href="programs.html" style="color:#ff8f75">训练项目</a>查看对应纠正训练。<div class="ac-src">来源：运动健康知识库</div>';
+        msgs.scrollTop = msgs.scrollHeight;
+      }, 1200);
+    }, 300);
+    imgInput.value = '';
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>动衡智助 — AI体态健康检测</title>
+<meta name="description" content="上传正面、侧面、背面三张照片，AI 30秒识别10+体态问题，生成可视化检测报告。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d0d0d'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23ff4d2e'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/health-check.css">
+</head>
+<body>
+
+<!-- ══════════ PRELOADER ══════════ -->
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-logo"><span>A</span><span>I</span><span>-</span><span>检</span></div>
+    <div class="preloader-bar"><i></i></div>
+    <div class="preloader-count">0%</div>
+  </div>
+</div>
+
+<!-- ══════════ CUSTOM CURSOR ══════════ -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ══════════ SCROLL PROGRESS ══════════ -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ══════════ NOISE OVERLAY ══════════ -->
+<div class="noise" aria-hidden="true"></div>
+
+<!-- ══════════ NAVBAR ══════════ -->
+<header class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo" data-cursor>
+      <svg class="logo-ico" viewBox="0 0 40 24" fill="none"><rect x="1" y="8" width="4" height="8" rx="1" fill="currentColor"/><rect x="35" y="8" width="4" height="8" rx="1" fill="currentColor"/><rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="30" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="10" y="10.5" width="20" height="3" rx="1.5" fill="currentColor"/></svg>
+      <span class="logo-txt">动衡智助<i class="logo-dot"></i></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html#home" class="nav-link">首页</a>
+      <a href="about.html" class="nav-link">关于我们</a>
+      <a href="programs.html" class="nav-link">训练项目</a>
+      <a href="health-check.html" class="nav-link is-active">健康检测</a>
+      <a href="ai.html" class="nav-link">AI技术底座</a>
+      <a href="index.html#packages" class="nav-link">会员套餐</a>
+      <a href="join.html" class="nav-link">加入我们</a>
+      <a href="index.html#contact" class="nav-link">联系我们</a>
+    </nav>
+    <a href="health-check.html" class="btn btn-red nav-cta" data-cursor data-magnetic>
+      <span>开始评估</span>
+    </a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- mobile menu -->
+<div class="m-menu" id="mMenu">
+  <nav class="m-menu-links">
+    <a href="index.html#home" class="m-link"><small>01</small>首页</a>
+    <a href="about.html" class="m-link"><small>02</small>关于我们</a>
+    <a href="programs.html" class="m-link"><small>03</small>训练项目</a>
+    <a href="health-check.html" class="m-link is-active"><small>04</small>健康检测</a>
+    <a href="ai.html" class="m-link"><small>05</small>AI技术底座</a>
+    <a href="index.html#packages" class="m-link"><small>06</small>会员套餐</a>
+    <a href="join.html" class="m-link"><small>07</small>加入我们</a>
+    <a href="index.html#contact" class="m-link"><small>08</small>联系我们</a>
+  </nav>
+  <div class="m-menu-foot">
+    <a href="health-check.html" class="btn btn-red">开始评估</a>
+    <p>0718 · 1283019010@qq.com</p>
+  </div>
+</div>
+
+<main>
+<!-- ══════════ HERO ══════════ -->
+<section class="hc-hero">
+  <div class="orb orb-red-soft orb-left" aria-hidden="true"></div>
+  <div class="container" style="text-align:center">
+    <div data-reveal><span class="tag-orange">// 健康检测</span></div>
+    <div data-reveal>
+      <h1 class="svc-title" style="margin-top:14px">AI<span class="orange">体态健康</span>检测</h1>
+      <p class="svc-sub">上传正面、侧面、背面三张照片，AI 30秒识别10+体态问题</p>
+    </div>
+    <div class="hc-steps" data-reveal>
+      <div class="hc-step"><i>1</i><span>拍照引导</span></div>
+      <span class="hc-step-arrow">→</span>
+      <div class="hc-step"><i>2</i><span>上传照片</span></div>
+      <span class="hc-step-arrow">→</span>
+      <div class="hc-step"><i>3</i><span>AI分析</span></div>
+      <span class="hc-step-arrow">→</span>
+      <div class="hc-step"><i>4</i><span>生成报告</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ STEP 1 拍照引导 + 上传 ══════════ -->
+<section class="hc-section" id="hcStep1">
+  <div class="container">
+    <div class="sec-head" data-reveal>
+      <h2 class="h2">Step 1 <span class="red">拍照引导</span></h2>
+      <div class="sec-rule"><i></i></div>
+    </div>
+    <div class="hc-guide-grid" data-reveal-group>
+      <div class="hc-guide glass" data-reveal>
+        <span class="hc-guide-ico">正</span>
+        <div><b>正面照</b><p>自然站立，双手下垂，正对镜头</p></div>
+      </div>
+      <div class="hc-guide glass" data-reveal>
+        <span class="hc-guide-ico">侧</span>
+        <div><b>侧面照</b><p>自然站立，侧面朝向镜头</p></div>
+      </div>
+      <div class="hc-guide glass" data-reveal>
+        <span class="hc-guide-ico">背</span>
+        <div><b>背面照</b><p>自然站立，背对镜头</p></div>
+      </div>
+    </div>
+    <div class="hc-upload-grid" data-reveal-group>
+      <label class="hc-upload" data-reveal>
+        <input type="file" accept="image/*" aria-label="上传正面照">
+        <span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg></span>
+        <b>正面照</b>
+        <small>点击上传 · 全身入镜</small>
+      </label>
+      <label class="hc-upload" data-reveal>
+        <input type="file" accept="image/*" aria-label="上传侧面照">
+        <span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg></span>
+        <b>侧面照</b>
+        <small>点击上传 · 全身入镜</small>
+      </label>
+      <label class="hc-upload" data-reveal>
+        <input type="file" accept="image/*" aria-label="上传背面照">
+        <span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg></span>
+        <b>背面照</b>
+        <small>点击上传 · 全身入镜</small>
+      </label>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ STEP 2 检测中 ══════════ -->
+<section class="hc-section" id="hcStep2">
+  <div class="orb orb-dim" aria-hidden="true"></div>
+  <div class="container">
+    <div class="sec-head" data-reveal>
+      <h2 class="h2">Step 2 <span class="red">检测中</span></h2>
+      <div class="sec-rule"><i></i></div>
+    </div>
+    <div class="hc-scan-wrap" data-reveal>
+      <div class="hc-radar" aria-hidden="true">
+        <span class="ring"></span><span class="ring r2"></span><span class="ring r3"></span>
+        <div class="hc-sweep"></div>
+      </div>
+      <p class="hc-scan-text"><i></i>AI正在分析骨骼关键点...</p>
+      <div class="hc-dims">
+        <span>头前伸检测</span>
+        <span>圆肩检测</span>
+        <span>骨盆检测</span>
+        <span>高低肩检测</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ STEP 3 检测报告 ══════════ -->
+<section class="hc-section" id="hcStep3">
+  <div class="container">
+    <div class="sec-head" data-reveal>
+      <h2 class="h2">Step 3 <span class="red">检测报告</span></h2>
+      <div class="sec-rule"><i></i></div>
+    </div>
+    <div class="hc-report glass-strong" data-reveal>
+      <div class="hc-report-head">
+        <div class="hc-score">
+          <div class="hc-score-ring">
+            <svg width="130" height="130" viewBox="0 0 130 130" fill="none">
+              <circle class="bg" cx="65" cy="65" r="50" stroke-width="8"/>
+              <circle class="fg" cx="65" cy="65" r="50" stroke-width="8" fill="none"/>
+            </svg>
+            <div class="hc-score-num"><strong>78</strong><span>/ 100</span></div>
+          </div>
+          <div class="hc-score-meta">
+            <h3>总评分 78 分</h3>
+            <p>综合骨骼关键点排列与体态对称性分析，你的体态处于中等偏上水平，存在可改善的体态风险点。</p>
+          </div>
+        </div>
+        <span class="hc-badge">检测时间：30 秒</span>
+      </div>
+      <div class="hc-issues">
+        <div>
+          <div class="hc-issue">
+            <span class="lv lv-mid">中度</span>
+            <div><b>圆肩</b><p>肩部前引约15°</p></div>
+          </div>
+          <div class="hc-issue">
+            <span class="lv lv-light">轻度</span>
+            <div><b>骨盆前倾</b><p>髂前上棘偏高</p></div>
+          </div>
+          <div class="hc-issue">
+            <span class="lv lv-tiny">轻微</span>
+            <div><b>高低肩</b><p>左肩略高</p></div>
+          </div>
+        </div>
+        <div class="hc-body-map" aria-label="身体轮廓标注图，问题部位红色标注">
+          <svg viewBox="0 0 200 340" fill="none">
+            <!-- 人形轮廓 -->
+            <circle cx="100" cy="34" r="20" stroke="rgba(255,255,255,.35)" stroke-width="2"/>
+            <path d="M100 56 L100 176 M100 84 L58 118 M100 84 L142 118 M100 176 L70 260 M100 176 L130 260 M70 260 L62 322 M130 260 L138 322" stroke="rgba(255,255,255,.35)" stroke-width="2" stroke-linecap="round"/>
+            <!-- 问题标注点：肩部 / 骨盆 / 双肩差 -->
+            <g class="hc-dot"><circle cx="82" cy="86" r="7" fill="#ff4d2e"/><circle cx="82" cy="86" r="12" stroke="#ff4d2e" stroke-opacity=".4"/></g>
+            <g class="hc-dot" style="animation-delay:.4s"><circle cx="112" cy="170" r="7" fill="#ff4d2e"/><circle cx="112" cy="170" r="12" stroke="#ff4d2e" stroke-opacity=".4"/></g>
+            <g class="hc-dot" style="animation-delay:.8s"><circle cx="94" cy="80" r="5" fill="#ffb28a"/><circle cx="94" cy="80" r="10" stroke="#ffb28a" stroke-opacity=".4"/></g>
+            <text x="60" y="62" fill="#ff8f75" font-size="11" font-family="Inter">圆肩</text>
+            <text x="122" y="176" fill="#ff8f75" font-size="11" font-family="Inter">骨盆前倾</text>
+            <text x="104" y="66" fill="#ffc37a" font-size="11" font-family="Inter">高低肩</text>
+          </svg>
+        </div>
+      </div>
+      <div class="hc-actions">
+        <a href="index.html#packages" class="btn btn-red" data-cursor data-magnetic><span>获取改善方案</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 底部说明 ══════════ -->
+<div class="hc-disclaimer">
+  <div class="container" data-reveal>
+    <p>本检测结果仅供健康管理参考，不构成医疗诊断。如有疼痛或不适，请咨询专业医生。</p>
+  </div>
+</div>
+</main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="footer" id="contact">
+  <div class="orb orb-cta orb-red-soft" aria-hidden="true"></div>
+  <div class="container">
+    <div class="foot-cta" data-reveal>
+      <h2>开启你的<span class="red">AI健康管理</span>之旅</h2>
+      <p>AI体态评估 · 智能训练方案 · 动作实时纠错 · 健康数据追踪</p>
+      <a href="health-check.html" class="btn btn-red" data-cursor data-magnetic><span>开始体态评估</span></a>
+    </div>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="logo" data-cursor>
+          <svg class="logo-ico" viewBox="0 0 40 24" fill="none"><rect x="1" y="8" width="4" height="8" rx="1" fill="currentColor"/><rect x="35" y="8" width="4" height="8" rx="1" fill="currentColor"/><rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="30" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="10" y="10.5" width="20" height="3" rx="1.5" fill="currentColor"/></svg>
+          <span class="logo-txt">动衡智助<i class="logo-dot"></i></span>
+        </a>
+        <p>基于AI多模态大模型的居家运动体态健康管理平台，让每个人在家就能获得专业级体态评估与训练指导。</p>
+      </div>
+      <div class="foot-col">
+        <h4>快速链接</h4>
+        <a href="index.html#home">首页</a>
+        <a href="about.html">关于我们</a>
+        <a href="programs.html">训练项目</a>
+        <a href="health-check.html">健康检测</a>
+      </div>
+      <div class="foot-col">
+        <h4>平台服务</h4>
+        <a href="ai.html">AI技术底座</a>
+        <a href="index.html#packages">会员套餐</a>
+        <a href="join.html">加入我们</a>
+        <a href="index.html#contact">联系我们</a>
+      </div>
+      <div class="foot-col">
+        <h4>联系方式</h4>
+        <a href="mailto:1283019010@qq.com">1283019010@qq.com</a>
+        <span>0718 · AI健康管理</span>
+        <span>服务时间 9:00 - 21:00</span>
+      </div>
+    </div>
+    <div class="foot-base">
+      <p>© 2026 动衡智助 AI智能健康管理. All rights reserved.</p>
+      <a href="#home" data-cursor>返回顶部 ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+// 上传框交互：选择文件后显示预览与完成标记
+document.querySelectorAll('.hc-upload').forEach(function (box) {
+  var input = box.querySelector('input');
+  input.addEventListener('change', function () {
+    var file = input.files && input.files[0];
+    if (!file) return;
+    var url = URL.createObjectURL(file);
+    var img = document.createElement('img');
+    img.src = url;
+    img.alt = '已上传照片预览';
+    box.appendChild(img);
+    var done = document.createElement('span');
+    done.className = 'done';
+    done.textContent = '✓';
+    box.appendChild(done);
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+/* ═══════════════════════════════════════════════════════════
+   健康AI问答页 — AI Chat
+   ═══════════════════════════════════════════════════════════ */
+.ac-wrap{padding:110px 0 40px;min-height:100vh}
+.ac-layout{display:flex;gap:24px;align-items:stretch;min-height:calc(100vh - 220px)}
+
+/* ── 左侧边栏 ── */
+.ac-side{flex:0 0 280px;border-radius:20px;padding:26px 22px;display:flex;flex-direction:column;align-self:flex-start;position:sticky;top:100px;max-height:calc(100vh - 130px)}
+.ac-side-title{font:600 1.25rem var(--poppins);display:flex;align-items:center;gap:10px;margin-bottom:22px}
+.ac-side-title i{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;background:rgba(255,77,46,.14);border:1px solid rgba(255,77,46,.35);color:var(--red-2);font-style:normal}
+.ac-cats{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.ac-cats button{padding:7px 14px;border-radius:99px;font:500 .82rem var(--poppins);color:var(--muted);background:rgba(255,255,255,.05);border:1px solid var(--line);cursor:pointer;transition:.25s}
+.ac-cats button:hover,.ac-cats button.is-on{color:var(--red-2);background:rgba(255,77,46,.12);border-color:rgba(255,77,46,.4)}
+.ac-quick-t{font:600 .8rem var(--poppins);letter-spacing:.08em;color:var(--muted);text-transform:uppercase;margin-bottom:12px}
+.ac-quick{display:flex;flex-direction:column;gap:10px;overflow-y:auto;flex:1;margin-bottom:18px}
+.ac-quick button{text-align:left;padding:13px 16px;border-radius:14px;font:400 .88rem/1.5 var(--poppins);color:var(--text);background:rgba(255,255,255,.04);border:1px solid var(--line);cursor:pointer;transition:.25s}
+.ac-quick button:hover{background:rgba(255,77,46,.1);border-color:rgba(255,77,46,.35);transform:translateX(4px)}
+.ac-side-note{padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.76rem;line-height:1.7}
+
+/* ── 右侧对话区 ── */
+.ac-main{flex:1;display:flex;flex-direction:column;border-radius:20px;overflow:hidden;min-width:0}
+.ac-head{padding:20px 26px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px}
+.ac-head h1{font:600 1.15rem var(--poppins)}
+.ac-head i{width:9px;height:9px;border-radius:50%;background:#4ade80;box-shadow:0 0 10px rgba(74,222,128,.8)}
+.ac-head small{margin-left:auto;color:var(--muted);font-size:.78rem}
+.ac-msgs{flex:1;overflow-y:auto;padding:26px;display:flex;flex-direction:column;gap:18px;scroll-behavior:smooth}
+.ac-msg{display:flex;gap:12px;max-width:82%}
+.ac-msg.user{align-self:flex-end;flex-direction:row-reverse}
+.ac-ava{flex:0 0 36px;width:36px;height:36px;border-radius:11px;display:grid;place-items:center;font:600 .8rem var(--poppins);font-style:normal}
+.ac-msg.ai .ac-ava{background:rgba(255,77,46,.14);border:1px solid rgba(255,77,46,.35);color:var(--red-2)}
+.ac-msg.user .ac-ava{background:rgba(255,255,255,.08);border:1px solid var(--line);color:var(--muted)}
+.ac-bubble{padding:14px 18px;border-radius:16px;font:400 .92rem/1.75 var(--poppins)}
+.ac-msg.ai .ac-bubble{background:rgba(255,255,255,.05);border:1px solid var(--line);border-top-left-radius:4px;color:var(--text)}
+.ac-msg.user .ac-bubble{background:linear-gradient(135deg,var(--red),#e8380f);border-top-right-radius:4px;color:#fff}
+.ac-src{margin-top:10px;padding-top:8px;border-top:1px dashed var(--line);color:var(--muted);font-size:.72rem}
+.ac-msg.user .ac-src{display:none}
+.ac-bubble img{border-radius:10px;margin-top:8px;max-height:180px}
+.ac-typing{display:inline-flex;gap:5px;padding:6px 2px}
+.ac-typing i{width:7px;height:7px;border-radius:50%;background:var(--muted);animation:acTy 1.2s infinite}
+.ac-typing i:nth-child(2){animation-delay:.15s}
+.ac-typing i:nth-child(3){animation-delay:.3s}
+@keyframes acTy{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-5px);opacity:1}}
+
+/* ── 输入区 ── */
+.ac-input-wrap{padding:16px 22px 20px;border-top:1px solid var(--line)}
+.ac-img-tag{display:inline-flex;align-items:center;gap:7px;padding:6px 13px;border-radius:99px;font:500 .76rem var(--poppins);color:var(--muted);background:rgba(255,255,255,.04);border:1px solid var(--line);cursor:pointer;margin-bottom:12px;transition:.25s}
+.ac-img-tag:hover{color:var(--red-2);border-color:rgba(255,77,46,.4)}
+.ac-img-tag input{display:none}
+.ac-input-row{display:flex;gap:12px}
+.ac-input-row input{flex:1;padding:14px 20px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--text);font:400 .92rem var(--poppins);outline:none;transition:border-color .25s}
+.ac-input-row input:focus{border-color:rgba(255,77,46,.5)}
+.ac-input-row input::placeholder{color:var(--muted)}
+.ac-send{padding:0 26px;border-radius:14px;background:linear-gradient(135deg,var(--red),#e8380f);color:#fff;font:600 .92rem var(--poppins);cursor:pointer;border:0;display:flex;align-items:center;gap:8px;transition:transform .25s,box-shadow .25s}
+.ac-send:hover{transform:translateY(-2px);box-shadow:0 10px 24px -8px rgba(255,77,46,.55)}
+
+@media(max-width:900px){
+  .ac-layout{flex-direction:column}
+  .ac-side{flex:none;position:static;max-height:none;width:100%}
+  .ac-quick{max-height:180px}
+  .ac-msg{max-width:94%}
+}
