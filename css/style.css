@@ -462,6 +462,20 @@ html.fine .cursor-dot,html.fine .cursor-ring{display:block}
   padding:8px 16px;border-radius:99px;box-shadow:0 10px 26px -8px rgba(0,0,0,.8);
 }
 
+/* ─── 价格卡悬停交互动画增强 ─── */
+.pkg:hover{transform:translateY(-9px)}
+.pkg-featured:hover{transform:translateY(-9px)}
+.pkg .pkg-price{transition:transform .5s var(--ease),color .5s}
+.pkg:hover .pkg-price{transform:translateX(7px);color:var(--red-2)}
+.pkg-featured:hover .pkg-price{color:#fff}
+.pkg .btn{position:relative;overflow:hidden}
+.pkg .btn::after{content:'';position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.18),transparent);transform:skewX(-18deg);transition:left .65s var(--ease)}
+.pkg:hover .btn::after{left:140%}
+.pkg .btn span{transition:transform .4s var(--ease)}
+.pkg:hover .btn span{transform:translateX(3px)}
+.pkg ul li{transition:color .35s}
+.pkg ul li:hover{color:#fff}
+
 /* ═══════════ SERVICES / ACCORDION ═══════════ */
 .services-grid{display:grid;grid-template-columns:1fr 1.12fr;gap:70px;align-items:center}
 .sm-frame{position:relative;margin-top:26px}
